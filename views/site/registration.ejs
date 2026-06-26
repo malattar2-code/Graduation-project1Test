@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Najdah - Registration</title>
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+  <!-- my fotawesome -->
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <!-- my style css -->
+  <link rel="stylesheet" href="/assets/css/style.scss">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/image/Home-Page/header/najdah-icon.png">
+  <!-- phone code -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
+  <!-- FlatPickr (Date Input Style) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script>window.recaptchaSiteKey = '<%= recaptchaSiteKey %>';</script>
+  <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+</head>
+<body>
+  <!-- Start Header -->
+  <header class="registration-header-sec" id="header-sec">
+    <div class="main-content" id="main-content">
+      <div class="container">
+
+        <!-- ===== SIGN UP BOX ===== -->
+        <div class="sign-up-box">
+
+          <!-- ===== SIGN UP FORM BOX ===== -->
+          <div class="sign-up-form-box">
+
+            <!-- Home Button And Account Type -->
+            <div class="home-btn-and-account-type">
+              <div class="home-btn-box">
+                <a href="/" class="home-btn btn-website">
+                  <i class="fa fa-home" aria-hidden="true"></i>
+                </a>
+              </div>
+              <div class="account-type indigent-mode" id="account-type-selector">
+                <a class="donor-btn" id="donor-btn" value="donor" data-i18n="registrationSignUpBoxDonorBtnTgt">Donor</a>
+                <a class="indigent-btn" id="indigent-btn" value="requester" data-i18n="registrationSignUpBoxIndigentBtnTgt">Indigent</a>
+                <a class="charity-btn" id="charity-btn" value="charity" data-i18n="registrationSignUpBoxCharityBtnTgt">Charity</a>
+              </div>
+            </div>
+
+            <div class="title">
+              <h1 data-i18n="registrationSignUpBoxTitleTgt">Sign Up</h1>
+            </div>
+
+            <!-- ============================================================ -->
+            <!--  FORM A: Donor / Indigent (requester)                        -->
+            <!-- ============================================================ -->
+            <form id="donorIndigentForm" enctype="multipart/form-data">
+              <!-- Honeypot: hidden from real users, bots fill it -->
+              <div style="position:absolute;left:-5000px;" aria-hidden="true">
+                <input type="text" name="website" tabindex="-1" autocomplete="off" value="">
+              </div>
+              <!-- STEP 1 - Personal Info -->
+              <div class="form-step sign-up-form active" id="di-step1">
+                <h1 data-i18n="registrationSignUpBoxFormOneTitleTgt">Tell Us About Yourself!</h1>
+
+                <!-- Full Name -->
+                <div class="full-name">
+                  <div class="first-name input-box">
+                    <label class="label" for="di-firstName" data-i18n="registrationSignUpBoxFormOneLabelFirstNameTgt">First Name</label>
+                    <input type="text" name="firstName" id="di-firstName" maxlength="50">
+                  </div>
+                  <div class="last-name input-box">
+                    <label class="label" for="di-lastName" data-i18n="registrationSignUpBoxFormOneLabelLastNameTgt">Last Name</label>
+                    <input type="text" name="lastName" id="di-lastName" maxlength="50">
+                  </div>
+                  <div class="validation-error" id="di-name-error" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                      <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                    </svg>
+                    <p class="error-message"></p>
+                  </div>
+                </div>
+
+                <!-- Birthday And Gender -->
+                <div class="birthday-and-gender">
+                  <div class="birthday input-box">
+                    <label class="label" for="di-birthDate" data-i18n="registrationSignUpBoxFormBirthDateLabelTgt">Your Birthday</label>
+                    <input type="date" name="birthDate" id="di-birthDate">
+                  </div>
+                  <div class="gender input-box">
+                    <select name="gender" id="di-gender">
+                      <option value="Male" data-i18n="registrationSignUpBoxFormOneOptionOneTgt">Male</option>
+                      <option value="Female" data-i18n="registrationSignUpBoxFormOneOptionTwoTgt">Female</option>
+                    </select>
+                  </div>
+                  <div class="validation-error" id="di-birthday-error" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                      <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                    </svg>
+                    <p class="error-message"></p>
+                  </div>
+                </div>
+                
+                <!-- WhatsApp -->
+                <div class="whatsapp">
+                  <div class="whatsapp-number" id="di-phoneContainer">
+                    <input type="tel" id="di-phoneNumber" name="phone_number">
+                    <input type="hidden" id="di-phoneCode" name="phone_code" value="+1">
+                    <input type="hidden" id="di-fullPhoneNumber" name="full_phone_number">
+                  </div>
+                  <div class="error-message" id="di-phoneError"></div>
+                  <div class="validation-error" id="di-phone-error" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                      <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                    </svg>
+                    <p class="error-message"></p>
+                  </div>
+                </div>
+
+                <!-- Location -->
+                <div class="location">
+                  <div class="location-container">
+                    <button type="button" class="get-location-button btn-website" id="di-getLocationBtn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                      </svg>
+                    </button>
+                    <p class="location-p" data-i18n="registrationSignUpBoxFormOneLocationTgt">Allow access to your location.</p>
+                    <img src="/assets/image/Registration-Page/sign-up/map.png" alt="">
+                  </div>
+                  <div>
+                    <p id="di-locationDisplay" class="location-text-field">Location not selected</p>
+                  </div>
+                  <div class="location-coordinates input-box">
+                    <input type="hidden" name="location[latitude]" id="di-latitude">
+                    <input type="hidden" name="location[longitude]" id="di-longitude">
+                  </div>
+                  <div class="validation-error" id="di-location-error" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                      <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                    </svg>
+                    <p class="error-message"></p>
+                  </div>
+                </div>
+
+                <!-- Next Button -->
+                <div class="next-btn-box-one">
+                  <a class="di-next-btn btn-website" id="di-nextBtn" data-i18n="registrationSignUpBoxNextBtnTgt">Next</a>
+                </div>
+              </div>
+              <!-- END DI STEP 1 -->
+
+              <!-- STEP 2 - Account Info -->
+              <div class="form-step sign-up-form form-step-two" id="di-step2" style="display:none;">
+                <h1 data-i18n="registrationSignUpBoxFormTwoTitleTgt">Make Your Account!</h1>
+                <div class="flex-input-boxes">
+                  <div class="box-one">
+                    <!-- Email -->
+                    <div class="email input-box">
+                      <label class="label" for="di-email" data-i18n="registrationSignUpBoxFormTwoLabelEmailTgt">Email</label>
+                      <input type="email" name="email" id="di-email" maxlength="255">
+                      <div class="validation-error" id="di-email-error" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        <p class="error-message"></p>
+                      </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="password input-box">
+                      <label class="label" for="di-password" data-i18n="registrationSignUpBoxFormTwoLabelPasswordTgt">Password</label>
+                      <input type="password" name="password" id="di-password" maxlength="128">
+                      <div class="validation-error" id="di-password-error" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        <p class="error-message"></p>
+                      </div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="confirm-password input-box">
+                      <label class="label" for="di-confirmPassword" data-i18n="registrationSignUpBoxFormTwoLabelConfirmPasswordTgt">Confirm Password</label>
+                      <input type="password" name="confirmPassword" id="di-confirmPassword" maxlength="128">
+                      <div class="validation-error" id="di-confirmPassword-error" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        <p class="error-message"></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="box-two">
+                    <div class="change-user-image-box">
+                      <div class="image-upload-wrapper">
+                        <div class="upload-area" id="diImageUploadArea">
+                          <input type="file" name="image" id="di-image" class="image-input" accept="image/*">
+                          <div class="upload-placeholder">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                            <span class="upload-text" data-i18n="registrationSignUpBoxFormTwoLabelUploadImageTgt">Add Your Image</span>
+                          </div>
+                          <div class="upload-preview" id="diImagePreview" style="display: none;">
+                            <img src="" alt="Preview" id="diImagePreviewImg">
+                            <button type="button" class="remove-image-btn" id="diRemoveImage">
+                              <i class="fa fa-times"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="validation-error" id="di-image-error" style="display: none;">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                          </svg>
+                          <p class="error-message"></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="di-recaptcha" style="margin: 20px 0; min-height: 78px;"></div>
+                <div class="flex-btns">
+                  <div class="prev-btn-box">
+                    <a class="di-prev-btn prev-btn btn-website" id="di-prevBtn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                  </div>
+
+                  <!-- Verification Window -->
+                  <!-- MODIFY #di-verificationWindow opening tag to add position:relative -->
+                  <div class="verification-container" id="di-verificationWindow">
+                    <!-- ADD this as FIRST child of #di-verificationWindow -->
+                    <button type="button" class="close-verification-btn" id="di-close-verification" style="position:absolute;top:10px;right:15px;background:none;border:none;font-size:24px;cursor:pointer;color:#767676;line-height:1;z-index:10;">&times;</button>
+                    <h1 data-i18n="verificationWindowTitleTgt">Email Verification</h1>
+                    <p class="instructions" data-i18n="verificationWindowDescriptionTgt">Please enter the code we sent to your email.</p>
+                    <div class="code-container force-ltr">
+                      <input type="text" class="code-input" maxlength="1" data-index="0" autofocus>
+                      <input type="text" class="code-input" maxlength="1" data-index="1">
+                      <input type="text" class="code-input" maxlength="1" data-index="2">
+                      <input type="text" class="code-input" maxlength="1" data-index="3">
+                      <input type="text" class="code-input" maxlength="1" data-index="4">
+                      <input type="text" class="code-input" maxlength="1" data-index="5">
+                    </div>
+                    <a class="verify-button btn-website" id="di-verifyBtn" data-i18n="verificationWindowVerifyBtnTgt">Verify</a>
+                    <!-- REPLACE the resend paragraph in #di-verificationWindow -->
+                    <!-- Inside di-verificationWindow -->
+                    <div id="di-resend-section" style="display:none; margin-top:10px; text-align:center;">
+                      <p data-i18n="verificationWindowDidntReceiveCodeTgt">Didn't receive the code?</p>
+                      <button id="di-resendCodeBtn" type="button" class="btn-website">
+                        <span data-i18n="verificationWindowSendCodeAgainTgt">Send it again</span>
+                      </button>
+                    </div>
+                    <p class="error-message" id="di-errorMsg" style="display:none;"></p>
+                    <p class="success-message" id="di-successMsg" style="display:none;"></p>
+                  </div>
+
+                  <div class="submit-btn-box">
+                    <button type="submit" class="submit-btn btn-website" data-i18n="registrationSignUpBoxSubmitBtnTgt">Submit</button>
+                  </div>
+                </div>
+              </div>
+              <!-- END DI STEP 2 -->
+
+            </form>
+            <!-- END DONOR/INDIGENT FORM -->
+
+            <!-- Progress Bar for Donor/Indigent -->
+            <div class="progress-bar" id="progressBar-di">
+              <div class="step-one step" id="di-prog-step1">
+                <div class="bullet"><span>1</span><i class="fa fa-check-circle" aria-hidden="true"></i></div>
+                <div class="step-split-line"></div>
+              </div>
+              <div class="step-two step" id="di-prog-step2">
+                <div class="bullet"><span>2</span><i class="fa fa-check-circle" aria-hidden="true"></i></div>
+                <div class="step-split-line"></div>
+              </div>
+              <div class="step-three step" id="di-prog-step3">
+                <div class="bullet"><span>3</span><i class="fa fa-check-circle" aria-hidden="true"></i></div>
+              </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!--  FORM B: Charity                                              -->
+            <!-- ============================================================ -->
+            <form id="charityForm" enctype="multipart/form-data" style="display:none;">
+              <!-- Honeypot: hidden from real users, bots fill it -->
+              <div style="position:absolute;left:-5000px;" aria-hidden="true">
+                <input type="text" name="website" tabindex="-1" autocomplete="off" value="">
+              </div>
+              <!-- STEP 1 - Charity Info -->
+              <div class="form-step sign-up-form active" id="ch-step1">
+                <h1>Tell Us About Your Charity!</h1>
+
+                <!-- Charity Name & Description -->
+                <div class="charity-name-and-description">
+                  <div class="charity-name input-box">
+                    <label class="label" for="ch-charityName" maxlength="100" data-i18n="registrationSignUpBoxFormCharityNameLabelTgt">Name Of The Charity</label>
+                    <input type="text" name="charityName" id="ch-charityName">
+                  </div>
+                  <div class="charity-description input-box">
+                    <label class="label-desc" for="ch-charityDescription" maxlength="500" data-i18n="registrationSignUpBoxFormCharityDescriptionLabelTgt">Describe The Charity And Its Achievements</label>
+                    <textarea name="charityDescription" id="ch-charityDescription" ></textarea>
+                    <div class="characters">
+                      <span class="signal_num">0</span>
+                      <span class="limit_num">/500</span>
+                    </div>
+                  </div>
+                  <div class="validation-error" id="ch-nameDesc-error" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                      <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                    </svg>
+                    <p class="error-message"></p>
+                  </div>
+                </div>
+
+                <!-- Establishment Date & Type -->
+                <div class="charity-date-and-type">
+                  <div class="charity-date input-box">
+                      <label class="label" for="ch-charityDate" data-i18n="registrationSignUpBoxFormCharityDateLabelTgt">Date of establishment of the charity</label>
+                      <input type="text" name="charityDate" id="ch-charityDate">
+                  </div>
+                  <div class="charity-type input-box">
+                    <select name="charityType" id="ch-charityType">
+                      <option value="" disabled selected data-i18n="registrationSignUpBoxFormCharityTypeLabelTgt">Choose the Type of Charity</option>
+                      <option value="Disaster Relief and Humanitarian Aid" data-i18n="registrationSignUpBoxFormCharityTypeOneTgt">Disaster Relief and Humanitarian Aid</option>
+                      <option value="Health and Medical Care" data-i18n="registrationSignUpBoxFormCharityTypeTwoTgt">Health and Medical Care</option>
+                      <option value="Education and Skill Development" data-i18n="registrationSignUpBoxFormCharityTypeThreeTgt">Education and Skill Development</option>
+                      <option value="Orphan Care and Family Support" data-i18n="registrationSignUpBoxFormCharityTypeFourTgt">Orphan Care and Family Support</option>
+                      <option value="Housing and Urban Development" data-i18n="registrationSignUpBoxFormCharityTypeFiveTgt">Housing and Urban Development</option>
+                      <option value="Environment and Animal Protection" data-i18n="registrationSignUpBoxFormCharityTypeSixTgt">Environment and Animal Protection</option>
+                      <option value="Religious and Da'wah Affairs" data-i18n="registrationSignUpBoxFormCharityTypeSevenTgt">Religious and Da'wah Affairs</option>
+                      <option value="People with Disabilities" data-i18n="registrationSignUpBoxFormCharityTypeEigthTgt">People with Disabilities</option>
+                      <option value="Sustainable Development and Microfinance" data-i18n="registrationSignUpBoxFormCharityTypeNineTgt">Sustainable Development and Microfinance</option>
+                    </select>
+                  </div>
+                  <div class="validation-error" id="ch-dateType-error" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                      <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                    </svg>
+                    <p class="error-message"></p>
+                  </div>
+                </div>
+
+                <div class="charity-whatsapp-and-location">
+                  <!-- Charity WhatsApp -->
+                  <div class="charity-whatsapp">
+                    <div class="charity-whatsapp-number" id="ch-phoneContainer">
+                      <input type="tel" id="ch-phoneNumber" name="phone_number">
+                      <input type="hidden" id="ch-phoneCode" name="phone_code" value="+1">
+                      <input type="hidden" id="ch-fullPhoneNumber" name="full_phone_number">
+                    </div>
+                    <div class="error-message" id="ch-phoneError"></div>
+                    <div class="validation-error" id="ch-phone-error" style="display: none;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                      </svg>
+                      <p class="error-message"></p>
+                    </div>
+                  </div>
+
+
+                  <!-- Charity Location -->
+                  <div class="charity-location">
+                    <div class="charity-location-container">
+                      <button type="button" class="get-charity-location-button btn-website" id="ch-getLocationBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                        </svg>
+                      </button>
+                      <p class="location-p" data-i18n="registrationSignUpBoxFormCharityLocationLabelTgt">Access To Charity Location.</p>
+                      <img src="/assets/image/Registration-Page/sign-up/map.png" alt="">
+                    </div>
+                    <div>
+                      <p id="ch-locationDisplay" class="location-text-field">Location not selected</p>
+                    </div>
+                    <div class="location-coordinates input-box">
+                      <input type="hidden" name="location[latitude]" id="ch-latitude">
+                      <input type="hidden" name="location[longitude]" id="ch-longitude">
+                    </div>
+                    <div class="validation-error charity-location-validation-error" id="ch-location-error" style="display: none;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                      </svg>
+                      <p class="error-message"></p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Next Button -->
+                <div class="next-btn-box-one next-btn-box-one-charity">
+                  <a class="ch-next-btn btn-website" id="ch-nextBtn" data-i18n="registrationSignUpBoxNextBtnTgt">Next</a>
+                </div>
+              </div>
+              <!-- END CH STEP 1 -->
+              <!-- STEP 2 - Charity Links (Optional) -->
+              <div class="form-step sign-up-form" id="ch-step2" style="display:none;">
+                <h2>Charity Links <span class="optional-badge">— Optional Fields</span></h2>
+                <div class="charity-links-section">
+                  <div class="links-wrapper" style="display: flex; flex-wrap: wrap; column-gap: 10px;">
+                    <div class="input-box">
+                      <label class="label" for="ch-website">Official Website</label>
+                      <input type="url" name="charityWebsite" id="ch-website" maxlength="255">
+                    </div>
+                    <div class="input-box">
+                      <label class="label" for="ch-facebook">Facebook</label>
+                      <input type="url" name="charityFacebook" id="ch-facebook" maxlength="255">
+                    </div>
+                    <div class="input-box">
+                      <label class="label" for="ch-instagram">Instagram</label>
+                      <input type="url" name="charityInstagram" id="ch-instagram" maxlength="255">
+                    </div>
+                    <div class="input-box">
+                      <label class="label" for="ch-linkedin">LinkedIn</label>
+                      <input type="url" name="charityLinkedIn" id="ch-linkedin" maxlength="255">
+                    </div>
+                    <div class="input-box">
+                      <label class="label" for="ch-x">X platform</label>
+                      <input type="url" name="charityX" id="ch-x" maxlength="255">
+                    </div>
+                  </div>
+                  <div class="validation-error" id="ch-links-error" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                      <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                    </svg>
+                    <p class="error-message"></p>
+                  </div>
+                </div>
+                <div class="flex-btns" style="width:100%; margin-top:25px;">
+                  <div class="prev-btn-box">
+                    <a class="ch-prev-btn prev-btn btn-website" id="ch-prevBtn-links"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                  </div>
+                  <a class="btn-website" id="ch-skipBtn-links" style="padding:8px 24px;background:transparent;color:#14213d;border:2px solid #14213d;border-radius:4px;cursor:pointer;font-size:14px;font-weight:500;">Skip</a>
+                  <a class="btn-website" id="ch-nextBtn-links" style="padding:8px 24px;">Next</a>
+                </div>
+              </div>
+              <!-- STEP 3 - Account Info -->
+              <div class="form-step sign-up-form form-step-two" id="ch-step3" style="display:none;">
+                <h1 data-i18n="registrationSignUpBoxFormTwoTitleTgt">Make Your Account!</h1>
+                <div class="flex-input-boxes">
+                  <div class="box-one">
+                    <!-- Email -->
+                    <div class="email input-box">
+                      <label class="label" for="ch-email" data-i18n="registrationSignUpBoxFormTwoLabelEmailTgt">Email</label>
+                      <input type="email" name="email" id="ch-email" maxlength="255">
+                      <div class="validation-error" id="ch-email-error" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        <p class="error-message"></p>
+                      </div>
+                    </div>
+                    
+
+                    <!-- Password -->
+                    <div class="password input-box">
+                      <label class="label" for="ch-password" data-i18n="registrationSignUpBoxFormTwoLabelPasswordTgt">Password</label>
+                      <input type="password" name="password" id="ch-password" maxlength="128">
+                      <div class="validation-error" id="ch-password-error" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        <p class="error-message"></p>
+                      </div>
+                    </div>
+                    
+
+                    <!-- Confirm Password -->
+                    <div class="confirm-password input-box">
+                      <label class="label" for="ch-confirmPassword" data-i18n="registrationSignUpBoxFormTwoLabelConfirmPasswordTgt">Confirm Password</label>
+                      <input type="password" name="confirmPassword" id="ch-confirmPassword" maxlength="128">
+                      <div class="validation-error" id="ch-confirmPassword-error" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        <p class="error-message"></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="box-two">
+                    <div class="change-user-image-box">
+                      <div class="image-upload-wrapper">
+                        <div class="upload-area" id="chImageUploadArea">
+                          <input type="file" name="image" id="ch-image" class="image-input" accept="image/*">
+                          <div class="upload-placeholder">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                            <span class="upload-text" data-i18n="registrationSignUpBoxFormTwoLabelUploadImageTgt">Add Your Image</span>
+                          </div>
+                          <div class="upload-preview" id="chImagePreview" style="display: none;">
+                            <img src="" alt="Preview" id="chImagePreviewImg">
+                            <button type="button" class="remove-image-btn" id="chRemoveImage">
+                              <i class="fa fa-times"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="validation-error" id="ch-image-error" style="display: none;">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                          </svg>
+                          <p class="error-message"></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="ch-recaptcha" style="margin: 20px 0; min-height: 78px;"></div>
+                <div class="flex-btns">
+                  <div class="prev-btn-box">
+                    <a class="ch-prev-btn prev-btn btn-website" id="ch-prevBtn"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                  </div>
+
+                  <!-- Verification Window -->
+                  <div class="verification-container" id="ch-verificationWindow">
+                    <!-- ADD this as FIRST child of #ch-verificationWindow -->
+                    <button type="button" class="close-verification-btn" id="ch-close-verification" style="position:absolute;top:10px;right:15px;background:none;border:none;font-size:24px;cursor:pointer;color:#767676;line-height:1;z-index:10;">&times;</button>
+                    <h1 data-i18n="verificationWindowTitleTgt">Email Verification</h1>
+                    <p class="instructions" data-i18n="verificationWindowDescriptionTgt">Please enter the code we sent to your email.</p>
+                    <div class="code-container force-ltr">
+                      <input type="text" class="code-input" maxlength="1" data-index="0" autofocus>
+                      <input type="text" class="code-input" maxlength="1" data-index="1">
+                      <input type="text" class="code-input" maxlength="1" data-index="2">
+                      <input type="text" class="code-input" maxlength="1" data-index="3">
+                      <input type="text" class="code-input" maxlength="1" data-index="4">
+                      <input type="text" class="code-input" maxlength="1" data-index="5">
+                    </div>
+                    <a class="verify-button btn-website" id="ch-verifyBtn" data-i18n="verificationWindowVerifyBtnTgt">Verify</a>
+                    <!-- REPLACE the resend paragraph in #ch-verificationWindow -->
+                    <!-- Inside ch-verificationWindow -->
+                    <div id="ch-resend-section" style="display:none; margin-top:10px; text-align:center;">
+                      <p data-i18n="verificationWindowDidntReceiveCodeTgt">Didn't receive the code?</p>
+                      <button id="ch-resendCodeBtn" type="button" class="btn-website">
+                        <span data-i18n="verificationWindowSendCodeAgainTgt">Send it again</span>
+                      </button>
+                    </div>
+                    <p class="error-message" id="ch-errorMsg" style="display:none;"></p>
+                    <p class="success-message" id="ch-successMsg" style="display:none;"></p>
+                  </div>
+
+                  <div class="submit-btn-box">
+                    <button type="submit" class="submit-btn btn-website" data-i18n="registrationSignUpBoxSubmitBtnTgt">Submit</button>
+                  </div>
+                </div>
+              </div>
+              <!-- END CH STEP 2 -->
+
+            </form>
+            <!-- END CHARITY FORM -->
+
+            <!-- Progress Bar for Charity -->
+            <div class="progress-bar" id="progressBar-charity" style="display:none;">
+              <div class="step-one step" id="ch-prog-step1">
+                <div class="bullet"><span>1</span><i class="fa fa-check-circle" aria-hidden="true"></i></div>
+                <div class="step-split-line"></div>
+              </div>
+              <div class="step-two step" id="ch-prog-step2">
+                <div class="bullet"><span>2</span><i class="fa fa-check-circle" aria-hidden="true"></i></div>
+                <div class="step-split-line"></div>
+              </div>
+              <div class="step-three step" id="ch-prog-step3">
+                <div class="bullet"><span>3</span><i class="fa fa-check-circle" aria-hidden="true"></i></div>
+                <div class="step-split-line"></div>
+              </div>
+              <div class="step-four step" id="ch-prog-step4">
+                <div class="bullet"><span>4</span><i class="fa fa-check-circle" aria-hidden="true"></i></div>
+              </div>
+            </div>
+
+          </div>
+          <!-- END SIGN UP FORM BOX -->
+
+          <!-- Sign In Panel -->
+          <div class="sign-in-panel">
+            <div class="title">
+              <h1 data-i18n="registrationSignInPanelTitleTgt">Have Account ?</h1>
+              <p data-i18n="registrationSignInPanelDescriptionTgt">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                laboriosam ad deleniti.
+              </p>
+              <div class="sign-in-btn-box">
+                <a class="sign-in-btn btn-website transparent" id="sign-in-btn" data-i18n="registrationSignInPanelBtnTgt">Sign In</a>
+              </div>
+            </div>
+            <div class="sign-up-img">
+              <img src="/assets/image/Registration-Page/sign-up/Sign up-amico.png" alt="">
+            </div>
+          </div>
+
+        </div>
+        <!-- END SIGN UP BOX -->
+
+        <!-- ===== SIGN IN BOX ===== -->
+        <div class="sign-in-box">
+          <!-- Sign Up Panel -->
+          <div class="sign-up-panel">
+            <div class="title">
+              <h1 data-i18n="registrationSignUpPanelTitleTgt">New here ?</h1>
+              <p data-i18n="registrationSignUpPanelDescriptionTgt">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+                ex ratione. Aliquid!
+              </p>
+              <div class="sign-up-btn-box">
+                <button class="sign-up-btn btn-website transparent" id="sign-up-btn" data-i18n="registrationSignUpPanelBtnTgt">Sign Up</button>
+              </div>
+            </div>
+            <div class="sign-in-img">
+              <img src="/assets/image/Registration-Page/sign-in/Login-amico.png" alt="">
+            </div>
+          </div>
+
+          <!-- Sign In Form Box -->
+          <div class="sign-in-form-box">
+            <div class="home-problem-btns">
+              <div class="home-btn-box">
+                <a href="/" class="home-btn btn-website">
+                  <i class="fa fa-home" aria-hidden="true"></i>
+                </a>
+              </div>
+              <div class="problem-btn-box">
+                <a class="problem-btn btn-website" id="problemBtn" data-i18n="registrationSignInBoxProblemBtnTgt">Any Problem?</a>
+              </div>
+              <!-- Submit A Complaint Box -->
+              <div class="submit-complaint" id="submitComplaint">
+                <h1 data-i18n="complaintTitleTgt">Contact us on WhatsApp</h1>
+                <div class="whatsapp-number-box">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                  </svg>
+                  <h2>+972 595476377</h2>
+                </div>
+                <div id="complaintMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;"></div>
+              </div>
+            </div>
+
+            <!-- Sign In Form -->
+            <form class="sign-in-form" id="loginForm">
+              <h1 data-i18n="registrationSignInBoxTitleTgt">Sign In!</h1>
+              <p class="sign-in-p" data-i18n="registrationSignInBoxDescriptionTgt">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+              <div class="input-box email">
+                <label class="label" data-i18n="registrationSignInBoxEmailLabelTgt">Email</label>
+                <input type="text" name="email" id="loginEmail" maxlength="255">
+                <div class="validation-error1" id="login-email-error" style="display:none;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                  </svg>
+                  <p class="error-message"></p>
+                </div>
+              </div>
+
+              <div class="input-box password">
+                <label class="label" data-i18n="registrationSignInBoxPasswordLabelTgt">Password</label>
+                <input type="password" id="loginPassword" name="password" maxlength="128">
+                <div class="validation-error1" id="login-password-error" style="display:none;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                  </svg>
+                  <p class="error-message"></p>
+                </div>
+              </div>
+              
+              <div class="login-btn-box">
+                <button type="submit" class="login-btn btn-website" data-i18n="registrationSignInBoxLoginBtnTgt">Login</button>
+              </div>
+              <div class="forget-password-box">
+                <a class="forget-password-btn" id="showEmailWindowBtn" data-i18n="registrationSignInBoxForgetPasswordBtnTgt">Forget the Password ?</a>
+              </div>
+            </form>
+
+            <!-- Forgot Password Form -->
+            <div class="email-window" id="emailWindow">
+              <form id="forgotPasswordForm">
+                <h1 data-i18n="emailwindowTitleTgt">Enter your email to receive the verification code.</h1>
+                <div class="input-box email">
+                  <label class="label" data-i18n="registrationSignInBoxEmailLabelTgt">Email</label>
+                  <input type="text" name="forgotPasswordEmail" id="forgetPasswordEmail" maxlength="255" >
+                </div>
+                <button type="submit" class="email-submit-btn btn-website" id="forgetPasswordEmailBtn" data-i18n="emailBtnTgt">Send</button>
+                <div id="forgetPasswordMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;"></div>
+              </form>
+            </div>
+
+            <!-- Verification For Forget Password -->
+            <div class="verification-container" id="verificationWindowForForgetPassword">
+              <!-- ADD this as FIRST child of #verificationWindowForForgetPassword -->
+              <button type="button" class="close-verification-btn" id="fp-close-verification" style="position:absolute;top:10px;right:15px;background:none;border:none;font-size:24px;cursor:pointer;color:#767676;line-height:1;z-index:10;">&times;</button>
+              <h1 data-i18n="verificationWindowTitleTgt">Email Verification</h1>
+              <p class="instructions" data-i18n="verificationWindowDescriptionTgt">Please enter the code we sent to your email.</p>
+              <div class="code-container force-ltr">
+                <input type="text" class="code-input" maxlength="1" data-index="0" autofocus>
+                <input type="text" class="code-input" maxlength="1" data-index="1">
+                <input type="text" class="code-input" maxlength="1" data-index="2">
+                <input type="text" class="code-input" maxlength="1" data-index="3">
+                <input type="text" class="code-input" maxlength="1" data-index="4">
+                <input type="text" class="code-input" maxlength="1" data-index="5">
+              </div>
+              <a class="verify-button btn-website" id="verifyBtnForForgetPassword" data-i18n="verificationWindowVerifyBtnTgt">Verify</a>
+              <!-- REPLACE the resend paragraph in #verificationWindowForForgetPassword -->
+              <div id="fp-resend-section" style="display:none; margin-top:10px; text-align:center;">
+                <p data-i18n="verificationWindowDidntReceiveCodeTgt">Didn't receive the code?</p>
+                <button id="fp-resendCodeBtn" type="button" class="btn-website">
+                  <span data-i18n="verificationWindowSendCodeAgainTgt">Send it again</span>
+                </button>
+              </div>
+              <p class="error-message" id="errorMsg" style="display:none;"></p>
+              <p class="success-message" id="successMsg" style="display:none;"></p>
+            </div>
+          </div>
+          <!-- END SIGN IN FORM BOX -->
+        </div>
+        <!-- END SIGN IN BOX -->
+
+      </div>
+    </div>
+  </header>
+  <!-- End Header -->
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <!-- Jquery -->
+  <script src="/assets/js/jquery.js"></script>
+  <!-- Owl Carousel js -->
+  <script src="/assets/js/owl.carousel.min.js"></script>
+  <!-- مكتبات i18next من CDN -->
+  <script src="/assets/libs/i18next.min.js"></script>
+  <script src="/assets/libs/i18nextHttpBackend.js"></script>
+  <script src="/assets/libs/i18nextBrowserLanguageDetector.js"></script>
+  <!-- Custom my js -->
+  <!-- Load intl-tel-input scripts FIRST -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+  <script src="/assets/js/userRegistration.js"></script>
+  <script type="module" src="/assets/js/userLogin.js"></script>
+  <script src="/assets/js/registration.js"></script>
+  <!-- flatpickr -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- FontAwesome Icon-->
+  
+  <!-- <script src="https://kit.fontawesome.com/6fccdcc8fe.js" crossorigin="anonymous"></script> -->
+  <!-- NEW: custom Google Translate script -->
+  <script src="/assets/js/google-translate-custom.js"></script>
+</body>
+</html>

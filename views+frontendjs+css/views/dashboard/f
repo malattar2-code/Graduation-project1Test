@@ -1,0 +1,28 @@
+<div class="fundraiser-box">
+                <div class="fundraiser-img"
+                  style="background: url('/assets/image/Home-Page/most-fundraisers/main-fundraiser-img.jpg');"></div>
+                <div class="fundraiser-title">
+                  <h2 class="main-title">Bloody war on the Gaza Strip</h2>
+                  <span>Palestine - Gaza-Strip</span>
+                </div>
+                <p class="fundraiser-des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. amet consectetur
+                  adipisicing elit. Quaerat dolores placeat laboriosam esse culpa. Minus, consequuntur nam! Blanditiis
+                  deserunt vel illo doloribus iure.</p>
+                <div class="fundraiser-btns">
+                  <!-- Start Donation bar -->
+                  <div class="donation-bar">
+                    <div class="donation-scale">
+                      <div class="donation-progress"></div>
+                    </div>
+                    <div class="donation-money-number">
+                      <i class="fa fa-usd" aria-hidden="true"></i>
+                      <div class="money" data-goal="3100">200000</div>
+                    </div>
+                  </div>
+                  <!-- End Donation bar -->
+                  <div class="flex-btns">
+                    <a href="" class="edit-btn btn-website">Edit</a>
+                    <a href="" class="delete-btn btn-website">Delete</a>
+                  </div>
+                </div>
+              </div>

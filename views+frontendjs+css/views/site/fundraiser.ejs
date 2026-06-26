@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Najdah - Fundraiser</title>
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+  <!-- my fotawesome -->
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <!-- my style css -->
+  <link rel="stylesheet" href="/assets/css/style.scss">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/image/Home-Page/header/najdah-icon.png">
+  <script src="https://js.stripe.com/v3/"></script>
+  <!-- Compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+</head>
+<body>
+  <!-- Start Header -->
+  <header class="fundraiser-header-sec" id="header-sec">
+    <!-- Start Nav -->
+    <nav>
+      <!-- Start Nav Links -->
+      <a class="links-list btn-website" id="menuButton">
+        <img src="/assets/image/Home-Page/header/menus.png" alt="Menu">
+      </a>
+      <!-- Start Dropdown Access Menu -->
+      <div class="dropdown-content" id="dropdownMenu">
+        <a href="/ %>" data-i18n="dropdownHomeTgt">Home</a>
+        <a href="/userPanelIndigent %>" data-i18n="dropdownDashboardTgt" id="controlPanelBtn">Dashboard</a>
+        <a href="/all-fundraisers %>" data-i18n="dropdownFundraisersTgt">Fundraisers</a>
+        <a href="/categories %>" data-i18n="dropdownCategoriesTgt">Categories</a>
+        <a href="/faq %>" data-i18n="dropdownContactTgt">Contact Us</a>
+        <a class="language-menu" id="languageMenu" data-i18n="dropdownLanguageTgt">Language</a>
+        <div class="language-switcher" id="languageSwitcher">
+          <button class="lang-btn active" id="en-btn">English</button>
+          <button class="lang-btn" id="ar-btn">العربية</button>
+        </div>
+      </div>
+      <!-- End Dropdown Access Menu -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="user-panel-indigent.html">Dashboard</a></li>
+        <li><a href="all-fundraiser.html">Fundraisers</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="faq.html">Contact us</a></li>
+      </ul>
+      <!-- End Nav Links -->
+      <a href="/" class="brand">
+        <img src="/assets/image/Home-Page/header/najdah.png" alt="">
+      </a>
+      <!-- End Logo -->
+       <!-- Start Search And Contact -->
+      <div class="search-and-contact">
+        <!-- <div class="search-box">
+          <input type="text" placeholder="search...">
+          <div class="search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+          </div>
+        </div> -->
+        <!-- Start Logo -->
+      <a class="help-btn btn-website" id="helpBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-question-lg" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215 0 1.344-.665 2.288-1.79 2.973-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712 1.03-.632 1.397-1.135 1.397-2.028 0-.979-.758-1.698-1.926-1.698-1.009 0-1.71.529-1.938 1.402-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09 0-.618-.473-1.092-1.095-1.092-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14"/>
+        </svg>
+      </a>
+      <!-- Start Submit A Complaint Box(Form) -->
+      <div class="submit-complaint" id="submitComplaint">
+          <h1 data-i18n="complaintTitleTgt">Enter the problem you are facing</h1>
+          <form id="complaintForm" method="post">
+              <div class="title-filed input-box">
+                  <label class="label-desc" for="complaint_content" data-i18n="complaintLabelTgt">Enter A Problem</label>
+                  <textarea 
+                      id="complaint_content" 
+                      name="complaint_content" 
+                      required 
+                      maxlength="100"
+                  ></textarea>
+                  <div class="characters">
+                      <span class="signal_num">0</span>
+                      <span class="limit_num">/100</span>
+                  </div>
+              </div>
+              <button type="submit" class="complaint-submit-btn btn-website" data-i18n="complaintBtnTgt">
+                  Send
+              </button>
+          </form>
+          <div id="complaintMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;"></div>
+      </div>
+      <!-- End Submit A Complaint Box(Form) -->
+      </div>
+      <!-- End Search And Contact -->
+    </nav>
+    <!-- End Nav -->
+    <!-- Start Main Content -->
+    <div class="fundraiser-main-content">
+      <div class="container">
+        <!-- Start Fundraiser Images -->
+        <!-- Start Fundraiser Images -->
+        <div class="fundraiser-images">
+            <!-- Main Image -->
+            <div class="main-image" 
+                style="background: url('<%= fundraiserData.mainImage %>') center/cover no-repeat;"
+                onerror="this.style.backgroundImage='url(/assets/image/Home-Page/most-fundraisers/main-fundraiser-img.jpg)'">
+            </div>
+            
+            <!-- Sub Images -->
+            <div class="sub-images">
+                <% if (fundraiserData.subImages && fundraiserData.subImages.length > 0) { %>
+                    <% fundraiserData.subImages.forEach(function(subImage, index) { %>
+                        <div class="sub-image img-<%= ['one', 'two', 'three'][index] %>" 
+                            style="background: url('<%= subImage %>') center/cover no-repeat;"
+                            onerror="this.style.backgroundImage='url(/assets/image/Home-Page/most-fundraisers/main-fundraiser-img.jpg)'">
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <!-- Fallback if no sub images exist -->
+                    <div class="sub-image img-one" style="background: url('/assets/image/Home-Page/most-fundraisers/main-fundraiser-img.jpg') center/cover no-repeat;"></div>
+                    <div class="sub-image img-two" style="background: url('/assets/image/Home-Page/most-fundraisers/main-fundraiser-img.jpg') center/cover no-repeat;"></div>
+                    <div class="sub-image img-three" style="background: url('/assets/image/Home-Page/most-fundraisers/main-fundraiser-img.jpg') center/cover no-repeat;"></div>
+                <% } %>
+            </div>
+        </div>
+        <!-- End Fundraiser Images -->
+        <!-- Start Fundraiser Information -->
+        <!-- Start Fundraiser Information -->
+        <div class="fundraiser-info">
+            <!-- Start Fundraiser Boxes -->
+            <div class="fundraiser-boxes">
+                <!-- Start Info Boxes -->
+                <div class="info-boxes">
+                    <!-- Start Box One -->
+                    <div class="box-one">
+                        <div class="fundraiser-account" 
+                            onclick="window.location.href='/indigent-account/<%= fundraiserData.userId %>'"
+                            style="cursor: pointer;">
+                            <img src="<%= fundraiserData.userImage %>" 
+                                alt="<%= fundraiserData.userName %>'s profile"
+                                onerror="this.src='/assets/image/Fundraiser-Page/header-sec/man-profile.png'">
+                            <h1 class="account-name"><%= fundraiserData.userName %></h1>
+                        </div>
+                        <div class="flex-btns">
+                            <button class="save-fundraiser-btn donate-later-btn btn-website">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-bookmark-plus" viewBox="0 0 16 16">
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                                    <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- End Box One -->
+                    
+                    <!-- Start Box Two -->
+                    <div class="box-two">
+                        <div class="title">
+                            <h1><%= fundraiserData.title %></h1>
+                        </div>
+                        
+                        <!-- Categories -->
+                        <div class="categories">
+                            <% fundraiserData.categories.forEach(function(category, index) { %>
+                                <a class="categorie-<%= ['one', 'two', 'three', 'four'][index] || 'one' %>">
+                                    <%= category %>
+                                </a>
+                            <% }); %>
+                        </div>
+                        
+                        <div class="address">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <p><%= fundraiserData.location %></p>
+                        </div>
+                        
+                        <div class="whatsapp-number">
+                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                            <p><%= fundraiserData.phoneNumber %></p>
+                        </div>
+                        
+                        <div class="money-required">
+                            <div class="money-required-content">
+                                <img src="/assets/image/Fundraiser-Page/header-sec/money-bag.png" alt="">
+                                <h2>Fundraiser Goal :</h2>
+                                <h3 class="max-goal" data-max="<%= fundraiserData.targetAmount %>">
+                                    <%= fundraiserData.targetAmount.toLocaleString() %><i class="fa fa-usd" aria-hidden="true"></i>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Box Two -->
+                </div>
+                <!-- End Info Boxes -->
+                
+                <!-- Start Donation Scale -->
+                <div class="donation-bar">
+                    <div class="donation-money-number">
+                        <i class="fa fa-usd" aria-hidden="true"></i>
+                        <div class="money" data-goal="<%= fundraiserData.targetAmount %>">
+                            <%= fundraiserData.collectedAmount.toLocaleString() %>
+                        </div>
+                    </div>
+                    <div class="donation-scale">
+                        <div class="donation-progress" style="width: <%= fundraiserData.progressWidth %>"></div>
+                    </div>
+                </div>
+                <!-- End Donation Scale -->
+            </div>
+            <!-- End Fundraiser Boxes -->
+            
+            <div class="donate-btn-and-split-line">
+                <div class="split-line"></div>
+                <div class="btns" id="buttons-container">
+                </div>
+            </div>
+            
+            <!-- Start Fundraiser Description -->
+            <div class="fundraiser-desc">
+                <p><%= fundraiserData.description %></p>
+            </div>
+            <!-- End Fundraiser Description -->
+        </div>
+        <!-- End Fundraiser Information -->
+
+        <!-- Debug info (remove in production) -->
+        <!-- <% if (process.env.NODE_ENV !== 'production') { %>
+            <div style="margin-top: 20px; padding: 10px; background: #f0f0f0; font-size: 12px; border-radius: 5px;">
+                <strong>Debug - Fundraiser Data:</strong><br>
+                Fundraiser ID: <%= fundraiserData.fundraiserId %><br>
+                Title: <%= fundraiserData.title %><br>
+                Progress: <%= fundraiserData.progress %>%<br>
+                Collected: $<%= fundraiserData.collectedAmount %> / $<%= fundraiserData.targetAmount %><br>
+                User: <%= fundraiserData.userName %> (ID: <%= fundraiserData.userId %>)
+            </div>
+        <% } %> -->
+        <!-- End Fundraiser Information -->
+      </div>
+    </div>
+    <!-- End Main Content -->
+  </header>
+  <!-- End Header -->
+  <!-- Start Fundraiser Comments Section -->
+  <!-- Start Fundraiser Comments Section -->
+  <section class="fundraiser-comments-sec">
+    <div class="container">
+      <!-- Comment Input Section -->
+      <div class="comment-input-section">
+        <h1 class="section-title" data-i18n="fundraiserCommentTitleTgt">Add a comment</h1>
+        <p class="section-description" data-i18n="fundraiserCommentDescriptionTgt">Share your thoughts and support for this fundraiser.</p>
+        
+        <!-- Comment Form -->
+        <form class="comment-form" id="commentForm" method="post">
+          <input type="hidden" name="fundraiser_id" value="<%= fundraiserData.fundraiserId %>">
+          <div class="comment-field input-box">
+            <textarea 
+              id="commentText" 
+              name="comment_text" 
+              required 
+              maxlength="500"
+              placeholder="أكتُب تعليقاً..."
+            ></textarea>
+            <div class="character-counter">
+              <span class="current-count">0</span>
+              <span class="max-count">/500</span>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary comment-submit-btn" data-i18n="fundraiserCommentBtnTgt">
+            <span class="btn-text">Submit</span>
+            <span class="btn-loading" style="display: none;">Posting...</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Comments Display Section -->
+      <div class="comments-display-section">
+        <div class="comments-header">
+          <div class="section-divider"></div>
+          <h2 class="comments-title" data-i18n="fundraiserCommentSubTitleTgt">Comments</h2>
+          <div class="comments-count" id="commentsCount"></div>
+        </div>
+
+        <!-- Comments Container -->
+        <div class="comments-container" id="commentsContainer">
+          <!-- Comments will be loaded here dynamically -->
+        </div>
+
+        <!-- Loading State -->
+        <div class="comments-loading" id="commentsLoading" style="display: none;">
+          <div class="loading-spinner"></div>
+          <span>Loading comments...</span>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display: none;">
+          <div class="empty-icon">💬</div>
+          <p>No comments yet. Be the first to share your thoughts!</p>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-container" id="loadMoreContainer" style="display: none;">
+          <button class="btn-secondary load-more-btn" id="loadMoreBtn" data-i18n="loadMoreCommentsTgt">
+            Load More Comments
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Comments -->
+  <script>
+    
+  </script>
+  <!-- Start Fundraisers Requests Section -->
+  <!-- End Fundraisers requests Section -->
+  <!-- Start Footer Section -->
+  <footer class="footer-sec">
+    <!-- Start Copyright Section -->
+    <div class="copyright-box">
+      <ul class="copyright-box-list">
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li>&copy; 2025 Copyright Nowrap Inc.</li>
+      </ul>
+    </div>
+    <!-- End Copyright Section -->
+  </footer>
+  <!-- End Footer Section -->
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <!-- Jquery -->
+  <script>
+    // Get fundraiser ID from URL for real-time updates
+    window.fundraiserId = '<%= fundraiserData.fundraiserId %>';
+    window.initialData = {
+        collectedAmount: '<%= fundraiserData.collectedAmount %>',
+        targetAmount: '<%= fundraiserData.targetAmount %>',
+        progress: '<%= fundraiserData.progress %>',
+    };
+  </script>
+  <script>
+    // بيانات المستخدم (يجب استبدالها بالبيانات الفعلية)
+    // يمكن أن يكون: "donor", "requester", أو غير معرّف
+    const userType = sessionStorage.getItem("userType");
+    const buttonsContainer = document.getElementById('buttons-container');
+
+    if (!userType || userType === "donor" || userType === "superadmin") {
+        // عرض زر التبرع إذا لم يكن UserType معرّف أو إذا كان donor
+        buttonsContainer.innerHTML = `<a id="donateButton" class="donate-btn btn-website" data-i18n="fundraiserDonateBtnTgt">Donate</a>` 
+    } else if (userType === "requester") {
+        // عرض زر إضافة صندوق إذا كان requester
+        buttonsContainer.innerHTML = '<p class="donate-btn btn-website" data-i18n="fundraiserDonateBtnIndigentTgt">Indigent Does Not Donate</p>';
+    }
+  </script>
+  <script src="/assets/js/jquery.js"></script>
+  <!-- Owl Carousel js -->
+  <script src="/assets/js/owl.carousel.min.js"></script>
+  <!-- مكتبات i18next من CDN -->
+  <script src="/assets/libs/i18next.min.js"></script>
+  <script src="/assets/libs/i18nextHttpBackend.js"></script>
+  <script src="/assets/libs/i18nextBrowserLanguageDetector.js"></script>
+  <!-- Custom my js -->
+  <div id="fundraiser-data" 
+    data-fundraiser-id="<%= fundraiserData.fundraiserId %>"
+    style="display: none;">
+  </div>
+  <script src="/assets/js/fundraiser.js"></script>
+  <!-- FontAwesome Icon-->
+  <!-- <script src="https://kit.fontawesome.com/6fccdcc8fe.js" crossorigin="anonymous"></script> -->
+  <!-- نافذة التبرع -->
+  <div id="donationModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 data-i18n="donateNow">تبرع الآن</h2>
+  
+      <form id="donationForm">
+        <input type="hidden" id="fundraiserId">
+        <input type="hidden" id="fundraiserTitle">
+        <input type="hidden" id="targetAmount">
+  
+        <div class="form-group">
+          <label for="donorName" data-i18n="donorName">اسم المتبرع:</label>
+          <input type="text" id="donorName" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="donationAmount" data-i18n="donationAmount">مبلغ التبرع ($):</label>
+          <input type="number" id="donationAmount" min="1" step="0.01" required>
+          <small data-i18n="minDonation">الحد الأدنى للتبرع: $1</small>
+        </div>
+  
+        <div class="form-buttons">
+          <button type="button" id="cancelBtn" data-i18n="cancel">إلغاء</button>
+          <button type="submit" id="continueBtn" data-i18n="continueToPayment">متابعة إلى الدفع</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- نافذة خيارات الدفع -->
+  <div id="paymentMethodModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 data-i18n="choosePaymentMethod">اختر طريقة الدفع</h2>
+  
+      <div class="payment-options">
+        <label>
+          <input type="radio" name="paymentMethod" value="card" checked>
+          <span class="payment-method-icon">💳</span>
+          <span data-i18n="creditDebitCard">بطاقة ائتمان/خصم</span>
+        </label>
+        <label>
+          <input type="radio" name="paymentMethod" value="wallet">
+          <span class="payment-method-icon">📱</span>
+          <span data-i18n="eWallet">محفظة إلكترونية</span>
+        </label>
+        <label>
+          <input type="radio" name="paymentMethod" value="bank">
+          <span class="payment-method-icon">🏦</span>
+          <span data-i18n="bankTransfer">تحويل بنكي</span>
+        </label>
+      </div>
+  
+      <!-- حاوية بطاقات الائتمان -->
+      <div id="cardPaymentFields" class="payment-fields">
+        <h3 data-i18n="cardDetails">تفاصيل البطاقة</h3>
+  
+        <div class="form-group">
+          <label for="cardholderName" data-i18n="cardholderName">اسم حامل البطاقة:</label>
+          <input type="text" id="cardholderName" placeholder="الاسم كما هو مدون على البطاقة">
+        </div>
+  
+        <div class="form-group">
+          <label for="card-element" data-i18n="cardNumber">رقم البطاقة:</label>
+          <div id="card-element" class="StripeElement">
+            <!-- سيتم إدراج Stripe Elements هنا -->
+          </div>
+          <div class="card-icons">
+            <span class="card-icon">💳</span>
+            <span class="card-icon">🔒</span>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="card-expiry" data-i18n="expiryDate">تاريخ الانتهاء:</label>
+            <div id="card-expiry" class="StripeElement">
+              <!-- سيتم إدراج Stripe Elements هنا -->
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="card-cvc" data-i18n="cvv">CVV:</label>
+            <div id="card-cvc" class="StripeElement">
+              <!-- سيتم إدراج Stripe Elements هنا -->
+            </div>
+            <div class="cvv-hint" data-i18n="cvvHint">الرقم المكون من 3 أو 4 أرقام على ظهر البطاقة</div>
+          </div>
+        </div>
+        <div id="card-errors" class="error-message" role="alert" style="display: none;"></div>
+      </div>
+  
+      <!-- حاوية المحفظة الإلكترونية -->
+      <div id="walletPaymentFields" class="payment-fields" style="display: none;">
+        <h3 data-i18n="eWalletPayment">الدفع عبر المحفظة الإلكترونية</h3>
+        
+        <div class="wallet-options">
+          <div class="wallet-option" data-wallet-type="zain_cash">
+            <div class="wallet-icon">📱</div>
+            <div class="wallet-info">
+              <div class="wallet-name">Zain Cash</div>
+              <div class="wallet-description">الدفع عبر تطبيق Zain Cash</div>
+            </div>
+          </div>
+          
+          <div class="wallet-option" data-wallet-type="asia_hawala">
+            <div class="wallet-icon">💸</div>
+            <div class="wallet-info">
+              <div class="wallet-name">Asia Hawala</div>
+              <div class="wallet-description">الدفع عبر Asia Hawala</div>
+            </div>
+          </div>
+          
+          <div class="wallet-option" data-wallet-type="other">
+            <div class="wallet-icon">📲</div>
+            <div class="wallet-info">
+              <div class="wallet-name">محفظة أخرى</div>
+              <div class="wallet-description">اختر هذه الخيار لمحفظة أخرى</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group" id="walletPhoneGroup" style="display: none;">
+          <label for="walletPhone" data-i18n="walletPhone">رقم الهاتف المرتبط بالمحفظة:</label>
+          <input type="tel" id="walletPhone" placeholder="07XXXXXXXX">
+        </div>
+        
+        <div class="form-group" id="customWalletGroup" style="display: none;">
+          <label for="customWalletName" data-i18n="walletName">اسم المحفظة:</label>
+          <input type="text" id="customWalletName" placeholder="أدخل اسم المحفظة">
+        </div>
+      </div>
+  
+      <!-- حاوية التحويل البنكي -->
+      <div id="bankPaymentFields" class="payment-fields" style="display: none;">
+        <h3 data-i18n="bankTransfer">تحويل بنكي</h3>
+        
+        <div class="bank-info">
+          <div class="bank-detail">
+            <span data-i18n="bankName">اسم البنك:</span>
+            <span>البنك المركزي</span>
+          </div>
+          <div class="bank-detail">
+            <span data-i18n="accountName">اسم الحساب:</span>
+            <span>مشاريع الخير</span>
+          </div>
+          <div class="bank-detail">
+            <span data-i18n="accountNumber">رقم الحساب:</span>
+            <span>1234567890</span>
+          </div>
+          <div class="bank-detail">
+            <span data-i18n="iban">IBAN:</span>
+            <span>SA03 8000 0000 6080 1016 7519</span>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="bankRef" data-i18n="transferReference">رقم المرجع:</label>
+          <input type="text" id="bankRef" readonly value="DON-{{timestamp}}">
+          <small data-i18n="transferReferenceHint">يرجى استخدام هذا الرقم كمرجع عند التحويل</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="transferProof" data-i18n="transferProof">إثبات التحويل (اختياري):</label>
+          <input type="file" id="transferProof" accept="image/*,.pdf">
+          <small data-i18n="transferProofHint">يمكنك رفع صورة من إيصال التحويل</small>
+        </div>
+      </div>
+  
+      <div class="donation-summary">
+        <h3 data-i18n="donationSummary">ملخص التبرع</h3>
+        <p data-i18n="donor">المتبرع: <span id="summaryDonorName"></span></p>
+        <p data-i18n="amount">المبلغ: $<span id="summaryAmount"></span></p>
+        <p data-i18n="campaign">الحملة: <span id="summaryCampaign"></span></p>
+        <p data-i18n="paymentMethod">طريقة الدفع: <span id="summaryPaymentMethod"></span></p>
+      </div>
+  
+      <div class="security-notice">
+        <div class="security-icon">🔒</div>
+        <span data-i18n="securityNotice">بياناتك محمية ومشفرة بأعلى معايير الأمان</span>
+      </div>
+  
+      <div class="form-buttons">
+        <button type="button" id="backBtn" data-i18n="back">رجوع</button>
+        <button type="button" id="proceedPaymentBtn" data-i18n="completePayment">إتمام الدفع</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- نافذة التحميل -->
+  <div id="loadingModal" class="modal">
+    <div class="modal-content loading-content">
+      <div class="spinner"></div>
+      <p id="loadingMessage" data-i18n="processingPayment">جاري معالجة الدفع...</p>
+    </div>
+  </div>
+
+  <!-- نافذة النجاح -->
+  <div id="successModal" class="modal">
+    <div class="modal-content loading-content">
+      <div style="color: #4CAF50; font-size: 48px; margin-bottom: 20px;">✓</div>
+      <h3 data-i18n="paymentSuccess">تم الدفع بنجاح!</h3>
+      <p id="successMessage"></p>
+      <div class="form-buttons">
+        <button type="button" id="successCloseBtn" data-i18n="close">إغلاق</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const STRIPE_PUBLIC_KEY = 'pk_test_51SBtChDAEAM6yuRiFQzCs0fEXOKoHZ10lCV3PJGxPb1TTYOkpL0gFmE3IEnqmEC3bjNrGehL3n9M3bZdjop3nRJV00AgWo6i4B';
+
+    let currentDonationData = {};
+    let currentUser = {};
+    let stripe = null;
+    let elements = null;
+    let cardNumber = null;
+    let cardExpiry = null;
+    let cardCvc = null;
+    let cardElementsMounted = false;
+    let mountRetryTimer = null;
+    let selectedWalletType = null;
+
+    // ---------- Get fundraiser data from template ----------
+    function getFundraiserData() {
+      // Get fundraiser ID from the template variable
+      const fundraiserId = '<%= fundraiserData.fundraiserId %>';
+      
+      // Get fundraiser title from the template
+      const fundraiserTitle = '<%= fundraiserData.title %>';
+      
+      // Get target amount from the template
+      const targetAmount = <%= fundraiserData.targetAmount %>;
+      
+      // Get collected amount from the template
+      const collectedAmount = <%= fundraiserData.collectedAmount %>;
+      
+      return {
+        fundraiserId,
+        fundraiserTitle,
+        targetAmount,
+        collectedAmount
+      };
+    }
+
+    // ---------- Get fundraiser ID from URL ----------
+    function getFundraiserIdFromURL() {
+      const path = window.location.pathname;
+      const matches = path.match(/\/fundraiser\/([^\/]+)/);
+      return matches ? matches[1] : null;
+    }
+
+    // ---------- Initialize Stripe ----------
+    function initializeStripe() {
+      if (!window.Stripe) {
+        console.error('Stripe.js not loaded');
+        return;
+      }
+      stripe = Stripe(STRIPE_PUBLIC_KEY);
+      elements = stripe.elements();
+
+      const style = {
+        base: {
+          fontSize: '16px',
+          color: '#32325d',
+          fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+          '::placeholder': { color: '#aab7c4' }
+        },
+        invalid: {
+          color: '#fa755a',
+          iconColor: '#fa755a'
+        }
+      };
+
+      cardNumber = elements.create('cardNumber', { style, placeholder: '4242 4242 4242 4242' });
+      cardExpiry = elements.create('cardExpiry', { style });
+      cardCvc = elements.create('cardCvc', { style });
+
+      const cardErrorEl = () => document.getElementById('card-errors');
+      cardNumber.on('change', e => { 
+        if (cardErrorEl()) {
+          cardErrorEl().textContent = e.error ? e.error.message : '';
+          cardErrorEl().style.display = e.error ? 'block' : 'none';
+        }
+      });
+      cardExpiry.on('change', e => { 
+        if (cardErrorEl()) {
+          cardErrorEl().textContent = e.error ? e.error.message : '';
+          cardErrorEl().style.display = e.error ? 'block' : 'none';
+        }
+      });
+      cardCvc.on('change', e => { 
+        if (cardErrorEl()) {
+          cardErrorEl().textContent = e.error ? e.error.message : '';
+          cardErrorEl().style.display = e.error ? 'block' : 'none';
+        }
+      });
+    }
+
+    // ---------- Mount/unmount helpers ----------
+    function mountCardElements(retryInterval = 150) {
+      if (cardElementsMounted) return;
+      const numContainer = document.getElementById('card-element');
+      const expContainer = document.getElementById('card-expiry');
+      const cvcContainer = document.getElementById('card-cvc');
+
+      if (!numContainer || !expContainer || !cvcContainer) {
+        if (mountRetryTimer) clearTimeout(mountRetryTimer);
+        mountRetryTimer = setTimeout(() => mountCardElements(retryInterval), retryInterval);
+        return;
+      }
+
+      try {
+        cardNumber.mount('#card-element');
+        cardExpiry.mount('#card-expiry');
+        cardCvc.mount('#card-cvc');
+        cardElementsMounted = true;
+        if (mountRetryTimer) { clearTimeout(mountRetryTimer); mountRetryTimer = null; }
+        console.log('✅ Stripe Elements mounted');
+      } catch (err) {
+        console.warn('Retry mounting Stripe Elements', err);
+        if (mountRetryTimer) clearTimeout(mountRetryTimer);
+        mountRetryTimer = setTimeout(() => mountCardElements(retryInterval), retryInterval);
+      }
+    }
+
+    function unmountCardElements() {
+      try {
+        if (cardElementsMounted) {
+          cardNumber.unmount();
+          cardExpiry.unmount();
+          cardCvc.unmount();
+          cardElementsMounted = false;
+          console.log('🧹 Stripe Elements unmounted');
+        }
+      } catch (err) {
+        console.warn('Error during unmount:', err);
+      }
+    }
+
+    // ---------- Fetch current user ----------
+    async function fetchCurrentUser() {
+      try {
+        const res = await fetch('/api/payments/me', { credentials: 'include' });
+        if (!res.ok) throw new Error('فشل في جلب بيانات المستخدم');
+        const data = await res.json();
+        currentUser = { uid: data.uid || null, name: data.name || 'مستخدم مجهول', email: data.email || null };
+        const donorInput = document.getElementById('donorName');
+        if (donorInput) donorInput.value = currentUser.name;
+      } catch (err) {
+        console.error('fetchCurrentUser error:', err);
+        currentUser = { uid: null, name: 'مستخدم مجهول', email: null };
+      }
+    }
+
+    // ---------- Open modal ----------
+    function openDonationModal() {
+      const fundraiserData = getFundraiserData();
+      
+      // Fallback: try to get fundraiser ID from URL if not available in template
+      let fundraiserId = fundraiserData.fundraiserId;
+      if (!fundraiserId) {
+        fundraiserId = getFundraiserIdFromURL();
+      }
+
+      if (!fundraiserId) {
+        console.error('Fundraiser ID not found');
+        showErrorMessage('تعذر العثور على بيانات الحملة');
+        return;
+      }
+
+      currentDonationData = {
+        fundraiserId,
+        fundraiserTitle: fundraiserData.fundraiserTitle,
+        donorName: currentUser.name || 'مستخدم مجهول',
+        donorId: currentUser.uid || null,
+        targetAmount: fundraiserData.targetAmount
+      };
+
+      // Set form values
+      document.getElementById('fundraiserId').value = fundraiserId;
+      document.getElementById('fundraiserTitle').value = fundraiserData.fundraiserTitle;
+      document.getElementById('targetAmount').value = fundraiserData.targetAmount;
+      document.getElementById('donorName').value = currentUser.name || 'مستخدم مجهول';
+
+      // إنشاء رقم مرجعي للتحويل البنكي
+      const timestamp = Date.now();
+      document.getElementById('bankRef').value = `DON-${timestamp}`;
+
+      document.getElementById('donationModal').style.display = 'block';
+      setTimeout(() => mountCardElements(), 200);
+    }
+
+    // ---------- Create invoice ----------
+    async function createInvoice(donationData) {
+      const selectedMethod = donationData.paymentMethod;
+      let paymentDetails = {
+        donorName: donationData.donorName,
+        donorEmail: currentUser.email || null
+      };
+
+      // إضافة تفاصيل إضافية بناءً على طريقة الدفع
+      if (selectedMethod === 'wallet') {
+        paymentDetails.walletType = selectedWalletType;
+        paymentDetails.walletPhone = document.getElementById('walletPhone')?.value || null;
+        if (selectedWalletType === 'other') {
+          paymentDetails.customWalletName = document.getElementById('customWalletName')?.value || null;
+        }
+      } else if (selectedMethod === 'bank') {
+        paymentDetails.bankRef = document.getElementById('bankRef')?.value || null;
+        paymentDetails.transferProof = document.getElementById('transferProof')?.files[0] ? true : false;
+      }
+
+      const payload = {
+        fundraiserKey: donationData.fundraiserId,
+        amount: donationData.amount,
+        paymentMethod: selectedMethod,
+        paymentDetails,
+        currency: 'usd'
+      };
+
+      const res = await fetch('/api/payments/create-invoice', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) {
+        const txt = await res.text().catch(() => null);
+        throw new Error('فشل في إنشاء الفاتورة: ' + (txt || res.status));
+      }
+      const json = await res.json();
+      return json.invoiceId;
+    }
+
+    // ---------- Request PaymentIntent ----------
+    async function requestPaymentIntent(amountDollar, invoiceId, paymentMethodType = 'card') {
+      const payload = {
+        amount: Math.round(amountDollar * 100),
+        currency: 'usd',
+        fundraiserId: currentDonationData.fundraiserId,
+        invoiceId,
+        paymentMethodType
+      };
+
+      const res = await fetch('/api/payments/create-payment-intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) {
+        const txt = await res.text().catch(() => null);
+        return { success: false, error: txt || res.status };
+      }
+      return await res.json();
+    }
+
+    // ---------- Process wallet payment ----------
+    async function processWalletPayment(amountDollar, invoiceId) {
+      const payload = {
+        amount: Math.round(amountDollar * 100),
+        currency: 'usd',
+        fundraiserId: currentDonationData.fundraiserId,
+        invoiceId,
+        walletType: selectedWalletType
+      };
+
+      const res = await fetch('/api/payments/process-wallet-payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify(payload)
+      });
+
+      if (!res.ok) {
+        const txt = await res.text().catch(() => null);
+        return { success: false, error: txt || res.status };
+      }
+      return await res.json();
+    }
+
+    // ---------- Confirm card payment ----------
+    async function processCardPayment(clientSecret) {
+      if (!cardElementsMounted) {
+        mountCardElements();
+        await new Promise(r => setTimeout(r, 300));
+        if (!cardElementsMounted) throw new Error('عنصر البطاقة غير جاهز. الرجاء إعادة فتح نافذة الدفع.');
+      }
+
+      const cardholderName = document.getElementById('cardholderName')?.value?.trim();
+      if (!cardholderName) throw new Error('يرجى إدخال اسم حامل البطاقة');
+
+      const result = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: cardNumber,
+          billing_details: { 
+            name: cardholderName, 
+            email: currentUser.email || undefined 
+          }
+        }
+      });
+
+      if (result.error) throw new Error(result.error.message);
+      return result.paymentIntent;
+    }
+
+    // ---------- Main payment flow ----------
+    async function processDonationPayment() {
+      try {
+        showLoading('جاري معالجة الدفع...');
+
+        const donorName = document.getElementById('donorName')?.value?.trim();
+        const amount = parseFloat(document.getElementById('donationAmount')?.value);
+        if (!donorName) throw new Error('يرجى إدخال اسم المتبرع.');
+        if (!amount || amount < 1) throw new Error('يرجى إدخال مبلغ تبرع صحيح (الحد الأدنى $1).');
+
+        currentDonationData.donorName = donorName;
+        currentDonationData.amount = amount;
+        currentDonationData.paymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value || 'card';
+
+        // 1) Create invoice
+        const invoiceId = await createInvoice(currentDonationData);
+        console.log('Invoice created:', invoiceId);
+
+        let paymentResult;
+
+        if (currentDonationData.paymentMethod === 'card') {
+          // 2) Card payment flow
+          const pi = await requestPaymentIntent(amount, invoiceId, 'card');
+          if (!pi.success) throw new Error(pi.error || 'فشل إنشاء PaymentIntent');
+
+          // 3) Confirm card payment
+          const paymentIntent = await processCardPayment(pi.clientSecret);
+          if (paymentIntent && paymentIntent.status === 'succeeded') {
+            paymentResult = { success: true, invoiceId, method: 'card' };
+          } else {
+            throw new Error('فشل في إتمام عملية الدفع');
+          }
+
+        } else if (currentDonationData.paymentMethod === 'wallet') {
+          // Wallet payment flow
+          const walletResult = await processWalletPayment(amount, invoiceId);
+          if (!walletResult.success) throw new Error(walletResult.error || 'فشل معالجة الدفع بالمحفظة');
+          paymentResult = { success: true, invoiceId, method: 'wallet', data: walletResult };
+
+        } else if (currentDonationData.paymentMethod === 'bank') {
+          // Bank transfer flow
+          paymentResult = { 
+            success: true, 
+            invoiceId, 
+            method: 'bank',
+            bankRef: document.getElementById('bankRef')?.value 
+          };
+        }
+
+        // Show success message
+        if (paymentResult.success) {
+          showSuccessMessage(paymentResult);
+        }
+
+      } catch (err) {
+        console.error('Payment error:', err);
+        showErrorMessage(err.message || 'حدث خطأ أثناء معالجة الدفع');
+      } finally {
+        hideLoading();
+      }
+    }
+
+    // ---------- UI helpers ----------
+    function showLoading(msg) {
+      const modal = document.getElementById('loadingModal');
+      const msgEl = document.getElementById('loadingMessage');
+      if (msgEl) msgEl.textContent = msg || 'جاري المعالجة...';
+      if (modal) modal.style.display = 'block';
+    }
+
+    function hideLoading() { 
+      const modal = document.getElementById('loadingModal'); 
+      if (modal) modal.style.display = 'none'; 
+    }
+
+    function showSuccessMessage(paymentResult) {
+      const successModal = document.getElementById('successModal');
+      const successMessage = document.getElementById('successMessage');
+      
+      let message = `تم إنشاء الفاتورة بنجاح! رقم الفاتورة: ${paymentResult.invoiceId}`;
+      
+      if (paymentResult.method === 'card') {
+        message = `تم الدفع بنجاح!`;
+      } else if (paymentResult.method === 'wallet') {
+        message = `تم تقديم طلب الدفع عبر المحفظة. رقم الفاتورة: ${paymentResult.invoiceId}`;
+      } else if (paymentResult.method === 'bank') {
+        message = `تم إنشاء الفاتورة. رقم المرجع: ${paymentResult.bankRef}. يرجى إتمام التحويل البنكي.`;
+      }
+      
+      if (successMessage) successMessage.textContent = message;
+      if (successModal) successModal.style.display = 'block';
+    }
+
+    function showErrorMessage(msg) {
+      alert('خطأ: ' + msg);
+    }
+
+    function resetForms() {
+      document.getElementById('donationForm')?.reset();
+      const pm = document.getElementById('paymentMethodModal');
+      if (pm) {
+        pm.querySelectorAll('input, select, textarea').forEach(i => { 
+          if (i.type !== 'radio' && i.type !== 'file') i.value = ''; 
+        });
+        // Reset file input
+        const fileInput = document.getElementById('transferProof');
+        if (fileInput) fileInput.value = '';
+      }
+      document.getElementById('donationModal').style.display = 'none';
+      document.getElementById('paymentMethodModal').style.display = 'none';
+      document.getElementById('loadingModal').style.display = 'none';
+      document.getElementById('successModal').style.display = 'none';
+      
+      // Reset wallet selection
+      selectedWalletType = null;
+      document.querySelectorAll('.wallet-option').forEach(opt => {
+        opt.classList.remove('selected');
+      });
+      document.getElementById('walletPhoneGroup').style.display = 'none';
+      document.getElementById('customWalletGroup').style.display = 'none';
+      
+      unmountCardElements();
+    }
+
+    // ---------- Wallet selection ----------
+    function setupWalletSelection() {
+      document.querySelectorAll('.wallet-option').forEach(option => {
+        option.addEventListener('click', function() {
+          // Remove selection from all options
+          document.querySelectorAll('.wallet-option').forEach(opt => {
+            opt.classList.remove('selected');
+          });
+          
+          // Add selection to clicked option
+          this.classList.add('selected');
+          selectedWalletType = this.dataset.walletType;
+          
+          // Show/hide additional fields based on selection
+          const walletPhoneGroup = document.getElementById('walletPhoneGroup');
+          const customWalletGroup = document.getElementById('customWalletGroup');
+          
+          if (selectedWalletType === 'other') {
+            walletPhoneGroup.style.display = 'block';
+            customWalletGroup.style.display = 'block';
+          } else if (selectedWalletType === 'zain_cash' || selectedWalletType === 'asia_hawala') {
+            walletPhoneGroup.style.display = 'block';
+            customWalletGroup.style.display = 'none';
+          } else {
+            walletPhoneGroup.style.display = 'none';
+            customWalletGroup.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    // ---------- Payment method toggle ----------
+    function setupPaymentMethodToggle() {
+      const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+      const cardFields = document.getElementById('cardPaymentFields');
+      const walletFields = document.getElementById('walletPaymentFields');
+      const bankFields = document.getElementById('bankPaymentFields');
+      const summaryPaymentMethod = document.getElementById('summaryPaymentMethod');
+
+      paymentMethods.forEach(pm => {
+        pm.addEventListener('change', function () {
+          const v = this.value;
+          if (cardFields) cardFields.style.display = v === 'card' ? 'block' : 'none';
+          if (walletFields) walletFields.style.display = v === 'wallet' ? 'block' : 'none';
+          if (bankFields) bankFields.style.display = v === 'bank' ? 'block' : 'none';
+          
+          // Update summary
+          if (summaryPaymentMethod) {
+            if (v === 'card') summaryPaymentMethod.textContent = 'بطاقة ائتمان/خصم';
+            else if (v === 'wallet') summaryPaymentMethod.textContent = 'محفظة إلكترونية';
+            else if (v === 'bank') summaryPaymentMethod.textContent = 'تحويل بنكي';
+          }
+          
+          if (v === 'card') setTimeout(mountCardElements, 120);
+        });
+      });
+    }
+
+    // ---------- Initialize donation events ----------
+    function initializeDonationEvents() {
+      // Updated: Use the donate button from your template
+      const donateButton = document.getElementById('donateButton');
+      if (donateButton) {
+        donateButton.addEventListener('click', e => {
+          e.preventDefault();
+          openDonationModal();
+        });
+      }
+
+      // Close buttons
+      document.querySelectorAll('.close, #cancelBtn, #successCloseBtn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          resetForms();
+        });
+      });
+
+      // Donation form submission
+      document.getElementById('donationForm')?.addEventListener('submit', e => {
+        e.preventDefault();
+        
+        const donorName = document.getElementById('donorName')?.value?.trim();
+        const donationAmount = parseFloat(document.getElementById('donationAmount')?.value);
+        if (!donorName) return alert('يرجى إدخال اسم المتبرع.');
+        if (!donationAmount || donationAmount < 1) return alert('الحد الأدنى $1');
+
+        currentDonationData.donorName = donorName;
+        currentDonationData.amount = donationAmount;
+        
+        // Update summary
+        document.getElementById('summaryDonorName').textContent = donorName;
+        document.getElementById('summaryAmount').textContent = donationAmount.toFixed(2);
+        document.getElementById('summaryCampaign').textContent = currentDonationData.fundraiserTitle || '';
+        
+        // Set default payment method in summary
+        const defaultMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value;
+        if (defaultMethod === 'card') {
+          document.getElementById('summaryPaymentMethod').textContent = 'بطاقة ائتمان/خصم';
+        }
+
+        document.getElementById('donationModal').style.display = 'none';
+        document.getElementById('paymentMethodModal').style.display = 'block';
+        setTimeout(() => mountCardElements(), 200);
+      });
+
+      // Back button
+      document.getElementById('backBtn')?.addEventListener('click', () => {
+        document.getElementById('paymentMethodModal').style.display = 'none';
+        document.getElementById('donationModal').style.display = 'block';
+      });
+
+      // Proceed to payment button
+      document.getElementById('proceedPaymentBtn')?.addEventListener('click', () => {
+        processDonationPayment();
+      });
+
+      // Close modals by clicking outside
+      window.addEventListener('click', e => {
+        const modals = ['donationModal', 'paymentMethodModal', 'loadingModal', 'successModal'];
+        modals.forEach(modalId => {
+          const modal = document.getElementById(modalId);
+          if (e.target === modal) {
+            modal.style.display = 'none';
+            if (modalId !== 'loadingModal') resetForms();
+          }
+        });
+      });
+    }
+
+    // ---------- Initialize application ----------
+    document.addEventListener('DOMContentLoaded', async () => {
+      await fetchCurrentUser();
+      initializeStripe();
+      setupPaymentMethodToggle();
+      setupWalletSelection();
+      initializeDonationEvents();
+      
+      // Debug: Log fundraiser data
+      const fundraiserData = getFundraiserData();
+      console.log('Fundraiser Data:', fundraiserData);
+    });
+  </script>
+</body> 

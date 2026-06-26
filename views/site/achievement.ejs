@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Najdah - Achievement: <%= achievementData.achievementTitle %></title>
+
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/style.scss">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/image/Home-Page/header/najdah-icon.png">
+</head>
+<body>
+  <!-- Header -->
+  <header class="fundraiser-header-sec achievement-header-sec" id="header-sec">
+    <nav>
+      <!-- Mobile Menu Toggle -->
+      <a class="links-list btn-website" id="menuButton">
+        <img src="/assets/image/Home-Page/header/menus.png" alt="Menu">
+      </a>
+
+      <!-- Dropdown Menu -->
+      <div class="dropdown-content" id="dropdownMenu">
+        <a href="/" data-i18n="dropdownHomeTgt">Home</a>
+        <a href="/userPanelIndigent" data-i18n="dropdownDashboardTgt" id="controlPanelBtn">Dashboard</a>
+        <a href="/all-fundraisers" data-i18n="dropdownFundraisersTgt">Fundraisers</a>
+        <a href="/all-achievements" data-i18n="dropdownAchievementsTgt">Achievements</a>
+        <a href="/categories" data-i18n="dropdownCategoriesTgt">Categories</a>
+        <a href="/faq" data-i18n="dropdownContactTgt">Contact Us</a>
+        <a class="language-menu" id="languageMenu" data-i18n="dropdownLanguageTgt">Language</a>
+        <div class="language-switcher" id="languageSwitcher">
+          <button class="lang-btn active" id="en-btn">English</button>
+          <button class="lang-btn" id="ar-btn">العربية</button>
+        </div>
+      </div>
+
+      <!-- Logo -->
+      <a href="/" class="brand">
+        <img src="/assets/image/Home-Page/header/najdah.png" alt="">
+      </a>
+
+      <!-- Help & Complaint -->
+      <div class="search-and-contact">
+        <a class="help-btn btn-website" id="helpBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-question-lg" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215 0 1.344-.665 2.288-1.79 2.973-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712 1.03-.632 1.397-1.135 1.397-2.028 0-.979-.758-1.698-1.926-1.698-1.009 0-1.71.529-1.938 1.402-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09 0-.618-.473-1.092-1.095-1.092-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14"/>
+          </svg>
+        </a>
+
+        <!-- Complaint Form -->
+        <div class="submit-complaint" id="submitComplaint">
+          <h1 data-i18n="complaintTitleTgt">Enter the problem you are facing</h1>
+          <form id="complaintForm" method="post">
+            <div class="title-filed input-box">
+              <label class="label-desc" for="complaint_content" data-i18n="complaintLabelTgt">Enter A Problem</label>
+              <textarea id="complaint_content" name="complaint_content" required maxlength="100"></textarea>
+              <div class="characters">
+                <span class="signal_num">0</span>
+                <span class="limit_num">/100</span>
+              </div>
+            </div>
+            <button type="submit" class="complaint-submit-btn btn-website" data-i18n="complaintBtnTgt">Send</button>
+          </form>
+          <div id="complaintMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;"></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- PARENT FUNDRAISER SECTION (without donation bar & save button)        -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <div class="fundraiser-main-content achievement-fundraiser-preview">
+      <div class="container">
+        <div class="achievement-section-label">
+          <span class="section-tag">Campaign</span>
+          <p>This achievement belongs to the following fundraiser campaign</p>
+        </div>
+      </div>
+      <div class="container">
+        <!-- Fundraiser Images (read-only preview) -->
+        <div class="fundraiser-images">
+          <div class="main-image" style="background: url('<%= achievementData.fundraiserMainImage %>') center/cover no-repeat;"></div>
+          <div class="sub-images">
+            <% if (achievementData.fundraiserSubImages && achievementData.fundraiserSubImages.length > 0) { %>
+              <% achievementData.fundraiserSubImages.forEach(function(subImage, index) { %>
+                <div class="sub-image img-<%= ['one','two','three'][index] %>" style="background: url('<%= subImage %>') center/cover no-repeat;"></div>
+              <% }); %>
+            <% } else { %>
+              <div class="sub-image img-one" style="background: url('<%= achievementData.fundraiserMainImage %>') center/cover no-repeat;"></div>
+              <div class="sub-image img-two" style="background: url('/assets/image/Home-Page/most-fundraisers/main-fundraiser-img.jpg') center/cover no-repeat;"></div>
+              <div class="sub-image img-three" style="background: url('/assets/image/Home-Page/most-fundraisers/main-fundraiser-img.jpg') center/cover no-repeat;"></div>
+            <% } %>
+          </div>
+        </div>
+
+        <!-- Fundraiser Information (without donation bar & save button) -->
+        <div class="fundraiser-info">
+          <div class="fundraiser-boxes">
+            <div class="info-boxes">
+              <!-- Box One: Account Info -->
+              <div class="box-one">
+                <div class="fundraiser-account" data-user-id="<%= achievementData.userId %>" style="cursor: pointer;">
+                  <img src="<%= achievementData.userImage %>" alt="<%= achievementData.userName %>'s profile" data-fallback-src="/assets/image/Fundraiser-Page/header-sec/man-profile.png">
+                  <h1 class="account-name"><%= achievementData.userName %></h1>
+                </div>
+              </div>
+
+              <!-- Box Two: Fundraiser Title & Info -->
+              <div class="box-two">
+                <div class="title">
+                  <h1><%= achievementData.fundraiserTitle %></h1>
+                </div>
+                <div class="categories">
+                  <% if (achievementData.fundraiserCategories && achievementData.fundraiserCategories.length > 0) { %>
+                    <% achievementData.fundraiserCategories.forEach(function(category, index) { %>
+                      <a class="categorie-<%= ['one','two','three','four'][index] || 'one' %>"><%= category %></a>
+                    <% }); %>
+                  <% } else { %>
+                    <a class="categorie-one">General</a>
+                  <% } %>
+                </div>
+                <div class="money-required">
+                  <div class="money-required-content">
+                    <img src="/assets/image/Fundraiser-Page/header-sec/money-bag.png" alt="">
+                    <h2>Campaign Goal :</h2>
+                    <h3 class="max-goal">
+                      $<%= achievementData.fundraiserTargetAmount.toLocaleString('en-US') %>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="donate-btn-and-split-line">
+            <div class="split-line"></div>
+            <a href="/fundraiser/<%= achievementData.publicId %>" class="donate-btn btn-website" style="text-decoration: none; text-align: center;">
+              View Campaign
+            </a>
+          </div>
+
+          <div class="fundraiser-desc">
+            <p><%= achievementData.fundraiserDescription %></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Down Arrow -->
+      <div class="scroll-down-arrow" id="scrollDownArrow">
+        <p>Thanks to your generous donations, here are the campaign's achievements</p>
+        <div class="arrow-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <!-- ACHIEVEMENT DETAIL SECTION                                            -->
+    <!-- ═══════════════════════════════════════════════════════════════════════ -->
+    <div class="fundraiser-main-content achievement-detail-section" id="achievementDetailSection">
+      <div class="container">
+
+        <!-- Achievement Images (uses sub_images, falls back to main_image) -->
+        <div class="fundraiser-images achievement-images">
+          <div class="main-image" style="background: url('<%= achievementData.mainImage %>') center/cover no-repeat;"></div>
+          <% if (achievementData.subImages && achievementData.subImages.length > 0) { %>
+            <div class="sub-images">
+              <% achievementData.subImages.forEach(function(subImage, index) { %>
+                <div class="sub-image img-<%= ['one','two','three'][index] %>" style="background: url('<%= subImage %>') center/cover no-repeat;"></div>
+              <% }); %>
+            </div>
+          <% } else { %>
+            <!-- Default fallback sub-images -->
+            <div class="sub-images">
+              <div class="sub-image img-one" style="background: url('<%= achievementData.mainImage %>') center/cover no-repeat;"></div>
+              <div class="sub-image img-two" style="background: url('/assets/image/Home-Page/most-fundraisers/main-fundraiser-img.jpg') center/cover no-repeat;"></div>
+              <div class="sub-image img-three" style="background: url('/assets/image/Home-Page/most-fundraisers/main-fundraiser-img.jpg') center/cover no-repeat;"></div>
+            </div>
+          <% } %>
+        </div>
+
+        <!-- Achievement Info -->
+        <div class="fundraiser-info achievement-detail-info">
+          <div class="fundraiser-boxes">
+            <div class="info-boxes">
+              <!-- Box One: Creator with Achievement Type Icon -->
+              <div class="box-one">
+                <div class="fundraiser-account" data-user-id="<%= achievementData.userId %>" style="cursor: pointer;">
+                  <img src="<%= achievementData.userImage %>" alt="<%= achievementData.userName %>'s profile" data-fallback-src="/assets/image/Fundraiser-Page/header-sec/man-profile.png">
+                  <h1 class="account-name"><%= achievementData.userName %></h1>
+
+                  <!-- Achievement Type Icon (replaces verified/charity/urgent) -->
+                  <div class="fundraiser-Icons achievement-Icons">
+                    <% if (achievementData.achievementType === 'milestone') { %>
+                      <!-- Milestone: Animated Flag Icon -->
+                      <span class="icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style="display: inline-block; vertical-align: middle;">
+                          <defs>
+                            <linearGradient id="milestoneGrad-<%= achievementData.achievementId %>" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+                              <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+                            </linearGradient>
+                            <filter id="glowM-<%= achievementData.achievementId %>" x="-50%" y="-50%" width="200%" height="200%">
+                              <feGaussianBlur stdDeviation="0.6" result="coloredBlur"/>
+                              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                          </defs>
+                          <circle cx="12" cy="12" r="11" fill="url(#milestoneGrad-<%= achievementData.achievementId %>)" stroke="#fff" stroke-width="0.8">
+                            <animate attributeName="r" values="11;11.4;11" dur="2.5s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="1;0.92;1" dur="3s" repeatCount="indefinite" />
+                          </circle>
+                          <!-- Centered flag with draw-in animation -->
+                          <g transform="translate(0, 0)" filter="url(#glowM-<%= achievementData.achievementId %>)">
+                            <path d="M7 4 L7 20 M7 5 L16 5 L14 9 L16 13 L7 13" 
+                                  fill="none" 
+                                  stroke="#ffffff" 
+                                  stroke-width="2.2" 
+                                  stroke-linecap="round" 
+                                  stroke-linejoin="round"
+                                  stroke-dasharray="50"
+                                  stroke-dashoffset="50">
+                              <animate attributeName="stroke-dashoffset" values="50;0;0;50" dur="3s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1" />
+                              <animate attributeName="stroke-width" values="2.2;2.7;2.2" dur="2s" repeatCount="indefinite" />
+                            </path>
+                          </g>
+                          <circle cx="12" cy="12" r="11" fill="none" stroke="#3498db" stroke-width="0.5" opacity="0">
+                            <animate attributeName="r" values="11;14;16" dur="2.5s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.5;0;0" dur="2.5s" repeatCount="indefinite" />
+                          </circle>
+                        </svg>
+                        <span class="tooltip tooltip-milestone">Milestone Achievement</span>
+                      </span>
+                      <% } else { %>
+                      <!-- Final: Animated Trophy Icon -->
+                      <span class="icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style="display: inline-block; vertical-align: middle;">
+                          <defs>
+                            <linearGradient id="finalGrad-<%= achievementData.achievementId %>" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" style="stop-color:#f1c40f;stop-opacity:1" />
+                              <stop offset="100%" style="stop-color:#f39c12;stop-opacity:1" />
+                            </linearGradient>
+                            <filter id="glowF-<%= achievementData.achievementId %>" x="-50%" y="-50%" width="200%" height="200%">
+                              <feGaussianBlur stdDeviation="0.6" result="coloredBlur"/>
+                              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                          </defs>
+                          <circle cx="12" cy="12" r="11" fill="url(#finalGrad-<%= achievementData.achievementId %>)" stroke="#fff" stroke-width="0.8">
+                            <animate attributeName="r" values="11;11.4;11" dur="2.5s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="1;0.92;1" dur="3s" repeatCount="indefinite" />
+                          </circle>
+                          <!-- Centered trophy with draw-in animation -->
+                          <g transform="translate(0, 0)" filter="url(#glowF-<%= achievementData.achievementId %>)">
+                            <path d="M5 3 L5 6 Q5 10 8 12 L8 14 L7 16 L17 16 L16 14 L16 12 Q19 10 19 6 L19 3 Z M7 3 L7 6 M17 3 L17 6 M8 12 Q12 13 16 12" 
+                                  fill="none" 
+                                  stroke="#ffffff" 
+                                  stroke-width="2" 
+                                  stroke-linecap="round" 
+                                  stroke-linejoin="round"
+                                  stroke-dasharray="60"
+                                  stroke-dashoffset="60">
+                              <animate attributeName="stroke-dashoffset" values="60;0;0;60" dur="3s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1" />
+                              <animate attributeName="stroke-width" values="2;2.5;2" dur="2s" repeatCount="indefinite" />
+                            </path>
+                          </g>
+                          <circle cx="12" cy="12" r="11" fill="none" stroke="#f1c40f" stroke-width="0.5" opacity="0">
+                            <animate attributeName="r" values="11;14;16" dur="2.5s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.5;0;0" dur="2.5s" repeatCount="indefinite" />
+                          </circle>
+                        </svg>
+                        <span class="tooltip tooltip-final">Final Achievement</span>
+                      </span>
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Box Two: Achievement Title & Date -->
+              <div class="box-two">
+                <div class="title">
+                  <h1><%= achievementData.achievementTitle %></h1>
+                </div>
+                <div class="address achievement-date">
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+                  <p>
+                    <%= new Date(achievementData.createdAt).toLocaleDateString('en-US', {
+                      year: 'numeric', month: 'long', day: 'numeric'
+                    }) %>
+                  </p>
+                </div>
+                <div class="address achievement-type-badge">
+                  <% if (achievementData.achievementType === 'milestone') { %>
+                    <span class="badge badge-milestone">
+                      <i class="fa fa-flag" aria-hidden="true"></i> Milestone
+                    </span>
+                  <% } else { %>
+                    <span class="badge badge-final">
+                      <i class="fa fa-trophy" aria-hidden="true"></i> Final Achievement
+                    </span>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="donate-btn-and-split-line">
+            <div class="split-line"></div>
+            <div class="btns achievement-action-btns" id="buttons-container">
+              <!-- Like Button -->
+              <button class="achievement-like-btn btn-website"
+                      data-achievement-id="<%= achievementData.achievementId %>"
+                      id="achievementLikeBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                </svg>
+                <span id="likeCountDisplay"><%= achievementData.likeCount %></span> Likes
+              </button>
+
+              <!-- Share Button -->
+              <button class="achievement-share-btn btn-website" id="achievementShareBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
+                  <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"/>
+                </svg>
+                Share
+              </button>
+            </div>
+          </div>
+
+          <!-- Achievement Description -->
+          <div class="fundraiser-desc achievement-full-description">
+            <p><%= achievementData.achievementDescription %></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievement Video Section (if available) -->
+      <% if (achievementData.achievementVideo) { %>
+        <div class="container">
+          <div class="achievement-video-section">
+            <h2 class="section-title">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 8px;">
+                <path d="M6 3.234c-.754.51-1.496.902-2.377 1.352C2.53 5.157 1.94 5.5 1.94 6.06v.316c0 .58.588 1.023 1.683 1.473 1.005.415 2.19.87 2.852 1.438.663.568.377 1.07.377 1.468v.613c0 .58-.588 1.023-1.683 1.473-1.005.415-2.19.87-2.852 1.438-.663.568-.377 1.07-.377 1.468v.316c0 .58.588 1.023 1.683 1.473 1.005.415 2.19.87 2.852 1.438.663.568.377 1.07.377 1.468v.316c0 .58-.588 1.023-1.683 1.473-1.005.415-2.19.87-2.852 1.438-.663.568-.377 1.07-.377 1.468v.316"/>
+              </svg>
+              Achievement Video
+            </h2>
+            <div class="video-container">
+              <video controls poster="<%= achievementData.mainImage %>">
+                <source src="<%= achievementData.achievementVideo %>" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      <% } %>
+
+      <!-- Other Achievements from Same Campaign -->
+      <% if (otherAchievements && otherAchievements.length > 0) { %>
+        <div class="container">
+          <div class="more-campaign-info other-achievements-section">
+            <h2 class="section-title">Other Achievements From This Campaign</h2>
+            <div class="other-achievements-list">
+              <% otherAchievements.forEach(function(oa) { %>
+                <a href="/achievement/<%= oa.achievement_id %>" class="other-achievement-item">
+                  <div class="other-achievement-img" style="background: url('<%= oa.main_image %>') center/cover;"></div>
+                  <div class="other-achievement-info">
+                    <h4>
+                      <%= oa.achievement_title.length > 30 ?
+                        oa.achievement_title.substring(0, 30) + '...' :
+                        oa.achievement_title %>
+                    </h4>
+                    <% if (oa.achievement_type === 'milestone') { %>
+                      <span class="badge badge-milestone-small"><i class="fa fa-flag"></i> Milestone</span>
+                    <% } else { %>
+                      <span class="badge badge-final-small"><i class="fa fa-trophy"></i> Final</span>
+                    <% } %>
+                  </div>
+                </a>
+              <% }); %>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- COMMENTS SECTION                                                        -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="fundraiser-comments-sec achievement-comments-sec" id="comments-section">
+    <div class="container">
+      <div class="comment-input-section">
+        <h1 class="section-title" data-i18n="achievementCommentTitleTgt">Add a comment</h1>
+        <p class="section-description" data-i18n="achievementCommentDescriptionTgt">Share your thoughts on this achievement.</p>
+        <form class="comment-form" id="commentForm" method="post">
+          <input type="hidden" name="achievement_id" id="achievementIdInput" value="<%= achievementData.achievementId %>">
+          <div class="comment-field input-box">
+            <textarea id="commentText" name="comment_text" required maxlength="500" placeholder="Write a comment..."></textarea>
+            <div class="character-counter">
+              <span class="current-count">0</span>
+              <span class="max-count">/500</span>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary comment-submit-btn" data-i18n="achievementCommentBtnTgt">
+            <span class="btn-text">Submit</span>
+            <span class="btn-loading" style="display: none;">Posting...</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="comments-display-section">
+        <div class="comments-header">
+          <div class="section-divider"></div>
+          <h2 class="comments-title" data-i18n="achievementCommentSubTitleTgt">Comments</h2>
+          <div class="comments-count" id="commentsCount"></div>
+        </div>
+        <div class="comments-container" id="commentsContainer"></div>
+        <div class="comments-loading" id="commentsLoading" style="display: none;">
+          <div class="loading-spinner"></div>
+          <span>Loading comments...</span>
+        </div>
+        <div class="empty-state" id="emptyState" style="display: none;">
+          <div class="empty-icon">💬</div>
+          <p>No comments yet. Be the first to share your thoughts!</p>
+        </div>
+        <div class="load-more-container" id="loadMoreContainer" style="display: none;">
+          <button class="btn-secondary load-more-btn" id="loadMoreBtn" data-i18n="loadMoreCommentsTgt">Load More Comments</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-sec">
+    <div class="copyright-box">
+      <ul class="copyright-box-list">
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li>&copy; 2025 Copyright Nowrap Inc.</li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Hidden Data for JS -->
+  <div id="achievement-data"
+      data-achievement-id="<%= achievementData.achievementId %>"
+      data-fundraiser-id="<%= achievementData.publicId %>"
+      style="display: none;">
+  </div>
+
+  <script>
+    window.achievementId = '<%= achievementData.achievementId %>';
+    window.initialData = {
+      likeCount: '<%= achievementData.likeCount %>',
+      commentCount: '<%= achievementData.commentCount %>'
+    };
+  </script>
+
+  <script src="/assets/js/jquery.js"></script>
+  <!-- Owl Carousel js -->
+  <script src="/assets/js/owl.carousel.min.js"></script>
+  <!-- i18next -->
+  <script src="/assets/libs/i18next.min.js"></script>
+  <script src="/assets/libs/i18nextHttpBackend.js"></script>
+  <script src="/assets/libs/i18nextBrowserLanguageDetector.js"></script>
+  <!-- Custom JS -->
+  <script src="/assets/js/achievement.js"></script>
+  <!-- Google Translate -->
+  <script src="/assets/js/google-translate-custom.js"></script>
+</body>
+</html>

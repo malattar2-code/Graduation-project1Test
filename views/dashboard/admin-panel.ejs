@@ -1,0 +1,2901 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Najdah - Admin Panel</title>
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+  <!-- my fotawesome -->
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <!-- my style css -->
+  <link rel="stylesheet" href="/assets/css/style.scss">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/image/Home-Page/header/najdah-icon.png">
+  <!-- Compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+</head>
+
+<body>
+  <!-- Start Header -->
+  <header class="admin-panel-header-sec" id="header-sec">
+    <!-- Start Access Links Section -->
+    <section class="access-links-sec">
+      <!-- Start Brand And Return(Back Button) -->
+      <div class="brand-and-return-btns">
+        <a href="/" class="brand">
+          <img src="/assets/image/Home-Page/header/najdah.png" alt="">
+        </a>
+        <!-- Start Access Links Btn Box -->
+        <a class="links-list btn-website" id="menuButton">
+          <img src="/assets/image/Home-Page/header/menus.png" alt="">
+        </a>
+        <!-- End Access Links Btn Box -->
+      </div>
+      <!-- End Brand And Return(Back Button) -->
+      <div class="split-line"></div>
+      <!-- Start Links -->
+      <ul class="links">
+        <li class="link-content-one active-li">
+          <a class="li-btn-one">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-people-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+            </svg>
+            <h2>Users</h2>
+          </a>
+        </li>
+        <li class="link-content-two">
+          <a class="li-btn-two">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+              class="bi bi-x-diamond-fill" viewBox="0 0 16 16">
+              <path
+                d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.614L8 8.708l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.614-.706L7.292 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098z" />
+            </svg>
+            <h2>Fundraisers</h2>
+          </a>
+        </li>
+        <li class="link-content-three">
+          <a class="li-btn-three">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-grid-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z" />
+            </svg>
+            <h2>Categories</h2>
+          </a>
+        </li>
+        <li class="link-content-forms">
+          <a class="li-btn-forms">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-file-earmark-text-fill" viewBox="0 0 16 16">
+              <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7M4.5 12a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7"/>
+            </svg>
+            <h2>Forms & Requests</h2>
+          </a>
+        </li>
+        <li class="link-content-four">
+          <a class="li-btn-four">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+              class="bi bi-bar-chart-line-fill" viewBox="0 0 16 16">
+              <path
+                d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1z" />
+            </svg>
+            <h2>Statistics</h2>
+          </a>
+        </li>
+        <li class="link-content-five">
+          <a class="li-btn-five">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+              class="bi bi-clipboard2-data-fill" viewBox="0 0 16 16">
+              <path
+                d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5" />
+              <path
+                d="M4.085 1H3.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1h-.585q.084.236.085.5V2a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 4 2v-.5q.001-.264.085-.5M10 7a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zm-6 4a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0V9a1 1 0 0 1 1-1" />
+            </svg>
+            <h2>Reports</h2>
+          </a>
+        </li>
+        <li class="link-content-six">
+          <a class="li-btn-six">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-cash-coin"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0" />
+              <path
+                d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z" />
+              <path
+                d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z" />
+              <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567" />
+            </svg>
+            <h2>Balances & Transactions</h2>
+          </a>
+        </li>
+        <li class="link-content-seven">
+          <a class="li-btn-seven">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-gift-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A3 3 0 0 1 3 2.506zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43zM9 3h2.932l.023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0zm6 4v7.5a1.5 1.5 0 0 1-1.5 1.5H9V7zM2.5 16A1.5 1.5 0 0 1 1 14.5V7h6v9z" />
+            </svg>
+            <h2>Ranks & Rewards</h2>
+          </a>
+        </li>
+        <li class="link-content-eight">
+          <a class="li-btn-eight">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+              class="bi bi-person-fill-gear" viewBox="0 0 16 16">
+              <path
+                d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4m9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.149-.045c-.612-.18-.612-1.048 0-1.229l.15-.043a.64.64 0 0 0 .38-.921l-.074-.136c-.305-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
+            </svg>
+            <h2>Admin Settings</h2>
+          </a>
+        </li>
+      </ul>
+      <!-- End Links -->
+      <div class="split-line"></div>
+      <!-- Start Logout Box -->
+      <ul class="logout-box">
+        <li>
+          <a class="logout-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+              class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
+              <path fill-rule="evenodd"
+                d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
+            </svg>
+            <h2>Logout</h2>
+          </a>
+        </li>
+      </ul>
+      <!-- End Logout Box -->
+    </section>
+    <!-- End Access Links Section -->
+    <!-- Start Main Content Admin Panel -->
+    <section class="main-content-admin-panel">
+      <!-- Start Search And Account Boxes -->
+      <div class="search-and-account-boxes">
+        <!-- <div class="search-and-note-box">
+          <div class="search-filed">
+            <input type="text" placeholder="Search..">
+            <a class="btn-website" href="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+                </path>
+              </svg>
+            </a>
+          </div>
+          <div class="notification-btn">
+            <a class="btn-website" href="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-bell"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+              </svg>
+            </a>
+          </div>
+        </div> -->
+        <div class="account-box">
+          <div class="admin-account">
+            <img class="account-image" src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="Admin Profile">
+            <h1 class="account-name"></h1>
+          </div>
+          <!-- Start Dropdown Access Menu -->
+          <div class="dropdown-content" id="dropdownMenu">
+            <a href="/ %>" data-i18n="dropdownHomeTgt">Home</a>
+            <a href="/userPanelIndigent %>" data-i18n="dropdownDashboardTgt" id="controlPanelBtn">Dashboard</a>
+            <a href="/all-fundraisers %>" data-i18n="dropdownFundraisersTgt">Fundraisers</a>
+            <a href="/categories %>" data-i18n="dropdownCategoriesTgt">Categories</a>
+            <a href="/faq %>" data-i18n="dropdownContactTgt">Contact Us</a>
+          </div>
+          <!-- End Dropdown Access Menu -->
+          <a class="home-btn btn-website" href="">
+            <i class="fa fa-home" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <!-- End Search And Account Boxes -->
+      <!-- Start Users Dashboard Section -->
+      <div class="users-dashboard-sec">
+        <!-- Start Users Statistics Boxes -->
+        <div class="users-statistics-boxes">
+          <!-- Start All Users Number Box -->
+          <div class="all-users-number-box statistic-box">
+            <div class="requseters-number-box">
+              <img src="/assets/image/User-Panel-Page/incentive.png" alt="">
+              <h1>All Requesters User</h1>
+              <h2 id="fundraisersCount">0</h2>
+            </div>
+            <div class="split-line"></div>
+            <div class="donaters-number-box">
+              <img src="/assets/image/User-Panel-Page/statistics.png" alt="">
+              <h1>All Donors User</h1>
+              <h2 id="donorsCount">0</h2>
+            </div>
+            <div class="split-line"></div>
+            <div class="charities-number-box">
+              <img src="/assets/image/User-Panel-Page/charity.png" alt="">
+              <h1>All Charity Users</h1>
+              <h2 id="charitiesCount">0</h2>
+            </div>
+          </div>
+          <!-- End All Users Number Box -->
+          <!-- Start Online Users Number Box -->
+          <!-- <div class="online-users-number-box statistic-box">
+            <div class="fundraisers-number-box">
+              <img src="/assets/image/User-Panel-Page/charity.png" alt="">
+              <h1>Fundraisers User Online</h1>
+              <h2>5500</h2>
+            </div>
+            <div class="split-line"></div>
+            <div class="donaters-number-box">
+              <img src="/assets/image/User-Panel-Page/incentive1.png" alt="">
+              <h1>Donaters User Online</h1>
+              <h2>1000</h2>
+            </div>
+          </div> -->
+          <!-- End Online Users Number Box -->
+          <!-- Start This Month Users Number Box -->
+          <!-- <div class="new-users-number-box statistic-box">
+            <div class="fundraisers-number-box">
+              <img src="/assets/image/User-Panel-Page/rising.png" alt="">
+              <h1>New Fundraisers Users</h1>
+              <h2>1200</h2>
+            </div>
+            <div class="split-line"></div>
+            <div class="donaters-number-box">
+              <img src="/assets/image/User-Panel-Page/roadmap.png" alt="">
+              <h1>New Donaters Users</h1>
+              <h2>300</h2>
+            </div>
+          </div> -->
+          <!-- End This Month Users Number Box -->
+        </div>
+        <!-- End Users Statistics Boxes -->
+        <!-- Start Table Search Filter -->
+        <div class="table-search-filter">
+          <div class="filter-menu">
+            <form id="usersFilterForm">
+              <div class="filter-header">
+                <div class="filter-title">Users Table Filter</div>
+                <div class="filter-actions">
+                  <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                  <a class="reset-btn btn-website" href="" onclick="resetUsersFilter(event)">Reset</a>
+                </div>
+              </div>
+
+              <div class="horizontal-filters">
+                <div class="filter-group">
+                  <div class="filter-category" onclick="toggleFilter(this)">
+                    <span>User Type</span>
+                    <span class="arrow">▼</span>
+                  </div>
+                  <div class="filter-options">
+                    <div class="filter-option"><label><input type="checkbox" name="user_type[]" value="requester">Requester</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="user_type[]" value="donor">Donor</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="user_type[]" value="Charity">Charity</label></div>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <div class="filter-category" onclick="toggleFilter(this)">
+                    <span>Status</span>
+                    <span class="arrow">▼</span>
+                  </div>
+                  <div class="filter-options">
+                    <div class="filter-option"><label><input type="checkbox" name="status[]" value="verified">Verified</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="status[]" value="unverified">Unverified</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="status[]" value="banned">Banned</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="status[]" value="active">Active</label></div>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <div class="filter-category" onclick="toggleFilter(this)">
+                    <span>Search</span>
+                    <span class="arrow">▼</span>
+                  </div>
+                  <div class="filter-options">
+                    <div class="filter-option">
+                      <input type="text" name="search" placeholder="Name or Email..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- End Filter -->
+        <!-- In your admin-panel.ejs -->
+        <!-- Start All Requester(Indigent) Users Table -->
+        <div class="all-requester-users-table">
+          <table class="content-table">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>Image</th>
+                <th>fullName</th>
+                <th>email</th>
+                <th>isVerified</th>
+                <th>bannedStatus</th>
+                <th>bannedReason(WhyThisUserHaveBanned)</th>
+                <th>location</th>
+                <th>userType</th>
+                <th class="th-btn">ActionsButtons</th>
+                <th>Notify</th>
+              </tr>
+            </thead>
+            <tbody id="requesterList">
+            </tbody>
+          </table>
+        </div>
+        <!-- Start Pagination -->
+        <div class="pagination-controls requester-pagination" data-section="requester">
+            <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+            <span class="page-info">Page 1 of 1</span>
+            <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+        </div>
+        <!-- End Pagination -->
+        <!-- Start All Donor Users Table -->
+        <div class="all-donor-users-table donerList">
+          <table class="content-table">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>Image</th>
+                <th>fullName</th>
+                <th>email</th>
+                <th>isVerified</th>
+                <th>bannedStatus</th>
+                <th>bannedReason(WhyThisUserHaveBanned)</th>
+                <th>location</th>
+                <th>userType</th>
+                <th class="th-btn">ActionsButtons</th>
+                <th>Notify</th>
+              </tr>
+            </thead>
+            <tbody id="donorsTableBody">
+            </tbody>
+          </table>
+        </div>
+        <!-- Start Pagination -->
+        <div class="pagination-controls donor-pagination" data-section="donor">
+            <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+            <span class="page-info">Page 1 of 1</span>
+            <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+        </div>
+        <!-- End Pagination -->
+        <!-- Start All Charity Users Table -->
+        <div class="all-charity-users-table">
+          <table class="content-table">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>Image</th>
+                <th>fullName</th>
+                <th>email</th>
+                <th>isVerified</th>
+                <th>bannedStatus</th>
+                <th>bannedReason(WhyThisUserHaveBanned)</th>
+                <th>location</th>
+                <th>userType</th>
+                <th>Charity Name</th>
+                <th>Charity Type</th>
+                <th class="th-btn">ActionsButtons</th>
+                <th>Notify</th>
+              </tr>
+            </thead>
+            <tbody id="charityList">
+            </tbody>
+          </table>
+        </div>
+        <!-- Start Pagination -->
+        <div class="pagination-controls charity-pagination" data-section="charity">
+            <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+            <span class="page-info">Page 1 of 1</span>
+            <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+        </div>
+        <!-- End Pagination -->
+      </div>
+      <!-- End Users Dashboard Section -->
+      <!-- Start Fundraisers Dashboard Section -->
+      <div class="fundraisers-dashboard-sec">
+        <!-- Start Fundraisers In The Website -->
+        <div class="fundraisers-in-website">
+          <div class="title">
+            <h1>Fundraisers In The Web Site</h1>
+          </div>
+          <!-- Start Flex Boxes Content -->
+          <div class="flex-boxes-content">
+            <div class="fundraisers-statistics-and-charts">
+                <!-- Start Fundraisers Statistics Boxes -->
+                <div class="fundraisers-statistics-boxes">
+                    <!-- Start Progress Today -->
+                    <div class="all-fundraisers-number-box">
+                        <img src="/assets/image/User-Panel-Page/charity.png" alt="">
+                        <h1>All Fundraisers</h1>
+                        <h2 id="allWebsiteFundraisersCount">
+                            <%= fundraiserStats.total || 0 %>
+                        </h2>
+                    </div>
+                    <!-- End Progress Today -->
+                    
+                    <!-- Start Progress In Month -->
+                    <div class="all-completed-fundraisers-box">
+                        <img src="/assets/image/User-Panel-Page/roadmap.png" alt="">
+                        <h1>Completed Fundraisers</h1>
+                        <h2 id="completeWebsiteFundraisersCount">
+                            <%= fundraiserStats.completed || 0 %>
+                        </h2>
+                    </div>
+                    <!-- End Progress In Month -->
+                    
+                    <!-- Start Total Donations -->
+                    <div class="all-incomplete-fundraisers-box">
+                        <img src="/assets/image/User-Panel-Page/incentive1.png" alt="">
+                        <h1>Incomplete Fundraisers</h1>
+                        <h2 id="incompleteWebsiteFundraisersCount">
+                            <%= fundraiserStats.incompleted || 0 %>
+                        </h2>
+                    </div>
+                    <!-- End Total Donations -->
+
+                    <!-- Start Waiting Requesters Box -->
+                    <div class="all-Waiting-requesters-fundraisers-box">
+                        <img src="/assets/image/User-Panel-Page/incentive.png" alt="">
+                        <h1>Waiting Requesters</h1>
+                        <h2 id="waitingRequestersWebsiteFundraisersCount">
+                            <%= fundraiserStats.waiting_requesters || 0 %>
+                        </h2>
+                    </div>
+                    <!-- End Waiting Requesters Box -->
+
+                    <!-- Start Create Form Box -->
+                    <div class="all-create-form-fundraisers-box">
+                        <img src="/assets/image/User-Panel-Page/rising.png" alt="">
+                        <h1>Create Form</h1>
+                        <h2 id="createFormWebsiteFundraisersCount">
+                            <%= fundraiserStats.create_form || 0 %>
+                        </h2>
+                    </div>
+                    <!-- End Create Form Box -->
+
+                    <!-- Start Transferred Box -->
+                    <div class="all-transferred-fundraisers-box">
+                        <img src="/assets/image/User-Panel-Page/roadmap.png" alt="">
+                        <h1>Transferred</h1>
+                        <h2 id="transferredWebsiteFundraisersCount">
+                            <%= fundraiserStats.transferred || 0 %>
+                        </h2>
+                    </div>
+                    <!-- End Transferred Box -->
+                </div>
+                <!-- End Fundraisers Statistics Boxes -->
+                
+                <!-- Start Fundraisers Charts -->
+                <div class="fundraisers-charts">
+                    <div class="metrics-container">
+                        <div class="metric">
+                            <div class="metric-title">
+                                <span class="metric-name">Completed Fundraisers</span>
+                                <span class="metric-completed-value" id="completedFundraisersValue">
+                                    <%= fundraiserStats.completedPercentage || 0 %>%
+                                </span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar completed-bar" 
+                                    id="completedFundraisersbar"
+                                    style="width: <%= fundraiserStats.completedPercentage || 0 %>%;">
+                                </div>
+                            </div>
+                            <div class="time-scale">
+                                <span class="time-mark">0%</span>
+                                <span class="time-mark">20%</span>
+                                <span class="time-mark">40%</span>
+                                <span class="time-mark">60%</span>
+                                <span class="time-mark">80%</span>
+                                <span class="time-mark">100%</span>
+                            </div>
+                        </div>
+
+                        <div class="metric">
+                            <div class="metric-title">
+                                <span class="metric-name">Incomplete Fundraisers</span>
+                                <span class="metric-incomplete-value" id="incompletedFundraisersValue">
+                                    <%= fundraiserStats.incompletedPercentage || 0 %>%
+                                </span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar incomplete-bar" 
+                                    id="incompletedFundraisersbar"
+                                    style="width: <%= fundraiserStats.incompletedPercentage || 0 %>%;">
+                                </div>
+                            </div>
+                            <div class="time-scale">
+                                <span class="time-mark">0%</span>
+                                <span class="time-mark">20%</span>
+                                <span class="time-mark">40%</span>
+                                <span class="time-mark">60%</span>
+                                <span class="time-mark">80%</span>
+                                <span class="time-mark">100%</span>
+                            </div>
+                        </div>
+
+                        <div class="metric">
+                            <div class="metric-title">
+                                <span class="metric-name">Waiting Requesters</span>
+                                <span class="metric-waiting-value" id="waitingRequestersFundraisersValue">
+                                    <%= fundraiserStats.waitingRequestersPercentage || 0 %>%
+                                </span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar waiting-requesters-bar" 
+                                    id="waitingRequestersFundraisersbar"
+                                    style="width: <%= fundraiserStats.waitingRequestersPercentage || 0 %>%;">
+                                </div>
+                            </div>
+                            <div class="time-scale">
+                                <span class="time-mark">0%</span>
+                                <span class="time-mark">20%</span>
+                                <span class="time-mark">40%</span>
+                                <span class="time-mark">60%</span>
+                                <span class="time-mark">80%</span>
+                                <span class="time-mark">100%</span>
+                            </div>
+                        </div>
+
+                        <div class="metric">
+                            <div class="metric-title">
+                                <span class="metric-name">Create Form</span>
+                                <span class="metric-createform-value" id="createFormFundraisersValue">
+                                    <%= fundraiserStats.createFormPercentage || 0 %>%
+                                </span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar create-form-bar" 
+                                    id="createFormFundraisersbar"
+                                    style="width: <%= fundraiserStats.createFormPercentage || 0 %>%;">
+                                </div>
+                            </div>
+                            <div class="time-scale">
+                                <span class="time-mark">0%</span>
+                                <span class="time-mark">20%</span>
+                                <span class="time-mark">40%</span>
+                                <span class="time-mark">60%</span>
+                                <span class="time-mark">80%</span>
+                                <span class="time-mark">100%</span>
+                            </div>
+                        </div>
+
+                        <div class="metric">
+                            <div class="metric-title">
+                                <span class="metric-name">Transferred</span>
+                                <span class="metric-transferred-value" id="transferredFundraisersValue">
+                                    <%= fundraiserStats.transferredPercentage || 0 %>%
+                                </span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar transferred-bar" 
+                                    id="transferredFundraisersbar"
+                                    style="width: <%= fundraiserStats.transferredPercentage || 0 %>%;">
+                                </div>
+                            </div>
+                            <div class="time-scale">
+                                <span class="time-mark">0%</span>
+                                <span class="time-mark">20%</span>
+                                <span class="time-mark">40%</span>
+                                <span class="time-mark">60%</span>
+                                <span class="time-mark">80%</span>
+                                <span class="time-mark">100%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Fundraisers Charts -->
+            </div>
+            <!-- Start Most Interacted Fundraisers Table -->
+            <div class="fundraisers-in-website-img">
+              <img src="/assets/image/Admin-Panel-Page/web.png" alt="">
+            </div>
+            <!-- End Most interacted Fundraisers Table -->
+          </div>
+          <!-- End Flex Boxes Content -->
+          <!-- ADD AFTER: all-fundraisers-table (before the table) -->
+          <div class="table-search-filter fundraisers-filter">
+              <div class="filter-menu">
+                  <form id="fundraisersFilterForm">
+                      <div class="filter-header">
+                          <div class="filter-title">Fundraisers Table Filter</div>
+                          <div class="filter-actions">
+                              <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                              <a class="reset-btn btn-website" href="" onclick="resetFundraisersFilter(event)">Reset</a>
+                          </div>
+                      </div>
+                      <div class="horizontal-filters">
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Status</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option"><label><input type="checkbox" name="status[]" value="completed">Completed</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="status[]" value="incompleted">Incomplete</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="status[]" value="Waiting_requesters">Waiting Requesters</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="status[]" value="create_form">Create Form</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="status[]" value="transferred">Transferred</label></div>
+                              </div>
+                          </div>
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Type</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option"><label><input type="checkbox" name="type[]" value="Fundraiser">Fundraiser</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="type[]" value="Donation">Donation</label></div>
+                              </div>
+                          </div>
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Urgent</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option"><label><input type="checkbox" name="urgent" value="true">Show Urgent Only</label></div>
+                              </div>
+                          </div>
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Search</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option">
+                                      <input type="text" name="search" placeholder="Title or User ID..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+
+          <!-- Start All Fundraisers Table -->
+          <div class="all-fundraisers-table">
+              <table class="content-table">
+                  <thead>
+                      <tr>
+                          <th>Id</th>
+                          <th>Main Image</th>
+                          <th>Title</th>
+                          <th>Collected Amount</th>
+                          <th>Target Amount</th>
+                          <th>Status</th>
+                          <th>User Id</th>
+                          <th>Type</th>
+                          <th>Categories</th>
+                          <th>Urgent</th>
+                          <th class="th-btn">Delete</th>
+                          <th class="th-btn">Add Trend</th>
+                          <!-- In the table header (add after "Add Trend" column) -->
+                          <th class="th-btn">Remove Trend</th>
+                          <!-- In the table header (add after "Remove Trend" column) -->
+                          <th class="th-btn">Block</th>
+                          <th class="th-btn">Unblock</th>
+                          <th class="th-btn">Mark Urgent</th>
+                      </tr>
+                  </thead>
+                <!-- FUNDRAISERS TABLE -->
+                <tbody id="fundraisersTable">
+                    <tr><td colspan="16" class="loading-text">Loading fundraisers...</td></tr>
+                </tbody>
+              </table>
+          </div>
+          <!-- End All Fundraisers Table -->
+          <!-- Start Pagination -->
+          <div class="pagination-controls fundraisers-pagination" data-section="fundraisers">
+              <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+              <span class="page-info">Page 1 of 1</span>
+              <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+          </div>
+          <!-- End Pagination -->
+          <!-- ═══ VERIFICATION REQUESTS TABLE ═══ -->
+          <div class="verification-requests-table-section" style="margin-top: 40px;">
+            <div class="title"><h1>Fundraiser Verification Requests</h1></div>
+
+            <!-- Filter -->
+            <div class="table-search-filter verification-requests-filter">
+              <div class="filter-menu">
+                <form id="verificationRequestsFilterForm">
+                  <div class="filter-header">
+                    <div class="filter-title">Verification Requests Filter</div>
+                    <div class="filter-actions">
+                      <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                      <a class="reset-btn btn-website" href="" onclick="resetVerificationRequestsFilter(event)">Reset</a>
+                    </div>
+                  </div>
+                  <div class="horizontal-filters">
+                    <div class="filter-group">
+                      <div class="filter-category" onclick="toggleFilter(this)"><span>Status</span><span class="arrow">▼</span></div>
+                      <div class="filter-options">
+                        <div class="filter-option"><label><input type="checkbox" name="status[]" value="pending">Pending</label></div>
+                        <div class="filter-option"><label><input type="checkbox" name="status[]" value="accepted">Accepted</label></div>
+                        <div class="filter-option"><label><input type="checkbox" name="status[]" value="rejected">Rejected</label></div>
+                      </div>
+                    </div>
+                    <div class="filter-group">
+                      <div class="filter-category" onclick="toggleFilter(this)"><span>Type</span><span class="arrow">▼</span></div>
+                      <div class="filter-options">
+                        <div class="filter-option"><label><input type="checkbox" name="fundraiser_type[]" value="Fundraiser">Fundraiser</label></div>
+                        <div class="filter-option"><label><input type="checkbox" name="fundraiser_type[]" value="Donation">Donation</label></div>
+                      </div>
+                    </div>
+                    <div class="filter-group">
+                      <div class="filter-category" onclick="toggleFilter(this)"><span>Search</span><span class="arrow">▼</span></div>
+                      <div class="filter-options">
+                        <div class="filter-option">
+                          <input type="text" name="search" placeholder="Name, Email, or Charity..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Table -->
+            <div class="all-verification-requests-table">
+              <table class="content-table">
+                <thead>
+                  <tr>
+                    <th>Request ID</th>
+                    <th>User ID</th>
+                    <th>User / Charity Name</th>
+                    <th>Email</th>
+                    <th>User Type</th>
+                    <th>Fundraiser ID</th>
+                    <th>Campaign Type</th>
+                    <th>Identity / License</th>
+                    <th>Address</th>
+                    <th>Status</th>
+                    <th>Created At</th>
+                    <th class="th-btn">Accept</th>
+                    <th class="th-btn">Reject</th>
+                  </tr>
+                </thead>
+                <tbody id="verificationRequestsTableBody">
+                  <tr><td colspan="13" class="loading-text">Loading verification requests...</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-controls verification-requests-pagination" data-section="verificationRequests">
+              <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+              <span class="page-info">Page 1 of 1</span>
+              <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+            </div>
+          </div>
+          <!-- ═══ END VERIFICATION REQUESTS TABLE ═══ -->
+        </div>
+        <!-- End Fundraisers In The Website -->
+
+      </div>
+      <!-- End Fundraisers Dashboard Section -->
+      <!-- Start Categories Dashboard Section -->
+      <div class="categories-dashboard-sec">
+        <div class="flex-content">
+          <!-- Start All Categories Number Box -->
+          <div class="all-categories-number-box">
+              <img src="/assets/image/Admin-Panel-Page/categories.png" alt="">
+              <h1>All Categories</h1>
+              <h2 id="categories-count">0</h2> <!-- Added ID -->
+          </div>
+          <!-- End All Categories Number Box -->
+          <div class="split-line"></div>
+          <!-- Start Add Categorie Box(Form)  -->
+          <form id="addCategoryForm" class="add-categorie-box">
+            <div class="categorie-name-and-image-boxes">
+              <div class="flex-details">
+                <div class="categorie-name input-box">
+                  <label class="label" for="categoryName">Category Name *</label>
+                  <input type="text" id="categoryName" name="categoryName" required>
+                </div>
+                  
+                <div class="categorie-description input-box">
+                  <label class="label" for="categoryDescription">Description</label>
+                  <input type="text" id="categoryDescription" name="categoryDescription" required>
+                </div>
+              </div>
+              <div class="wrapper">
+                  <div class="image-box">
+                    <input class="file-input" type="file" id="categoryImage" name="categoryImage" hidden 
+                            accept="image/jpeg, image/png, image/webp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-cloud-plus-fill" viewBox="0 0 16 16">
+                      <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2m.5 4v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0"/>
+                    </svg>
+                    <p>Add Categorie Image</p>
+                    <!-- Image preview will be added here by JavaScript -->
+                  </div>
+                  <section class="progress-area"></section>
+                  <section class="uploaded-area"></section>
+              </div>
+            </div>
+              
+            <button type="submit" class="add-categorie-btn btn-website">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+              </svg>
+              <h1>Add</h1>
+            </button>
+          </form>
+          <!-- End Add Categorie Box(Form) -->
+        </div>
+        <!-- Start Display area for categories -->
+        <div class="all-categories-table">
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th class="th-btn">Delete</th>
+                    </tr>
+                </thead>
+              <!-- CATEGORIES TABLE -->
+              <tbody id="categoriesTableBody">
+                  <tr><td colspan="4" class="loading-text">Loading categories...</td></tr>
+              </tbody>
+            </table>
+        </div>
+        <!-- End Display area for categories -->
+        <!-- Start Pagination -->
+        <div class="pagination-controls categories-pagination" data-section="categories">
+            <% if (typeof pagination !== 'undefined' && pagination.categories) { %>
+                <button class="prev-page-btn btn-website" data-page="<%= pagination.categories.currentPage - 1 %>" <%= pagination.categories.currentPage <= 1 ? 'disabled' : '' %>>Previous</button>
+                <span class="page-info">Page <%= pagination.categories.currentPage %> of <%= pagination.categories.totalPages %></span>
+                <button class="next-page-btn btn-website" data-page="<%= pagination.categories.currentPage + 1 %>" <%= pagination.categories.currentPage >= pagination.categories.totalPages ? 'disabled' : '' %>>Next</button>
+            <% } else { %>
+                <button class="prev-page-btn btn-website" disabled>Previous</button>
+                <span class="page-info">Page 1</span>
+                <button class="next-page-btn btn-website" disabled>Next</button>
+            <% } %>
+        </div>
+        <!-- End Pagination -->
+      </div>
+      <!-- End Categories Dashboard Section -->
+      <!-- Start Forms & Requests Dashboard Section -->
+      <div class="forms-and-requests-dashboard-sec">
+        <!-- ADD AFTER: forms-table-section title, before the table -->
+        <div class="table-search-filter forms-filter">
+            <div class="filter-menu">
+                <form id="formsFilterForm">
+                    <div class="filter-header">
+                        <div class="filter-title">Forms Table Filter</div>
+                        <div class="filter-actions">
+                            <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                            <a class="reset-btn btn-website" href="" onclick="resetFormsFilter(event)">Reset</a>
+                        </div>
+                    </div>
+                    <div class="horizontal-filters">
+                        <div class="filter-group">
+                            <div class="filter-category" onclick="toggleFilter(this)">
+                                <span>Fundraiser ID</span><span class="arrow">▼</span>
+                            </div>
+                            <div class="filter-options">
+                                <div class="filter-option">
+                                    <input type="number" name="fundraiser_id" placeholder="Enter Fundraiser ID..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <div class="filter-category" onclick="toggleFilter(this)">
+                                <span>User ID</span><span class="arrow">▼</span>
+                            </div>
+                            <div class="filter-options">
+                                <div class="filter-option">
+                                    <input type="number" name="user_id" placeholder="Enter User ID..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Start Fundraisers Forms Table -->
+        <div class="forms-table-section">
+          <div class="title">
+            <h1>Fundraisers Forms</h1>
+          </div>
+          <div class="all-forms-table">
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Fundraiser Id</th>
+                  <th>User Id</th>
+                  <th>Target Requesters</th>
+                  <th>Current Requesters</th>
+                  <th>Schema</th>
+                  <th>Created At</th>
+                  <th class="th-btn">Delete</th>
+                </tr>
+              </thead>
+              <tbody id="formsTableBody">
+                <tr>
+                  <td colspan="8" class="loading-text">Loading forms...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Start Pagination -->
+          <div class="pagination-controls forms-pagination" data-section="forms">
+              <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+              <span class="page-info">Page 1 of 1</span>
+              <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+          </div>
+          <!-- End Pagination -->
+        </div>
+        <!-- End Fundraisers Forms Table -->
+        <!-- ADD AFTER: requests-table-section title, before the table -->
+        <div class="table-search-filter requests-filter">
+            <div class="filter-menu">
+                <form id="requestsFilterForm">
+                    <div class="filter-header">
+                        <div class="filter-title">Requests Table Filter</div>
+                        <div class="filter-actions">
+                            <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                            <a class="reset-btn btn-website" href="" onclick="resetRequestsFilter(event)">Reset</a>
+                        </div>
+                    </div>
+                    <div class="horizontal-filters">
+                        <div class="filter-group">
+                            <div class="filter-category" onclick="toggleFilter(this)">
+                                <span>Status</span><span class="arrow">▼</span>
+                            </div>
+                            <div class="filter-options">
+                                <div class="filter-option"><label><input type="checkbox" name="status[]" value="pending">Pending</label></div>
+                                <div class="filter-option"><label><input type="checkbox" name="status[]" value="accepted">Accepted</label></div>
+                                <div class="filter-option"><label><input type="checkbox" name="status[]" value="rejected">Rejected</label></div>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <div class="filter-category" onclick="toggleFilter(this)">
+                                <span>Fundraiser ID</span><span class="arrow">▼</span>
+                            </div>
+                            <div class="filter-options">
+                                <div class="filter-option">
+                                    <input type="number" name="fundraiser_id" placeholder="Enter Fundraiser ID..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Start Fundraisers Requests Table -->
+        <div class="requests-table-section">
+          <div class="title">
+            <h1>Fundraisers Requests</h1>
+          </div>
+          <div class="all-requests-table">
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Form Id</th>
+                  <th>Fundraiser Id</th>
+                  <th>User Id</th>
+                  <th>Requests (JSONB)</th>
+                  <th>Status</th>
+                  <th>Rejected Reason</th>
+                  <th>Created At</th>
+                  <th class="th-btn">Delete</th>
+                </tr>
+              </thead>
+              <tbody id="requestsTableBody">
+                <tr>
+                  <td colspan="9" class="loading-text">Loading requests...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Start Pagination -->
+          <div class="pagination-controls requests-pagination" data-section="requests">
+              <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+              <span class="page-info">Page 1 of 1</span>
+              <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+          </div>
+          <!-- End Pagination -->
+        </div>
+        <!-- End Fundraisers Requests Table -->
+      </div>
+      <!-- End Forms & Requests Dashboard Section -->
+      <!-- Start Statistics Dashboard Section -->
+      <div class="statistics-dashboard-sec">
+        <!-- Start Users Statistics Box -->
+        <div class="users-statistics-box">
+          <h1>Users Statistics</h1>
+          <div class="statistics-boxes">
+            <!-- Start Monthly User Statistics -->
+            <div class="monthly-user-statistics">
+                <div class="chart-container">
+                    <div class="chart-title">Monthly User Growth (Aug 2025 - Aug 2026)</div>
+                    <div class="chart" id="chart-users"></div>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color donors"></div>
+                            <span>Donors</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color requesters"></div>
+                            <span>Requesters</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color charities"></div>
+                            <span>Charities</span>
+                        </div>
+                    </div>
+                    <div class="chart-loading" id="chart-loading">
+                        Loading chart data...
+                    </div>
+                </div>
+            </div>
+            <!-- End Monthly User Statistics -->
+            <!-- Start Total User Statistics -->
+            <div class="total-user-statistics">
+                <div class="chart-container">
+                    <h2>Users Percentage (%)</h2>
+                    <canvas id="userChart"></canvas>
+                </div>
+            </div>
+            <!-- End Total User Statistics -->
+          </div>
+        </div>
+        <!-- End Users Statistics Box -->
+        <!-- Start Fundraisers Statistics Box -->
+        <div class="fundraisers-statistics-box">
+          <h1>Fundraisers Statistics</h1>
+          <div class="statistics-boxes">
+            <!-- Start Monthly Fundraisers Statistics -->
+            <div class="monthly-fundraisers-statistics">
+                <div class="chart-container">
+                    <div class="chart-title">Monthly Fundraisers Requests</div>
+                    <div class="chart" id="chart-fundraisers"></div>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color completed"></div>
+                            <span>Completed</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color uncompleted"></div>
+                            <span>Uncompleted</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color waiting-requesters"></div>
+                            <span>Waiting Requesters</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color create-form"></div>
+                            <span>Create Form</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color transferred"></div>
+                            <span>Transferred</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Monthly Fundraisers Statistics -->
+            <!-- Start Total Fundraisers Statistics -->
+            <div class="total-Fundraisers-statistics">
+                <div class="chart-container">
+                    <h2>Fundraisers Percentage (%)</h2>
+                    <canvas id="fundraisersChart"></canvas>
+                </div>
+            </div>
+            <!-- End Total Fundraisers Statistics -->
+
+          </div>
+        </div>
+        <!-- End Donations Statistics Box -->
+        <!-- Start Forms & Requests Statistics Box -->
+        <div class="forms-and-requests-statistics-box">
+          <h1>Forms & Requests Statistics</h1>
+          <div class="statistics-boxes">
+            <!-- Start Monthly Forms & Requests Statistics -->
+            <div class="monthly-forms-requests-statistics">
+                <div class="chart-container">
+                    <div class="chart-title">Monthly Forms & Requests (Aug 2025 - Aug 2026)</div>
+                    <div class="chart" id="chart-forms-requests"></div>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color forms"></div>
+                            <span>Forms</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color requests"></div>
+                            <span>Requests</span>
+                        </div>
+                    </div>
+                    <div class="chart-loading" id="chart-forms-requests-loading">
+                        Loading chart data...
+                    </div>
+                </div>
+            </div>
+            <!-- End Monthly Forms & Requests Statistics -->
+            <!-- Start Total Forms & Requests Statistics -->
+            <div class="total-forms-requests-statistics">
+                <div class="chart-container">
+                    <h2>Forms & Requests Percentage (%)</h2>
+                    <canvas id="formsRequestsChart"></canvas>
+                    <div class="chart-loading" id="forms-requests-doughnut-loading">Loading...</div>
+                </div>
+            </div>
+            <!-- End Total Forms & Requests Statistics -->
+          </div>
+        </div>
+        <!-- End Forms & Requests Statistics Box -->
+        <!-- Start Donations Statistics Box -->
+        <div class="donations-statistics-box">
+          <h1>Donations Statistics</h1>
+          <div class="statistics-boxes">
+            <!-- Start Monthly Donations Statistics -->
+            <div class="monthly-donations-statistics">
+              <div class="chart-container">
+                <div class="chart-title">Monthly Financial Donations</div>
+                <div class="chart" id="chart-donations"></div>
+              </div>
+            </div>
+            <!-- End Monthly Donations Statistics -->
+            <!-- Start Daily Donations Statistics -->
+            <div class="daily-donations-statistics">
+              <h5>Daily donation progress</h5>
+              <!-- Start The Data Chart -->
+              <div class="donation-chart-container">
+                <h2 id="chart-title">Daily Donations</h2>
+                <div class="chart-controls">
+                  <button class="nav-btn prev-btn" aria-label="Previous days">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                      <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
+                    </svg>
+                  </button>
+                  <div class="donation-chart">
+                    <!-- Chart will be generated by JavaScript -->
+                  </div>
+                  <button class="nav-btn next-btn" aria-label="Next days">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="chart-footer">
+                  <div class="scale-labels">
+                    <span class="min">$0</span>
+                    <span class="max">$0</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End The Data Chart -->
+            </div>
+            <!-- End Daily Donations Statistics -->
+          </div>
+        </div>
+        <!-- End Donations Statistics Box -->
+        <!-- Start Users Ranks Box -->
+        <div class="users-ranks-statistics-box">
+          <h1>Users Ranks Statistics</h1>
+          <div class="statistics-boxes">
+            <!-- Start All User Ranks Statistics -->
+            <div class="user-ranks-statistics">
+                <div class="chart-container">
+                    <div class="chart-title">User Distribution by Rank</div>
+                    <div class="chart" id="chart-ranks"></div>
+                </div>
+            </div>
+            <!-- End All User Ranks Statistics -->
+            <!-- Start Total User In Ranks Statistics -->
+            <div class="total-users-in-ranks-statistics">
+                <div class="chart-container">
+                    <h2>Users In Ranks Percentage (%)</h2>
+                    <canvas id="users-in-ranksChart"></canvas>
+                </div>
+            </div>
+            <!-- End Total User In Ranks Statistics -->
+          </div>
+        </div>
+        <!-- End Users Ranks Statistics Box -->
+      </div>
+      <!-- End Statistics Dashboard Section -->
+      <!-- Start Reports Dashboard Section -->
+      <div class="reports-dashboard-sec">
+        <div class="title">
+          <h1>Reports</h1>
+          <a href="/api/print-report %>" class="reports-print-btn btn-website">
+            print
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+              class="bi bi-printer-fill" viewBox="0 0 16 16">
+              <path
+                d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1" />
+              <path
+                d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
+            </svg>
+          </a>
+        </div>
+        <!-- Start Table Search Filter(Reports) -->
+        <!-- <div class="table-search-filter reports-filter">
+          <div class="filter-menu">
+            <form>
+              <div class="filter-header">
+                <div class="filter-title">Reports Table Filter</div>
+                <div class="filter-actions">
+                  <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                  <a class="reset-btn btn-website" href="">Reset</a>
+                </div>
+              </div>
+
+              <div class="horizontal-filters">
+                <div class="filter-group">
+                  <div class="filter-category" onclick="toggleFilter(this)">
+                    <span>Career Stage</span>
+                    <span class="arrow">▼</span>
+                  </div>
+                  <div class="filter-options">
+                    <div class="filter-option"><label><input type="checkbox" name="career_state[]"
+                          value="recent_graduate">Recent Graduate</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="career_state[]"
+                          value="imposter_syndrome">Imposter Syndrome</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="career_state[]"
+                          value="wise_old_head">Wise Old Head</label></div>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <div class="filter-category" onclick="toggleFilter(this)">
+                    <span>Topic</span>
+                    <span class="arrow">▼</span>
+                  </div>
+                  <div class="filter-options">
+                    <div class="filter-option"><label><input type="checkbox" name="topic[]"
+                          value="politics">Politics</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="topic[]"
+                          value="religion">Religion</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="topic[]" value="music">Music</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div> -->
+        <!-- End Filter -->
+        <!-- Start All Reports Table -->
+        <!-- <div class="all-reports-table">
+          <table class="content-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Add</th>
+                <th>Add</th>
+                <th>Add</th>
+                <th>Add</th>
+                <th>Add</th>
+                <th class="th-btn">Take A Look</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td class="td-img">
+                  <img class="fundraiser-img" src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="">
+                </td>
+                <td>Bloody war on the Gaza Strip</td>
+                <td>2011/04/25</td>
+                <td class="td-btn">
+                  <a href="" class="show-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                      class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td class="td-img">
+                  <img class="fundraiser-img" src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="">
+                </td>
+                <td>Bloody war on the Gaza Strip</td>
+                <td>2011/04/25</td>
+                <td class="td-btn">
+                  <a href="" class="show-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                      class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td class="td-img">
+                  <img class="fundraiser-img" src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="">
+                </td>
+                <td>Bloody war on the Gaza Strip</td>
+                <td>2011/04/25</td>
+                <td class="td-btn">
+                  <a href="" class="show-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                      class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td class="td-img">
+                  <img class="fundraiser-img" src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="">
+                </td>
+                <td>Bloody war on the Gaza Strip</td>
+                <td>2011/04/25</td>
+                <td class="td-btn">
+                  <a href="" class="show-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                      class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td class="td-img">
+                  <img class="fundraiser-img" src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="">
+                </td>
+                <td>Bloody war on the Gaza Strip</td>
+                <td>2011/04/25</td>
+                <td class="td-btn">
+                  <a href="" class="show-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                      class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td>Bloody war</td>
+                <td class="td-img">
+                  <img class="fundraiser-img" src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="">
+                </td>
+                <td>Bloody war on the Gaza Strip</td>
+                <td>2011/04/25</td>
+                <td class="td-btn">
+                  <a href="" class="show-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                      class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div> -->
+        <!-- End All Reports Table -->
+      </div>
+      <!-- End Reports Dashboard Section -->
+      <!-- Start Financial Transactions And Balances Dashboard Section -->
+      <div class="balances-dashboard-sec">
+        <!-- Start Balances And Transactions Statistics Boxes -->
+        <div class="balances-and-transactions-statistics-boxes">
+          <!-- Start All Balances Number Box -->
+          <!-- <div class="all-balances-number-box flex-statistic-box">
+            <div class="reserved-balance-number-box statistic-box">
+              <img src="/assets/image/User-Panel-Page/incentive.png" alt="">
+              <h1>Reserved balance</h1>
+              <h2>640000$</h2>
+            </div>
+            <div class="split-line"></div>
+            <div class="transferred-balance-number-box statistic-box">
+              <img src="/assets/image/User-Panel-Page/statistics.png" alt="">
+              <h1>Transferred Balance</h1>
+              <h2>500000$</h2>
+            </div>
+          </div> -->
+          <!-- End All Balances Number Box -->
+          <!-- Start Balances Number By Time Box -->
+          <!-- <div class="balances-number-bytime-box flex-statistic-box">
+            <div class="daily-balance-number-box statistic-box">
+              <img src="/assets/image/User-Panel-Page/charity.png" alt="">
+              <h1>Daily Balance</h1>
+              <h2>5500$</h2>
+            </div>
+            <div class="split-line"></div>
+            <div class="monthly-balance-number-box statistic-box">
+              <img src="/assets/image/User-Panel-Page/incentive1.png" alt="">
+              <h1>Monthly Balance</h1>
+              <h2>17000$</h2>
+            </div>
+          </div> -->
+          <!-- End  Balances Number Intime Box -->
+          <!-- Start Transactions Amounts Box -->
+          <div class="transactions-number-box flex-statistic-box">
+            <div class="successful-transactions-number-box statistic-box">
+              <img src="/assets/image/User-Panel-Page/rising.png" alt="">
+              <h1>Successful Transactions</h1>
+              <!-- Display total amounts for invoices with a status of paid here -->
+              <h2>12000</h2>
+            </div>
+            <div class="split-line"></div>
+            <div class="failed-transactions-number-box statistic-box">
+              <img src="/assets/image/User-Panel-Page/roadmap.png" alt="">
+              <h1>Failed Transactions</h1>
+              <!-- Display total amounts with a status of not paid here -->
+              <h2>360</h2>
+            </div>
+          </div>
+          <!-- End Transactions Amounts Box -->
+        </div>
+        <!-- End Balances And Transactions Statistics Boxes -->
+        <!-- Start Table Search Filter -->
+        <!-- <div class="table-search-filter">
+          <div class="filter-menu">
+            <form>
+              <div class="filter-header">
+                <div class="filter-title">User Table Filter</div>
+                <div class="filter-actions">
+                  <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                  <a class="reset-btn btn-website" href="">Reset</a>
+                </div>
+              </div>
+
+              <div class="horizontal-filters">
+                <div class="filter-group">
+                  <div class="filter-category" onclick="toggleFilter(this)">
+                    <span>Career Stage</span>
+                    <span class="arrow">▼</span>
+                  </div>
+                  <div class="filter-options">
+                    <div class="filter-option"><label><input type="checkbox" name="career_state[]"
+                          value="recent_graduate">Recent Graduate</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="career_state[]"
+                          value="imposter_syndrome">Imposter Syndrome</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="career_state[]"
+                          value="wise_old_head">Wise Old Head</label></div>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <div class="filter-category" onclick="toggleFilter(this)">
+                    <span>Topic</span>
+                    <span class="arrow">▼</span>
+                  </div>
+                  <div class="filter-options">
+                    <div class="filter-option"><label><input type="checkbox" name="topic[]"
+                          value="politics">Politics</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="topic[]"
+                          value="religion">Religion</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="topic[]" value="music">Music</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <div class="filter-category" onclick="toggleFilter(this)">
+                    <span>Format</span>
+                    <span class="arrow">▼</span>
+                  </div>
+                  <div class="filter-options">
+                    <div class="filter-option"><label><input type="checkbox" name="format[]"
+                          value="magazine">Magazine</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="format[]"
+                          value="website">Website</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="format[]" value="vine">Vine</label>
+                    </div>
+                    <div class="filter-option"><label><input type="checkbox" name="format[]" value="tweet">Tweet</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <div class="filter-category" onclick="toggleFilter(this)">
+                    <span>Status</span>
+                    <span class="arrow">▼</span>
+                  </div>
+                  <div class="filter-options">
+                    <div class="filter-option"><label><input type="checkbox" name="status[]"
+                          value="single">Single</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="status[]"
+                          value="married">Married</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="status[]"
+                          value="its_complicated">It's complicated</label></div>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <div class="filter-category" onclick="toggleFilter(this)">
+                    <span>Categories</span>
+                    <span class="arrow">▼</span>
+                  </div>
+                  <div class="filter-options">
+                    <div class="filter-option"><label><input type="checkbox" name="status[]"
+                          value="single">Single</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="status[]"
+                          value="married">Married</label></div>
+                    <div class="filter-option"><label><input type="checkbox" name="status[]"
+                          value="its_complicated">It's complicated</label></div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div> -->
+        <div class="invoices-settings">
+          <!-- ADD AFTER: all-invoices-table (before the table) -->
+          <div class="table-search-filter invoices-filter">
+              <div class="filter-menu">
+                  <form id="invoicesFilterForm">
+                      <div class="filter-header">
+                          <div class="filter-title">Invoices Table Filter</div>
+                          <div class="filter-actions">
+                              <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                              <a class="reset-btn btn-website" href="" onclick="resetInvoicesFilter(event)">Reset</a>
+                          </div>
+                      </div>
+                      <div class="horizontal-filters">
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Status</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option"><label><input type="checkbox" name="status[]" value="paid">Paid</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="status[]" value="not_paid">Not Paid</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="status[]" value="refunded">Refunded</label></div>
+                              </div>
+                          </div>
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Payment Method</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option"><label><input type="checkbox" name="payment_method[]" value="stripe">Stripe</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="payment_method[]" value="paypal">PayPal</label></div>
+                              </div>
+                          </div>
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Search</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option">
+                                      <input type="text" name="search" placeholder="Donor name or Fundraiser title..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+
+          <!-- Start All Invoices Table -->
+          <div class="all-invoices-table">
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Donor ID</th>
+                  <th>Donor Name</th>
+                  <th>Fundraiser ID</th>
+                  <th>Fundraiser Title</th>
+                  <th>Gross Amount</th>
+                  <th>Net Amount</th>
+                  <th>Processing Fee</th>
+                  <th>Currency</th>
+                  <th>Status</th>
+                  <th>Payment Provider</th>
+                  <th>Provider Tx ID</th>
+                  <th>Paid At</th>
+                  <th>Points Processed</th>
+                  <th>Points Processed At</th>
+                  <th class="th-btn">Delete</th>
+                </tr>
+              </thead>
+              <tbody id="invoicesTableBody">
+                <!-- Data will be populated by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+          <!-- End All Invoices Table -->
+          <!-- Start Pagination -->
+          <div class="pagination-controls invoices-pagination" data-section="invoices">
+              <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+              <span class="page-info">Page 1 of 1</span>
+              <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+          </div>
+          <!-- End Pagination -->
+        </div>
+        <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+        <!-- LEDGER TRANSACTIONS TABLE -->
+        <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+        <div class="ledger-dashboard-sec">
+          <h2 class="section-title">Ledger Transactions</h2>
+          
+          <!-- Filter -->
+          <div class="table-search-filter ledger-filter">
+            <div class="filter-menu">
+              <form id="ledgerFilterForm">
+                <div class="filter-header">
+                  <div class="filter-title">Ledger Filter</div>
+                  <div class="filter-actions">
+                    <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                    <a class="reset-btn btn-website" href="" onclick="resetLedgerFilter(event)">Reset</a>
+                  </div>
+                </div>
+                <div class="horizontal-filters">
+                  <div class="filter-group">
+                    <div class="filter-category" onclick="toggleFilter(this)">
+                      <span>Type</span><span class="arrow">▼</span>
+                    </div>
+                    <div class="filter-options">
+                      <div class="filter-option"><label><input type="checkbox" name="type[]" value="donation">Donation</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="type[]" value="withdrawal">Withdrawal</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="type[]" value="refund">Refund</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="type[]" value="fee">Fee</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="type[]" value="adjustment">Adjustment</label></div>
+                    </div>
+                  </div>
+                  <div class="filter-group">
+                    <div class="filter-category" onclick="toggleFilter(this)">
+                      <span>Reference Type</span><span class="arrow">▼</span>
+                    </div>
+                    <div class="filter-options">
+                      <div class="filter-option"><label><input type="checkbox" name="reference_type[]" value="invoice">Invoice</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="reference_type[]" value="withdraw_request">Withdraw Request</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="reference_type[]" value="transfer_log">Transfer Log</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="reference_type[]" value="admin_adjustment">Admin Adjustment</label></div>
+                    </div>
+                  </div>
+                  <div class="filter-group">
+                    <div class="filter-category" onclick="toggleFilter(this)">
+                      <span>Search</span><span class="arrow">▼</span>
+                    </div>
+                    <div class="filter-options">
+                      <div class="filter-option">
+                        <input type="text" name="search" placeholder="Description or ID..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="all-ledger-table">
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Fundraiser ID</th>
+                  <th>User ID</th>
+                  <th>Type</th>
+                  <th>Amount</th>
+                  <th>Currency</th>
+                  <th>Reference Type</th>
+                  <th>Reference ID</th>
+                  <th>Description</th>
+                  <th>Created At</th>
+                </tr>
+              </thead>
+              <tbody id="ledgerTableBody">
+                <!-- Data populated by JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="pagination-controls ledger-pagination" data-section="ledger">
+            <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+            <span class="page-info">Page 1 of 1</span>
+            <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+        <!-- FUNDRAISER BALANCES TABLE -->
+        <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+        <div class="balances-table-sec">
+          <h2 class="section-title">Fundraiser Balances</h2>
+
+          <!-- Filter -->
+          <div class="table-search-filter balances-filter">
+            <div class="filter-menu">
+              <form id="balancesFilterForm">
+                <div class="filter-header">
+                  <div class="filter-title">Balances Filter</div>
+                  <div class="filter-actions">
+                    <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                    <a class="reset-btn btn-website" href="" onclick="resetBalancesFilter(event)">Reset</a>
+                  </div>
+                </div>
+                <div class="horizontal-filters">
+                  <div class="filter-group">
+                    <div class="filter-category" onclick="toggleFilter(this)">
+                      <span>Balance Range</span><span class="arrow">▼</span>
+                    </div>
+                    <div class="filter-options">
+                      <div class="filter-option">
+                        <input type="number" name="min_available" placeholder="Min Available" style="padding: 6px; width: 100%; margin-bottom: 5px;">
+                        <input type="number" name="max_available" placeholder="Max Available" style="padding: 6px; width: 100%;">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter-group">
+                    <div class="filter-category" onclick="toggleFilter(this)">
+                      <span>Has Pending</span><span class="arrow">▼</span>
+                    </div>
+                    <div class="filter-options">
+                      <div class="filter-option"><label><input type="checkbox" name="has_pending[]" value="true">Yes</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="has_pending[]" value="false">No</label></div>
+                    </div>
+                  </div>
+                  <div class="filter-group">
+                    <div class="filter-category" onclick="toggleFilter(this)">
+                      <span>Search Fundraiser</span><span class="arrow">▼</span>
+                    </div>
+                    <div class="filter-options">
+                      <div class="filter-option">
+                        <input type="text" name="search" placeholder="Fundraiser ID..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="all-balances-table">
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>Fundraiser ID</th>
+                  <th>Total Balance</th>
+                  <th>Available</th>
+                  <th>Pending Withdrawal</th>
+                  <th>Total Withdrawn</th>
+                  <th>Total Donors</th>
+                  <th>Total Fees</th>
+                  <th>Last Donation</th>
+                  <th>Updated At</th>
+                </tr>
+              </thead>
+              <tbody id="balancesTableBody">
+                <!-- Data populated by JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="pagination-controls balances-pagination" data-section="balances">
+            <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+            <span class="page-info">Page 1 of 1</span>
+            <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+        <!-- WITHDRAW REQUESTS TABLE -->
+        <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+        <div class="withdrawals-dashboard-sec">
+          <h2 class="section-title">Withdrawal Requests</h2>
+
+          <!-- Filter -->
+          <div class="table-search-filter withdrawals-filter">
+            <div class="filter-menu">
+              <form id="withdrawalsFilterForm">
+                <div class="filter-header">
+                  <div class="filter-title">Withdrawals Filter</div>
+                  <div class="filter-actions">
+                    <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                    <a class="reset-btn btn-website" href="" onclick="resetWithdrawalsFilter(event)">Reset</a>
+                  </div>
+                </div>
+                <div class="horizontal-filters">
+                  <div class="filter-group">
+                    <div class="filter-category" onclick="toggleFilter(this)">
+                      <span>Status</span><span class="arrow">▼</span>
+                    </div>
+                    <div class="filter-options">
+                      <div class="filter-option"><label><input type="checkbox" name="status[]" value="pending">Pending</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="status[]" value="approved">Approved</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="status[]" value="rejected">Rejected</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="status[]" value="processing">Processing</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="status[]" value="completed">Completed</label></div>
+                    </div>
+                  </div>
+                  <div class="filter-group">
+                    <div class="filter-category" onclick="toggleFilter(this)">
+                      <span>Method</span><span class="arrow">▼</span>
+                    </div>
+                    <div class="filter-options">
+                      <div class="filter-option"><label><input type="checkbox" name="method[]" value="stripe">Stripe</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="method[]" value="bank_transfer">Bank Transfer</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="method[]" value="paypal">PayPal</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="method[]" value="palpay">PalPay</label></div>
+                    </div>
+                  </div>
+                  <div class="filter-group">
+                    <div class="filter-category" onclick="toggleFilter(this)">
+                      <span>Search</span><span class="arrow">▼</span>
+                    </div>
+                    <div class="filter-options">
+                      <div class="filter-option">
+                        <input type="text" name="search" placeholder="User ID or Fundraiser ID..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="all-withdrawals-table">
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Fundraiser ID</th>
+                  <th>User ID</th>
+                  <th>Amount</th>
+                  <th>Method</th>
+                  <th>Details</th>
+                  <th>Status</th>
+                  <th>Notes</th>
+                  <th>Admin Notes</th>
+                  <th>Reviewed By</th>
+                  <th>Reviewed At</th>
+                  <th>Created At</th>
+                  <th class="th-btn">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="withdrawalsTableBody">
+                <!-- Data populated by JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="pagination-controls withdrawals-pagination" data-section="withdrawals">
+            <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+            <span class="page-info">Page 1 of 1</span>
+            <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+        <!-- TRANSFER LOGS TABLE -->
+        <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+        <div class="transfers-dashboard-sec">
+          <h2 class="section-title">Transfer Logs</h2>
+
+          <!-- Filter -->
+          <div class="table-search-filter transfers-filter">
+            <div class="filter-menu">
+              <form id="transfersFilterForm">
+                <div class="filter-header">
+                  <div class="filter-title">Transfers Filter</div>
+                  <div class="filter-actions">
+                    <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                    <a class="reset-btn btn-website" href="" onclick="resetTransfersFilter(event)">Reset</a>
+                  </div>
+                </div>
+                <div class="horizontal-filters">
+                  <div class="filter-group">
+                    <div class="filter-category" onclick="toggleFilter(this)">
+                      <span>Status</span><span class="arrow">▼</span>
+                    </div>
+                    <div class="filter-options">
+                      <div class="filter-option"><label><input type="checkbox" name="status[]" value="processing">Processing</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="status[]" value="completed">Completed</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="status[]" value="failed">Failed</label></div>
+                    </div>
+                  </div>
+                  <div class="filter-group">
+                    <div class="filter-category" onclick="toggleFilter(this)">
+                      <span>Provider</span><span class="arrow">▼</span>
+                    </div>
+                    <div class="filter-options">
+                      <div class="filter-option"><label><input type="checkbox" name="provider[]" value="bank">Bank</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="provider[]" value="stripe">Stripe</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="provider[]" value="paypal">PayPal</label></div>
+                      <div class="filter-option"><label><input type="checkbox" name="provider[]" value="palpay">PalPay</label></div>
+                    </div>
+                  </div>
+                  <div class="filter-group">
+                    <div class="filter-category" onclick="toggleFilter(this)">
+                      <span>Search</span><span class="arrow">▼</span>
+                    </div>
+                    <div class="filter-options">
+                      <div class="filter-option">
+                        <input type="text" name="search" placeholder="Provider Tx ID or Fundraiser ID..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="all-transfers-table">
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Withdraw Request ID</th>
+                  <th>Fundraiser ID</th>
+                  <th>User ID</th>
+                  <th>Amount</th>
+                  <th>Fee</th>
+                  <th>Net Amount</th>
+                  <th>Provider</th>
+                  <th>Provider Tx ID</th>
+                  <th>Status</th>
+                  <th>Transferred At</th>
+                  <th>Created At</th>
+                </tr>
+              </thead>
+              <tbody id="transfersTableBody">
+                <!-- Data populated by JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="pagination-controls transfers-pagination" data-section="transfers">
+            <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+            <span class="page-info">Page 1 of 1</span>
+            <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+          </div>
+        </div>
+      </div>
+      <!-- End Financial Transactions And Balances Dashboard Section -->
+      <!-- Start Ranks And Rewards Dashboard Section -->
+      <div class="ranks-and-rewards-sec">
+        <div class="flex-content">
+          <!-- Start All Ranks Number Box -->
+          <div class="all-ranks-number-box">
+              <img src="/assets/image/Admin-Panel-Page/categories.png" alt="">
+              <h1>All Ranks</h1>
+              <h2 id="ranks-count">0</h2> <!-- Added ID -->
+          </div>
+          <!-- End All Ranks Number Box -->
+          <div class="split-line"></div>
+          <!-- Start Add Rank Box(Form)  -->
+          <form id="addRankForm" class="add-rank-box" action="/admin/ranks" method="POST" enctype="multipart/form-data">
+            <div class="rank-name-and-description">
+              <!-- Start Rank Name Box -->
+              <div class="rank-name input-box">
+                <label class="label" for="rankName">Rank Name *</label>
+                <input type="text" id="rankName" name="rankName" required>
+              </div>
+              <!-- End Rank Name Box -->
+              <!-- Start Rank Description Box -->
+              <div class="rank-description-box">
+                <div class="rank-description input-box">
+                  <label class="label-desc" for="rank-description">Rank Description</label>
+                  <textarea name="rankDescription" id="rankDescription" required></textarea>
+                  <div class="characters">
+                    <span class="signal_num">0</span>
+                    <span class="limit_num">/100</span>
+                  </div>
+                </div>
+              </div>
+              <!-- End Rank Description Box -->
+            </div>
+            <div class="points-and-image">
+              <div class="minimum-and-maximum-points">
+                <!-- Start Rank Minimum Points Box -->
+                <div class="minimum-points input-box">
+                  <label class="label" for="minimum-points">Min Points</label>
+                  <input type="number" id="minimumPoints" name="minimumPoints" required>
+                </div>
+                <!-- End Rank Minimum Points Box -->
+                <!-- Start Rank Maximum Points Box -->
+                <div class="maximum-points input-box">
+                  <label class="label" for="maximum-points">Max Points</label>
+                  <input type="text" id="maximumPoints" name="maximumPoints" required>
+                </div>
+                <!-- End Rank Maximum Points Box -->
+              </div>
+              <!-- Start Rank Image -->
+              <div class="wrapper">
+                <div class="image-box">
+                  <input class="file-input" type="file" id="RankImage" name="RankImage" hidden 
+                          accept="image/jpeg, image/png, image/webp">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-cloud-plus-fill" viewBox="0 0 16 16">
+                    <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2m.5 4v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0"/>
+                  </svg>
+                  <p>Add Rank Image</p>
+                  <!-- Image preview will be added here by JavaScript -->
+                </div>
+                <section class="progress-area"></section>
+                <section class="uploaded-area"></section>
+              </div>
+              <!-- End Rank Image -->
+            </div>
+            <div class="reward-name-and-image">
+              <!-- Start Reward Name Box -->
+              <div class="reward-name input-box">
+                <label class="label" for="reward-name">Reward Name</label>
+                <input type="text" id="rewardName" name="rewardName" required>
+              </div>
+              <!-- End Reward Name Box -->
+              <!-- Start Reward Image Box -->
+              <div class="wrapper">
+                <div class="image-box">
+                  <input class="file-input" type="file" id="rewardImage" name="rewardImage" hidden 
+                          accept="image/jpeg, image/png, image/webp">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-cloud-plus-fill" viewBox="0 0 16 16">
+                    <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2m.5 4v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0"/>
+                  </svg>
+                  <p>Add Reward Image</p>
+                  <!-- Image preview will be added here by JavaScript -->
+                </div>
+                <section class="progress-area"></section>
+                <section class="uploaded-area"></section>
+              </div>
+              <!-- End Reward Image Box -->
+            </div>
+              
+            <button type="submit" class="add-rank-btn btn-website">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+              </svg>
+              <h1>Add</h1>
+            </button>
+          </form>
+          <!-- End Add Rank Box(Form) -->
+        </div>
+        <div class="flex-tables">
+          <!-- Start Ranks Table -->
+          <div class="ranks-table">
+              <table class="content-table">
+                  <thead>
+                      <tr>
+                          <th>id</th>
+                          <th>name</th>
+                          <th>min point</th>
+                          <th>max point</th>
+                          <th>image</th>
+                          <th>reward name</th>
+                          <th>reward image</th>
+                          <th>number of user</th>
+                          <th class="th-btn">delete</th>
+                      </tr>
+                  </thead>
+                <!-- RANKS TABLE -->
+                <tbody id="ranksTableBody">
+                    <tr><td colspan="9" class="loading-text">Loading ranks...</td></tr>
+                </tbody>
+              </table>
+          </div>
+          <!-- End Ranks Table -->
+          <!-- ADD AFTER: flex-content (add rank form) -->
+          <div class="table-search-filter user-ranks-filter">
+              <div class="filter-menu">
+                  <form id="userRanksFilterForm">
+                      <div class="filter-header">
+                          <div class="filter-title">User Ranks Table Filter</div>
+                          <div class="filter-actions">
+                              <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                              <a class="reset-btn btn-website" href="" onclick="resetUserRanksFilter(event)">Reset</a>
+                          </div>
+                      </div>
+                      <div class="horizontal-filters">
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Points Range</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option">
+                                      <input type="number" name="min_points" placeholder="Min points" style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%; margin-bottom: 5px;">
+                                  </div>
+                                  <div class="filter-option">
+                                      <input type="number" name="max_points" placeholder="Max points" style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Has Rank</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option"><label><input type="checkbox" name="has_rank[]" value="true">Has Rank</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="has_rank[]" value="false">No Rank</label></div>
+                              </div>
+                          </div>
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Search</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option">
+                                      <input type="text" name="search" placeholder="User name or ID..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+          <!-- END ADD -->
+          <!-- Start User Rank Points Table -->
+          <div class="latest-users-in-ranks-table">
+              <table class="content-table">
+                  <thead>
+                      <tr>
+                          <th>id</th>
+                          <th>user id</th>
+                          <th>name</th>
+                          <th>image</th>
+                          <th>points</th>
+                          <th>max point</th>
+                          <th>rank image</th>
+                          <th class="th-btn">point 0</th>
+                          <th class="th-btn">delete</th>
+                      </tr>
+                  </thead>
+                <!-- USER RANK POINTS TABLE -->
+                <tbody id="userRanksTableBody">
+                    <tr><td colspan="9" class="loading-text">Loading user ranks...</td></tr>
+                </tbody>
+              </table>
+          </div>
+          <!-- End User Rank Points Table -->
+          <!-- Start Pagination -->
+          <div class="pagination-controls userRanks-pagination" data-section="userRanks">
+              <% if (typeof pagination !== 'undefined' && pagination.userRankPoints) { %>
+                  <button class="prev-page-btn btn-website" data-page="<%= pagination.userRankPoints.currentPage - 1 %>" <%= pagination.userRankPoints.currentPage <= 1 ? 'disabled' : '' %>>Previous</button>
+                  <span class="page-info">Page <%= pagination.userRankPoints.currentPage %> of <%= pagination.userRankPoints.totalPages %></span>
+                  <button class="next-page-btn btn-website" data-page="<%= pagination.userRankPoints.currentPage + 1 %>" <%= pagination.userRankPoints.currentPage >= pagination.userRankPoints.totalPages ? 'disabled' : '' %>>Next</button>
+              <% } else { %>
+                  <button class="prev-page-btn btn-website" disabled>Previous</button>
+                  <span class="page-info">Page 1</span>
+                  <button class="next-page-btn btn-website" disabled>Next</button>
+              <% } %>
+          </div>
+          <!-- End Pagination -->
+
+        </div>
+        <!-- End Flex Tables -->
+      </div>
+      <!-- End Ranks And Rewards Dashboard Section -->
+      <!-- Start Admin Settings Dashboard Section -->
+      <div class="admin-settings-sec">
+        <!-- Start Banner Settings -->
+        <div class="banner-settings">
+          <h1 class="title">Banner Settings</h1>
+          <div class="flex-content">
+            <!-- Start All Events Number Box -->
+            <div class="all-events-number-box">
+                <img src="/assets/image/Admin-Panel-Page/banner.png" alt="">
+                <h1>All Events</h1>
+                <h2 id="events-count">0</h2> <!-- Added ID -->
+            </div>
+            <!-- End All Events Number Box -->
+            <div class="split-line"></div>
+            <!-- Start Add Event Box(Form) -->
+            <form class="add-event-box" action="" method="get">
+              <!-- Start Event Details Name And Image Boxes-->
+              <div class="event-details-and-image-boxes">
+                <div class="flex-details">
+                  <!-- Start Event Name -->
+                  <div class="event-name input-box">
+                    <label class="label" for="event">Event name</label>
+                    <input type="text" name="title" id="title">
+                  </div>
+                  <!-- End Event Name -->
+                  <!-- Start Event Region -->
+                  <div class="event-region input-box">
+                    <label class="label" for="event">Event Region</label>
+                    <input type="text" name="region" id="region">
+                  </div>
+                  <!-- End Event Region -->
+                  <!-- Start Event Description -->
+                  <div class="event-description input-box">
+                    <label class="label" for="event">Event Description</label>
+                    <input type="text" name="description" id="description">
+                  </div>
+                  <!-- End Event Description -->
+                  <!-- Start Event Keyword -->
+                  <div class="event-keyword input-box">
+                    <label class="label" for="keyword">Search Keyword</label>
+                    <input type="text" name="keyword" id="keyword" placeholder="e.g. Gaza, floods, earthquake">
+                  </div>
+                  <!-- End Event Keyword -->
+                </div>
+                <!-- Start Event Image -->
+                <div class="wrapper">
+                  <div class="image-box">
+                  <!-- input مخفي لكن مربوط بالـ label -->
+                  <input class="file-input" type="file" name="image" id="image" accept="image/*" hidden required>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-cloud-plus-fill" viewBox="0 0 16 16">
+                      <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2m.5 4v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0"/>
+                    </svg>
+                    <p>Add Banner Image</p>
+                    <!-- Image preview will be added here by JavaScript -->
+                  </div>
+                  <section class="progress-area"></section>
+                  <section class="uploaded-area"></section>
+                </div>
+                <!-- Start Event Image -->
+              </div>
+              <!-- End Event Details And Image Boxes-->
+              <!-- Start Add Event Button -->
+              <button type="submit" class="add-event-btn btn-website">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                </svg>
+                <h1>Add</h1>
+              </button>
+              <!-- End Add Event Button -->
+            </form>
+            <!-- End Add Event Box(Form) -->
+          </div>
+          <!-- Start All Events Table -->
+          <div class="all-events-table">
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>image</th>
+                  <th>title</th>
+                  <th>description</th>
+                  <th>keyword</th>
+                  <th>regition</th>
+                  <th>date</th>
+                  <th class="th-btn">Home</th>
+                  <th class="th-btn">delete</th>
+                </tr>
+              </thead>
+              <tbody id="bannersList">
+
+              </tbody>
+              <!-- <tfoot>
+                <tr>
+                  <th>Name</th>
+                  <th>Position</th>
+                  <th>Office</th>
+                  <th>Age</th>
+                  <th>Start date</th>
+                  <th>Salary</th>
+                </tr>
+              </tfoot> -->
+            </table>
+          </div>
+          <!-- End All Events Table -->
+        </div>
+        <!-- End Banner Settings -->
+        <!-- Start Notifications Settings -->
+        <div class="notifications-settings">
+          <h1 class="title">Notifications Settings</h1>
+          <div class="flex-content">
+            <!-- Start All Notifications Number Box -->
+            <div class="all-notifications-number-box">
+              <img src="/assets/image/Admin-Panel-Page/banner.png" alt="">
+              <h1>All Notifications</h1>
+              <h2 id="notifications-count">0</h2>
+            </div>
+            <!-- End All Notifications Number Box -->
+          </div>
+          <!-- ADD AFTER: notifications title -->
+          <div class="table-search-filter notifications-filter">
+              <div class="filter-menu">
+                  <form id="notificationsFilterForm">
+                      <div class="filter-header">
+                          <div class="filter-title">Notifications Table Filter</div>
+                          <div class="filter-actions">
+                              <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                              <a class="reset-btn btn-website" href="" onclick="resetNotificationsFilter(event)">Reset</a>
+                          </div>
+                      </div>
+                      <div class="horizontal-filters">
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Type</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option"><label><input type="checkbox" name="type[]" value="donation">Donation</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="type[]" value="alert">Alert</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="type[]" value="reminder">Reminder</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="type[]" value="system">System</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="type[]" value="message">Message</label></div>
+                              </div>
+                          </div>
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Read Status</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option"><label><input type="checkbox" name="is_read[]" value="true">Read</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="is_read[]" value="false">Unread</label></div>
+                              </div>
+                          </div>
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Sender Type</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option"><label><input type="checkbox" name="sender_type[]" value="admin">Admin</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="sender_type[]" value="user">User</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="sender_type[]" value="system">System</label></div>
+                              </div>
+                          </div>
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Search</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option">
+                                      <input type="text" name="search" placeholder="Title, message, or user ID..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+          <!-- END ADD -->
+          <!-- Start All Notifications Table -->
+          <div class="all-notifications-table">
+            <h2>All Notifications</h2>
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Recipient ID</th>
+                  <th>Sender ID</th>
+                  <th>Sender Type</th>
+                  <th>Fundraiser ID</th>
+                  <th>Title</th>
+                  <th>Message</th>
+                  <th>Type</th>
+                  <th>Is Read</th>
+                  <th>Created At</th>
+                  <th class="th-btn">Delete</th>
+                </tr>
+              </thead>
+              <tbody id="notificationsTableBody">
+                <tr>
+                  <td colspan="11" class="loading-text">Loading notifications...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- End All Notifications Table -->
+          <!-- Start Pagination -->
+          <div class="pagination-controls notifications-pagination" data-section="notifications">
+            <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+            <span class="page-info">Page 1 of 1</span>
+            <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+          </div>
+          <!-- End Pagination -->
+        </div>
+        <!-- End Notifications Settings -->
+        <!-- Start Faq Settings -->
+        <div class="faq-settings">
+          <h1 class="title">FAQs Settings</h1>
+          <div class="flex-content">
+          <!-- Start All FAQs Number Box -->
+          <div class="all-faqs-number-box">
+              <img src="/assets/image/Admin-Panel-Page/faqs.png" alt="">
+              <h1>All FAQs</h1>
+              <h2 id="faqs-count">0</h2> <!-- Added ID -->
+          </div>
+          <!-- End All FAQs Number Box -->
+            <div class="split-line"></div>
+            <!-- Start Add Faq Box(Form) -->
+            <form class="add-faq-box" id="addFaqForm" action="" method="get">
+              <!-- Start Faq Details -->
+              <div class="faq-details">
+                <!-- Start Faq Question -->
+                <div class="faq-question input-box">
+                  <label class="label" for="faq-question">Faq Question</label>
+                  <input type="text" name="faq_question" id="faq_question" required>
+                </div>
+                <!-- End Faq Question -->
+                <!-- Start Faq Answer -->
+                <div class="faq-answer input-box">
+                  <label class="label" for="faq-answer">Faq Answer</label>
+                  <input type="text" name="faq_answer" id="faq_answer" required>
+                </div>
+                <!-- End Faq Answer -->
+                <!-- Start Faq Type -->
+                <div class="faq-type">
+                  <select name="faq_type" id="faq_type" aria-placeholder="FAQ Type">
+                      <option value="about site">About Site</option>
+                      <option value="registration">Registration</option>
+                      <option value="fundraisers">Fundraisers</option>
+                      <option value="donations">Donations</option>
+                      <option value="receiving donations">Receiving Donations</option>
+                      <option value="rewards & ranks">Rewards & Ranks</option>
+                      <option value="search">Search</option>
+                  </select>
+                </div>
+                <!-- End Faq Type -->
+              </div>
+              <!-- Start Add Faq Button -->
+              <button type="submit" class="add-faq-btn btn-website">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                </svg>
+                <h1>Add</h1>
+              </button>
+              <!-- End Add Faq Button -->
+            </form>
+            <!-- End Add Faq Box(Form) -->
+          </div>
+          <!-- Start All FAQs Table -->
+          <div class="all-Faqs-table">
+            <h2>All FAQs</h2>
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Question</th>
+                  <th>Answer</th>
+                  <th>Type</th>
+                  <th>Created Date</th>
+                  <th class="th-btn">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="faqTableBody">
+                <!-- FAQs will be dynamically loaded here -->
+                <tr>
+                  <td colspan="6" class="loading-text">Loading FAQs...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- End All FAQs Table -->
+          <!-- Start Pagination -->
+          <!-- Replace the existing faqs-pagination div with this: -->
+          <div class="pagination-controls faqs-pagination" data-section="faqs">
+              <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+              <span class="page-info">Page 1 of 1</span>
+              <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+          </div>
+          <!-- End Pagination -->
+          <!-- Delete Confirmation Modal -->
+          <div id="deleteModal" class="modal" style="display: none;">
+            <div class="modal-content">
+              <h3>Confirm Delete</h3>
+              <p>Are you sure you want to delete this FAQ?</p>
+              <div class="modal-actions">
+                <button id="confirmDelete" class="btn-danger">Yes, Delete</button>
+                <button id="cancelDelete" class="btn-secondary">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Faq Settings -->
+        <!-- Start Complaint Settings -->
+        <div class="complaint-settings">
+          <h1 class="title">Complaints Settings</h1>
+          <div class="flex-content">
+            <!-- Start All Complaints Number Box -->
+            <div class="all-complaints-number-box">
+              <img src="/assets/image/Admin-Panel-Page/banner.png" alt="">
+              <h1>All Complaints</h1>
+              <h2 id="complaints-count">0</h2> <!-- Added ID -->
+            </div>
+            <!-- End All Complaints Number Box -->
+          </div>
+          <!-- ADD AFTER: all-complaints-table (before the table) -->
+          <div class="table-search-filter complaints-filter">
+              <div class="filter-menu">
+                  <form id="complaintsFilterForm">
+                      <div class="filter-header">
+                          <div class="filter-title">Complaints Table Filter</div>
+                          <div class="filter-actions">
+                              <button class="apply-btn btn-website" type="submit">Apply Filters</button>
+                              <a class="reset-btn btn-website" href="" onclick="resetComplaintsFilter(event)">Reset</a>
+                          </div>
+                      </div>
+                      <div class="horizontal-filters">
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Status</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option"><label><input type="checkbox" name="status[]" value="pending">Pending</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="status[]" value="in_progress">In Progress</label></div>
+                                  <div class="filter-option"><label><input type="checkbox" name="status[]" value="resolved">Resolved</label></div>
+                              </div>
+                          </div>
+                          <div class="filter-group">
+                              <div class="filter-category" onclick="toggleFilter(this)">
+                                  <span>Search</span><span class="arrow">▼</span>
+                              </div>
+                              <div class="filter-options">
+                                  <div class="filter-option">
+                                      <input type="text" name="search" placeholder="User name or email..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; width: 100%;">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+          <!-- Start All Complaints Table -->
+          <div class="all-complaints-table">
+              <h2>All Complaints</h2>
+              <table class="content-table">
+                  <thead>
+                      <tr>
+                          <th>Id</th>
+                          <th>Content</th>
+                          <th>User Id</th>
+                          <th>User email</th>
+                          <th>User fullName</th>
+                          <th>Status</th>
+                          <th>Created At</th>
+                          <th class="th-btn">Resolved</th>
+                          <th class="th-btn">Delete</th>
+                      </tr>
+                  </thead>
+                  <tbody id="complaintsTableBody">
+                      <% if (allComplaints && allComplaints.length > 0) { %>
+                          <% console.log('Rendering complaints in template, count:', allComplaints.length); %>
+                          <% allComplaints.forEach(function(complaint, index) { %>
+                              <% console.log('Rendering complaint:', complaint.complaint_id, complaint.status); %>
+                              <tr id="complaint-<%= complaint.complaint_id %>">
+                                  <td><%= complaint.complaint_id %></td>
+                                  <td class="complaint-content">
+                                      <div class="content-preview">
+                                          <%= complaint.complaint_content && complaint.complaint_content.length > 100 ? 
+                                              complaint.complaint_content.substring(0, 100) + '...' : 
+                                              (complaint.complaint_content || 'No content') %>
+                                      </div>
+                                      <% if (complaint.complaint_content && complaint.complaint_content.length > 100) { %>
+                                          <button class="view-more-btn" onclick="toggleComplaintContent(<%= complaint.complaint_id %>)">View More</button>
+                                          <div class="full-content" id="full-content-<%= complaint.complaint_id %>" style="display: none;">
+                                              <%= complaint.complaint_content %>
+                                          </div>
+                                      <% } %>
+                                  </td>
+                                  <td><%= complaint.user_id %></td>
+                                  <td><%= complaint.user_email %></td>
+                                  <td><%= complaint.user_full_name %></td>
+                                  <td>
+                                      <span class="status-badge status-<%= complaint.status %>">
+                                          <%= complaint.status %>
+                                      </span>
+                                  </td>
+                                  <td><%= complaint.created_at ? new Date(complaint.created_at).toLocaleDateString() : 'N/A' %></td>
+                                  <td class="td-btn">
+                                      <% if (complaint.status !== 'resolved') { %>
+                                          <button class="resolve-btn" onclick="resolveComplaint(<%= complaint.complaint_id %>)">
+                                              Resolve
+                                          </button>
+                                      <% } else { %>
+                                          <span class="resolved-text">Resolved</span>
+                                      <% } %>
+                                  </td>
+                                  <td class="td-btn">
+                                      <button class="delete-btn" onclick="deleteComplaint(<%= complaint.complaint_id %>)">
+                                          Delete
+                                      </button>
+                                  </td>
+                              </tr>
+                          <% }); %>
+                      <% } else { %>
+                          <% console.log('No complaints to render in template'); %>
+                          <tr>
+                              <td colspan="9" class="no-data">No complaints found</td>
+                          </tr>
+                      <% } %>
+                  </tbody>
+              </table>
+          </div>
+          <!-- End All Complaints Table -->
+          <!-- Start Pagination -->
+          <div class="pagination-controls complaints-pagination" data-section="complaints">
+              <button class="prev-page-btn btn-website" data-page="0" disabled>Previous</button>
+              <span class="page-info">Page 1 of 1</span>
+              <button class="next-page-btn btn-website" data-page="2" disabled>Next</button>
+          </div>
+          <!-- End Pagination -->
+         </div>
+        <!-- End Complaint Settings -->
+      </div>
+      <!-- End Admin Settings Dashboard Section -->
+    </section>
+    <!-- End Main Content Admin Panel -->
+  </header>
+  <!-- End Header -->
+  <!-- Start Footer Section -->
+  <footer class="footer-sec admin-panel-footer">
+    <!-- Start Copyright Section -->
+    <div class="copyright-box">
+      <ul class="copyright-box-list">
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li>&copy; 2025 Copyright Nowrap Inc.</li>
+      </ul>
+    </div>
+    <!-- End Copyright Section -->
+  </footer>
+  <!-- Notification Send Modal -->
+  <div id="notificationModal" class="modal" style="display: none;">
+    <div class="modal-content" style="max-width: 500px;">
+      <h3>Send Notification</h3>
+      <p id="notificationRecipientName">To: <strong></strong></p>
+      <form id="sendNotificationForm">
+        <input type="hidden" id="notificationRecipientId" name="user_id">
+        <div class="input-box" style="margin-bottom: 15px;">
+          <label class="label" for="notificationTitle">Title</label>
+          <input type="text" id="notificationTitle" name="title" required placeholder="Notification title...">
+        </div>
+        <div class="input-box" style="margin-bottom: 15px;">
+          <label class="label" for="notificationMessage">Message</label>
+          <textarea id="notificationMessage" name="message" rows="4" required placeholder="Enter notification message..." style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ddd;"></textarea>
+        </div>
+        <div class="input-box" style="margin-bottom: 15px;">
+          <label class="label" for="notificationType">Type</label>
+          <select id="notificationType" name="type" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ddd;">
+            <option value="general">General</option>
+            <option value="campaign_complete">Campaign Complete</option>
+            <option value="request_accepted">Request Accepted</option>
+            <option value="request_rejected">Request Rejected</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn-website" style="background: #4caf50; color: white;">Send</button>
+          <button type="button" onclick="closeNotificationModal()" class="btn-secondary">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- End Footer Section -->
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <!-- Jquery -->
+  <script src="/assets/js/jquery.js"></script>
+  <!-- Owl Carousel js -->
+  <script src="/assets/js/owl.carousel.min.js"></script>
+  <!-- Add this hidden element to pass chart data -->
+  <div id="chart-data" 
+    data-fundraisers-monthly='<%= JSON.stringify(fundraiserChartData) %>'
+    style="display: none;">
+  </div>
+  <!-- Custom my js -->
+  <script src="/assets/js/admin-panel.js"></script>
+  <!-- Charts js -->
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- FontAwesome Icon-->
+  <!-- <script src="https://kit.fontawesome.com/6fccdcc8fe.js" crossorigin="anonymous"></script> -->
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+  <!-- TRANSFER EXECUTION MODAL -->
+  <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+  <div id="transferModal" class="modal-overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 10000; align-items: center; justify-content: center;">
+    <div class="modal-content" style="background: #fff; border-radius: 12px; max-width: 600px; width: 90%; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+      
+      <!-- Header -->
+      <div class="modal-header" style="padding: 20px 24px; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="margin: 0; font-size: 18px; font-weight: 600; color: #1f2937;">
+          <span id="transferModalStep">Step 1 of 2</span> — Execute Transfer
+        </h3>
+        <button onclick="closeTransferModal()" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #6b7280;">&times;</button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body" style="padding: 24px;">
+        
+        <!-- Transfer Info Summary -->
+        <div class="transfer-info" style="background: #f3f4f6; border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="color: #6b7280; font-size: 13px;">Withdraw Request ID</span>
+            <span id="transferWithdrawId" style="font-weight: 600; font-size: 13px;">-</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="color: #6b7280; font-size: 13px;">Amount to Transfer</span>
+            <span id="transferAmount" style="font-weight: 600; font-size: 13px; color: #059669;">-</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="color: #6b7280; font-size: 13px;">Platform Fee (3%)</span>
+            <span id="transferFee" style="font-weight: 600; font-size: 13px; color: #dc2626;">-</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-top: 8px; border-top: 1px solid #d1d5db;">
+            <span style="color: #374151; font-weight: 600; font-size: 14px;">Net Amount</span>
+            <span id="transferNetAmount" style="font-weight: 700; font-size: 14px; color: #059669;">-</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+            <span style="color: #6b7280; font-size: 13px;">User Requested Method</span>
+            <span id="transferMethod" style="font-weight: 600; font-size: 13px;">-</span>
+          </div>
+        </div>
+
+        <!-- Step 1: Review Recipient Information -->
+        <div id="transferStep1">
+          <h4 style="margin: 0 0 16px 0; font-size: 15px; color: #374151; font-weight: 600;">
+            <span style="display: inline-block; width: 24px; height: 24px; background: #ff9a17; color: white; border-radius: 50%; text-align: center; line-height: 24px; font-size: 12px; margin-right: 8px;">1</span>
+            Review Recipient Information
+          </h4>
+          <p style="font-size: 12px; color: #6b7280; margin-bottom: 16px;">These details were provided by the user in their withdrawal request.</p>
+          
+          <div id="recipientDetailsContainer" style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px;">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Step 2: Platform Transfer Configuration -->
+        <div id="transferStep2" style="display: none;">
+          <h4 style="margin: 0 0 16px 0; font-size: 15px; color: #374151; font-weight: 600;">
+            <span style="display: inline-block; width: 24px; height: 24px; background: #ff9a17; color: white; border-radius: 50%; text-align: center; line-height: 24px; font-size: 12px; margin-right: 8px;">2</span>
+            Platform Transfer Configuration
+          </h4>
+          
+          <!-- Transfer Method Selector -->
+          <div style="margin-bottom: 20px;">
+            <label style="display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 8px;">Select Transfer Method <span style="color: #dc2626;">*</span></label>
+            <p style="font-size: 11px; color: #6b7280; margin-bottom: 10px;">Choose how YOU (the platform) will send the funds. This can be different from what the user requested.</p>
+            
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="transfer-method-tab" data-method="stripe" onclick="updatePlatformFormVisibility('stripe')" 
+                style="padding: 10px 16px; border: 2px solid #d1d5db; background: #f3f4f6; color: #374151; border-radius: 8px; font-size: 13px; cursor: pointer; font-weight: 600; transition: all 0.2s;">
+                💳 Stripe
+              </button>
+              <button type="button" class="transfer-method-tab" data-method="bank_transfer" onclick="updatePlatformFormVisibility('bank_transfer')" 
+                style="padding: 10px 16px; border: 2px solid #d1d5db; background: #f3f4f6; color: #374151; border-radius: 8px; font-size: 13px; cursor: pointer; font-weight: 600; transition: all 0.2s;">
+                🏦 Bank Transfer
+              </button>
+              <button type="button" class="transfer-method-tab" data-method="paypal" onclick="updatePlatformFormVisibility('paypal')" 
+                style="padding: 10px 16px; border: 2px solid #d1d5db; background: #f3f4f6; color: #374151; border-radius: 8px; font-size: 13px; cursor: pointer; font-weight: 600; transition: all 0.2s;">
+                🅿️ PayPal
+              </button>
+              <button type="button" class="transfer-method-tab" data-method="palpay" onclick="updatePlatformFormVisibility('palpay')" 
+                style="padding: 10px 16px; border: 2px solid #d1d5db; background: #f3f4f6; color: #374151; border-radius: 8px; font-size: 13px; cursor: pointer; font-weight: 600; transition: all 0.2s;">
+                📱 PalPay
+              </button>
+            </div>
+          </div>
+
+          <!-- Platform Account Forms -->
+          
+          <!-- Stripe Platform Account -->
+          <div id="platformStripe" style="display: none;">
+            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 12px; margin-bottom: 16px;">
+              <p style="margin: 0; font-size: 12px; color: #059669; font-weight: 500;">✅ Stripe is fully supported. Funds will be transferred from your platform account to the connected account.</p>
+            </div>
+            <div class="input-group" style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 6px;">Your Platform Stripe Account ID</label>
+              <input type="text" id="platformStripeAccountId" placeholder="acct_xxxxxxxxxxxxxx" 
+                style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;">
+              <p style="font-size: 11px; color: #6b7280; margin-top: 4px;">Your platform's Stripe Connect account ID (the source of funds).</p>
+            </div>
+            <div class="input-group" style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 6px;">Stripe Secret Key (optional)</label>
+              <input type="password" id="platformStripeKey" placeholder="sk_live_..." 
+                style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;">
+              <p style="font-size: 11px; color: #6b7280; margin-top: 4px;">Leave empty to use server-configured STRIPE_SECRET_KEY.</p>
+            </div>
+            <div class="input-group" style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 6px;">Recipient Connected Account ID</label>
+              <input type="text" id="recipientStripeAccountId" placeholder="acct_xxxxxxxxxxxxxx" 
+                style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box; background: #f9fafb;">
+              <p style="font-size: 11px; color: #6b7280; margin-top: 4px;">The user's Stripe connected account (auto-filled from request if available).</p>
+            </div>
+          </div>
+
+          <!-- Bank Transfer Platform -->
+          <div id="platformBank" style="display: none;">
+            <div style="background: #fef3c7; border: 1px solid #fcd34d; border-radius: 8px; padding: 12px; margin-bottom: 16px;">
+              <p style="margin: 0; font-size: 12px; color: #d97706; font-weight: 500;">⚠️ Bank Transfer is not yet fully automated. You will need to manually complete the transfer through your bank portal.</p>
+            </div>
+            <div class="input-group" style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 6px;">Platform Bank Account Number</label>
+              <input type="text" id="platformBankAccount" placeholder="Enter your platform account number" 
+                style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;">
+            </div>
+            <div class="input-group" style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 6px;">Platform Bank Name</label>
+              <input type="text" id="platformBankName" placeholder="Enter your bank name" 
+                style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;">
+            </div>
+            <div class="input-group" style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 6px;">Platform IBAN</label>
+              <input type="text" id="platformBankIban" placeholder="Enter your IBAN" 
+                style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;">
+            </div>
+          </div>
+
+          <!-- PayPal Platform -->
+          <div id="platformPaypal" style="display: none;">
+            <div style="background: #fef3c7; border: 1px solid #fcd34d; border-radius: 8px; padding: 12px; margin-bottom: 16px;">
+              <p style="margin: 0; font-size: 12px; color: #d97706; font-weight: 500;">⚠️ PayPal is not yet fully automated. You will need to manually complete the transfer through PayPal.</p>
+            </div>
+            <div class="input-group" style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 6px;">Platform PayPal Email</label>
+              <input type="email" id="platformPaypalEmail" placeholder="platform@example.com" 
+                style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;">
+            </div>
+            <div class="input-group" style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 6px;">Recipient PayPal Email</label>
+              <input type="email" id="recipientPaypalEmail" placeholder="user@example.com" 
+                style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box; background: #f9fafb;">
+            </div>
+          </div>
+
+          <!-- PalPay Platform -->
+          <div id="platformPalpay" style="display: none;">
+            <div style="background: #fef3c7; border: 1px solid #fcd34d; border-radius: 8px; padding: 12px; margin-bottom: 16px;">
+              <p style="margin: 0; font-size: 12px; color: #d97706; font-weight: 500;">⚠️ PalPay is not yet fully automated. You will need to manually complete the transfer through PalPay.</p>
+            </div>
+            <div class="input-group" style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 6px;">Platform PalPay Mobile Number</label>
+              <input type="text" id="platformPalpayMobile" placeholder="Enter your mobile number" 
+                style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;">
+            </div>
+            <div class="input-group" style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 6px;">Recipient PalPay Mobile Number</label>
+              <input type="text" id="recipientPalpayMobile" placeholder="User's mobile number" 
+                style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box; background: #f9fafb;">
+            </div>
+          </div>
+
+          <!-- Transfer Note -->
+          <div class="input-group" style="margin-bottom: 16px;">
+            <label style="display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 6px;">Transfer Note (optional)</label>
+            <textarea id="transferNote" rows="2" placeholder="Internal note for this transfer..." 
+              style="width: 100%; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box; resize: vertical;"></textarea>
+          </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="transferError" style="display: none; background: #fee2e2; border: 1px solid #fecaca; border-radius: 6px; padding: 12px; margin-top: 16px; color: #dc2626; font-size: 13px;"></div>
+        
+        <!-- Success Message -->
+        <div id="transferSuccess" style="display: none; background: #d1fae5; border: 1px solid #a7f3d0; border-radius: 6px; padding: 12px; margin-top: 16px; color: #059669; font-size: 13px;"></div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer" style="padding: 16px 24px; border-top: 1px solid #e5e7eb; display: flex; justify-content: flex-end; gap: 12px;">
+        <button id="transferCancelBtn" onclick="closeTransferModal()" style="padding: 10px 20px; border: 1px solid #d1d5db; background: #fff; color: #374151; border-radius: 6px; font-size: 14px; cursor: pointer; font-weight: 500;">Cancel</button>
+        <button id="transferBackBtn" onclick="transferGoToStep(1)" style="display: none; padding: 10px 20px; border: 1px solid #d1d5db; background: #fff; color: #374151; border-radius: 6px; font-size: 14px; cursor: pointer; font-weight: 500;">Back</button>
+        <button id="transferNextBtn" onclick="transferGoToStep(2)" style="padding: 10px 24px; background: #ff9a17; color: #fff; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; font-weight: 600;">Next</button>
+        <button id="transferExecuteBtn" onclick="executeTransferFromModal()" style="display: none; padding: 10px 24px; background: #059669; color: #fff; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; font-weight: 600;">
+          <span id="transferExecuteText">Execute Transfer</span>
+          <span id="transferExecuteLoading" style="display: none;">Processing...</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>

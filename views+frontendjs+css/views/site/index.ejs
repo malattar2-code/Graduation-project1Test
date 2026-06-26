@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Najdah - Home</title>
+  <!-- Your existing CSS links -->
+  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/style.scss">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/image/Home-Page/header/najdah-icon.png">
+</head>
+<body>
+
+  <!-- Start Header -->
+  <header class="header-sec" id="header-sec" style="background: url('/assets/image/Home-Page/header/Darfur.jpg') no-repeat;">
+    <!-- Start Nav -->
+    <nav>
+      <!-- Start Nav Links -->
+      <a class="links-list btn-website" id="menuButton">
+        <img src="/assets/image/Home-Page/header/menus.png" alt="Menu">
+      </a>
+      <!-- Start Dropdown Access Menu -->
+      <div class="dropdown-content" id="dropdownMenu">
+        <a href="/" data-i18n="dropdownHomeTgt">Home</a>
+        <a href="<%= typeof isAuthenticated !== 'undefined' && isAuthenticated ? '/userPanelIndigent' : '/register' %>" 
+           data-i18n="dropdownDashboardTgt" 
+           id="controlPanelBtn">Dashboard</a>
+        <a href="<%= typeof isAuthenticated !== 'undefined' && isAuthenticated ? '/all-fundraisers' : '/register' %>" 
+           data-i18n="dropdownFundraisersTgt" 
+           id="FundraisersDrop">Fundraisers</a>
+        <a href="<%= typeof isAuthenticated !== 'undefined' && isAuthenticated ? '/categories' : '/register' %>" 
+           data-i18n="dropdownCategoriesTgt" 
+           id="CategoriesDrop">Categories</a>
+        <a href="/faq" data-i18n="dropdownContactTgt" id="Contact_UsDrop">Contact Us</a>
+        <a class="language-menu" id="languageMenu" data-i18n="dropdownLanguageTgt">Language</a>
+        <div class="language-switcher" id="languageSwitcher">
+          <button class="lang-btn active" id="en-btn">English</button>
+          <button class="lang-btn" id="ar-btn">العربية</button>
+        </div>
+      </div>
+      <!-- End Dropdown Access Menu -->
+      <!-- End Nav Links -->
+      <!-- Start Logo -->
+      <a href="/" class="brand">
+        <img src="/assets/image/Home-Page/header/najdah.png" alt="">
+      </a>
+      <!-- End Logo -->
+      <!-- Start Search And Contact -->
+      <div class="search-and-contact">
+        <a class="login-btn btn-website" id="controlPanelBtn" href="<%= typeof isAuthenticated !== 'undefined' && isAuthenticated ? '/userPanelIndigent' : '/register' %>">
+          <% if (typeof isAuthenticated !== 'undefined' && isAuthenticated && user && user.user_image) { %>
+            <img src="<%= user.user_image %>" alt="User Profile" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">
+          <% } else { %>
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+          <% } %>
+        </a>
+      </div>
+      <!-- End Search And Contact -->
+    </nav>
+    <!-- End Nav -->
+    <!-- Start Main Content -->
+    <div class="main-content">
+      <div class="container">
+        <!-- Start Disaster Description -->
+        <div class="disaster-description">
+          <% banners.forEach(banners=> { %>
+            <h1 class="bold p-<%= banners.idText %>" id="">
+              <%= banners.title %>
+            </h1>
+            <% }) %>
+              <!-- Start Disaster Info -->
+              <div class="disaster-info">
+                <div class="time">
+                  <% banners.forEach(banners=> { %>
+                    <h2 class="light p-<%= banners.idText %>" id="">
+                      <%= banners.date %>
+                    </h2>
+                    <% }) %>
+
+                </div>
+                <div class="split"></div>
+                <div class="location">
+                  <% banners.forEach(banners=> { %>
+                    <h2 class="light p-<%= banners.idText %>" id="">
+                      <%= banners.region %>
+                    </h2>
+                    <% }) %>
+                </div>
+              </div>
+              <!-- Start Disaster End -->
+              <% banners.forEach(banners=> { %>
+                <p class="p-<%= banners.idText %> p-hidden">
+                  <%= banners.description %>.
+                </p>
+                <% }) %>
+                  <div class="btns" id="buttons-container">
+                    
+                    
+                  </div>
+        </div>
+        <!-- End Disaster Description -->
+        <!-- Start Carusel -->
+        <div class="carousel-box carousel-box-after">
+          <div class="owl-carousel">
+            <!-- Start Item -->
+            <% banners.forEach(banners=> { %>
+              <div class="carousel-item item-<%= banners.idText %>" id=""
+                style="background: url('/uploadsBanares/<%= banners.image %>') no-repeat;"></div>
+              <% }) %>
+                <!-- End Item -->
+
+          </div>
+        </div>
+        <!-- End Carusel -->
+      </div>
+    </div>
+    <!-- End Main Content -->
+  </header>
+  <!-- End Header -->
+  <!-- Start Most Needed Section -->
+  <section class="most-fundraisers-sec">
+    <div class="container">
+      <div class="fundraisers-main-content">
+        <!-- Start Donate Window(Form) -->
+        <div class="donate-window" id="donateWindow">
+          <h1 data-i18n="donateWindowTitleTgt">Choose your payment method and specify the amount you intend to donate.</h1>
+          <form action="" method="post">
+            <div class="select-payment-method">
+              <!-- Start Payment Method One -->
+              <div class="payment-method-one payment-method">
+                <div class="payment-method-one-info">
+                  <h1>1.</h1>
+                  <img src="/assets/image/Registration-Page/sign-up/visa.png" alt="">
+                  <p class="card-number-info">2147-1545-1544-5656</p>
+                </div>
+                <div class="flex-btns">
+                  <label class="checkbox-container">
+                    <input type="radio" name="payment-method" checked>
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+              <!-- End Payment Method One -->
+              <!-- Start Payment Method Two -->
+              <div class="payment-method-two payment-method">
+                <div class="payment-method-two-info">
+                  <h1>2.</h1>
+                  <img class="ms-img" src="/assets/image/Registration-Page/sign-up/mastercard.png" alt="">
+                  <p class="card-number-info">2147-1545-1544-5656</p>
+                </div>
+                <div class="flex-btns">
+                  <label class="checkbox-container">
+                    <input type="radio" name="payment-method">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+              <!-- End Payment Method Two -->
+            </div>
+            <div class="flex-items">
+              <!-- Start Money Req Box -->
+              <div class="donate-amount-box">
+                <div class="donate-amount input-box">
+                  <label class="label" for="" data-i18n="donateWindowAmountTgt">Amount</label>
+                  <i class="fa fa-usd"></i>
+                  <input type="number">
+                </div>
+                <div class="note">
+                  <i></i>
+                  <p></p>
+                </div>
+              </div>
+              <!-- End Money Req Box -->
+              <a class="confirm-donate-btn btn-website" href="" data-i18n="donateWindowConfirmBtnTgt">Confirm Donate</a>
+            </div>
+          </form>
+        </div>
+        <!-- End Donate Window(Form) -->
+        <div class="title-and-more-fundraisers">
+          <h1 class="title" data-i18n="mostFundraisersTitleTgt">The Most Interactions Fundraisers</h1>
+          <a href="<%= typeof isAuthenticated !== 'undefined' && isAuthenticated ? `/all-fundraisers` : '/register' %>" class="more-fundraisers-btn btn-website" data-i18n="mostFundraisersMoreBtnTgt">More Fundraisers</a>
+        </div>
+        <!-- Start Fundraisers Boxes -->
+        <div class="fundraisers-boxes">
+            <!-- Start Main Fundraiser Box -->
+            <% if (typeof topFundraisers !== 'undefined' && topFundraisers.length > 0) { %>
+                <% const mainFundraiser = topFundraisers[0]; %>
+                <div class="main-fundraiser-box" data-fundraiser-id="<%= mainFundraiser.id %>" style="background: url('<%= mainFundraiser.main_image %>'); background-size: cover; background-position: center;"
+                  onclick="window.location.href='/fundraiser/<%= mainFundraiser.id %>'">
+                    <div class="fundraiser-account">
+                        <img src="<%= mainFundraiser.user.user_image %>" alt="<%= mainFundraiser.user.full_name %>">
+                        <h1 class="account-name"><%= mainFundraiser.user.full_name %></h1>
+                    </div>
+                    <div class="fundraiser-title">
+                        <h2 class="main-title"><%= mainFundraiser.title %></h2>
+                        <span>
+                          <%= mainFundraiser.location %>
+                        </span>
+                    </div>
+                    <p class="fundraiser-des">
+                        <%= mainFundraiser.description.length > 200 ? mainFundraiser.description.substring(0, 200) + '...' : mainFundraiser.description %>
+                    </p>
+                    <div class="fundraiser-btns">
+                        <div class="flex-btns">
+                            <button class="save-fundraiser-btn donate-later-btn btn-website">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-bookmark-plus" viewBox="0 0 16 16">
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                                    <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4"/>
+                                </svg>
+                            </button>
+                            <!-- Start Donation bar -->
+                            <div class="donation-bar">
+                                <div class="donation-scale">
+                                    <div class="donation-progress" style="width: <%= mainFundraiser.progress_percentage %>%;"></div>
+                                </div>
+                                <div class="donation-money-number">
+                                    <div class="money" data-goal="<%= mainFundraiser.target_amount %>">
+                                        $<%= mainFundraiser.collected_amount.toLocaleString() %> / $<%= mainFundraiser.target_amount.toLocaleString() %>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Donation bar -->
+                        </div>
+                        <a class="main-donate-btn btn-website" id="donateBtn" href="/fundraiser/<%= mainFundraiser.id %>">
+                            <img src="/assets/image/Home-Page/most-fundraisers/money.png" alt="Donate">
+                        </a>
+                    </div>
+                </div>
+            <% } else { %>
+                <!-- Fallback if no fundraisers -->
+                <div class="main-fundraiser-box" style="background: url('/assets/image/Home-Page/most-fundraisers/main-fundraiser-img.jpg');">
+                    <div class="fundraiser-account">
+                        <img src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="">
+                        <h1 class="account-name">No Fundraisers Available</h1>
+                    </div>
+                    <div class="fundraiser-title">
+                        <h2 class="main-title">Be the first to create a fundraiser</h2>
+                        <span>Start making a difference today</span>
+                    </div>
+                    <p class="fundraiser-des">There are currently no trending fundraisers. Create the first one and help make a positive impact in your community.</p>
+                    <div class="fundraiser-btns">
+                        <div class="flex-btns">
+                            <a href="/create-fundraiser" class="donate-btn btn-website">Create Fundraiser</a>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+            <!-- End Main Fundraiser Box -->
+            
+            <!-- Start Sub Fundraiser Boxes -->
+            <div class="sub-fundraisers-boxes">
+                <% if (typeof topFundraisers !== 'undefined' && topFundraisers.length > 1) { %>
+                    <% topFundraisers.slice(1, 5).forEach(function(fundraiser, index) { %>
+                        <!-- Start Sub Fundraiser Box -->
+                        <div class="sub-fundraiser-box" data-fundraiser-id="<%= fundraiser.id %>">
+                            <div class="fundraiser-account">
+                                <img src="<%= fundraiser.user.user_image %>" alt="<%= fundraiser.user.full_name %>">
+                                <h1 class="account-name"><%= fundraiser.user.full_name %></h1>
+                            </div>
+                            <div class="fundraiser-img" style="background: url('<%= fundraiser.main_image %>'); background-size: cover; background-position: center;"
+                              onclick="window.location.href='/fundraiser/<%= fundraiser.id %>'"></div>
+                            <div class="fundraiser-title">
+                                <h2 class="main-title"><%= fundraiser.title %></h2>
+                                <span>
+                                  <%= fundraiser.location %>
+                                </span>
+                            </div>
+                            <p class="fundraiser-des">
+                                <%= fundraiser.description.length > 150 ? fundraiser.description.substring(0, 150) + '...' : fundraiser.description %>
+                            </p>
+                            <div class="fundraiser-btns">
+                                <div class="flex-btns">
+                                    <button class="save-fundraiser-btn donate-later-btn btn-website">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-bookmark-plus" viewBox="0 0 16 16">
+                                            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                                            <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4"/>
+                                        </svg>
+                                    </button>
+                                    <!-- Start Donation bar -->
+                                    <div class="donation-bar">
+                                        <div class="donation-scale">
+                                            <div class="donation-progress" style="width: <%= fundraiser.progress_percentage %>%;"></div>
+                                        </div>
+                                        <div class="donation-money-number">
+                                            <div class="money" data-goal="<%= fundraiser.target_amount %>">
+                                              $<%= fundraiser.collected_amount.toLocaleString() %> $ / <%= fundraiser.target_amount.toLocaleString() %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Donation bar -->
+                                </div>
+                                <a class="donate-btn btn-website" href="/fundraiser/<%= fundraiser.id %>" data-i18n="mostFundraisersDonateBtnTgt">Donate</a>
+                            </div>
+                        </div>
+                        <!-- End Sub Fundraiser Box -->
+                    <% }); %>
+                <% } else { %>
+                    <!-- Fallback sub boxes if no additional fundraisers -->
+                    <% for (let i = 0; i < 4; i++) { %>
+                        <div class="sub-fundraiser-box">
+                            <div class="fundraiser-account">
+                                <img src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="">
+                                <h1 class="account-name">Coming Soon</h1>
+                            </div>
+                            <div class="fundraiser-img" style="background: url('/assets/image/Home-Page/most-fundraisers/main-fundraiser-img.jpg');"></div>
+                            <div class="fundraiser-title">
+                                <h2 class="main-title">New Fundraiser</h2>
+                                <span>Stay tuned</span>
+                            </div>
+                            <p class="fundraiser-des">New fundraisers will be displayed here as they become available. Check back soon for opportunities to support great causes.</p>
+                            <div class="fundraiser-btns">
+                                <div class="flex-btns">
+                                    <a href="/create-fundraiser" class="donate-btn btn-website">Create One</a>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                <% } %>
+            </div>
+            <!-- End Sub Fundraiser Boxes -->
+        </div>
+        <!-- End Fundraisers Boxes -->
+        <!-- End Fundraisers Boxes -->
+      </div>
+    </div>
+  </section>
+  <!-- End Most Needed Section -->
+  <!-- Start Almost Complete Fundraisers And Application Fundraisers Section -->
+  <section class="almost-complete-and-application-funraisers">
+    <div class="container">
+      <!-- Start Almost Complete Fundraisers -->
+      <div class="almost-complete-fundraisers">
+        <h1 class="title" data-i18n="almostCompleteFundraisersTitleTgt">Almost Complete Fundraisers</h1>
+        <div class="almost-complete-fundraisers-boxes">
+          <!-- Start Almost Complete Fundraisers Section -->
+          <% if (typeof almostCompleteFundraisers !== 'undefined' && almostCompleteFundraisers.length > 0) { %>
+              <% almostCompleteFundraisers.forEach(function(fundraiser, index) { %>
+                  <!-- Start Almost Complete Fundraiser Box -->
+                  <div class="almost-complete-fundraiser-box" data-fundraiser-id="<%= fundraiser.id %>">
+                      <div class="fundraiser-img" 
+                          style="background: url('<%= fundraiser.main_image %>'); background-size: cover; background-position: center; cursor: pointer;"
+                          onclick="window.location.href='/fundraiser/<%= fundraiser.id %>'">
+                      </div>
+                      <div class="flex-content">
+                          <!-- In the almost complete fundraisers section -->
+                          <div class="account-and-save-btn">
+                              <div class="fundraiser-account" 
+                                  onclick="handleFundraiserAccountClick(event, '<%= fundraiser.user.id %>')"
+                                  style="cursor: pointer;">
+                                  <img src="<%= fundraiser.user.user_image %>" alt="<%= fundraiser.user.full_name %>">
+                                  <h1 class="account-name"><%= fundraiser.user.full_name %></h1>
+                              </div>
+                              <a class="donate-later-btn btn-website save-fundraiser-btn" 
+                                onclick="handleSaveFundraiser(event, '<%= fundraiser.id %>')">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-bookmark-plus" viewBox="0 0 16 16">
+                                      <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                                      <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4"/>
+                                  </svg>
+                              </a>
+                          </div>
+                          <div class="title" onclick="window.location.href='/fundraiser/<%= fundraiser.id %>';" style="cursor: pointer;">
+                              <h1><%= fundraiser.title %></h1>
+                          </div>
+                          <div class="location">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                  <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                                  <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                              </svg>
+                              <span><%= fundraiser.location %></span>
+                          </div>
+                          <div class="flex-btns">
+                              <!-- Start Donation bar -->
+                              <div class="donation-bar">
+                                  <div class="donation-scale">
+                                      <div class="donation-progress" style="width: <%= fundraiser.progress_width %>"></div>
+                                  </div>
+                                  <div class="donation-money-number">
+                                      <div class="money" data-goal="<%= fundraiser.target_amount_formatted %>">
+                                          $<%= fundraiser.collected_amount.toLocaleString() %> / $<%= fundraiser.target_amount.toLocaleString() %>
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- End Donation bar -->
+                              <a class="donate-btn btn-website" href="/fundraiser/<%= fundraiser.id %>" data-i18n="almostCompleteFundraisersDonateBtnTgt">Donate</a>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- End Almost Complete Fundraiser Box -->
+              <% }); %>
+          <% } else { %>
+              <!-- Fallback if no almost complete fundraisers -->
+              <div class="almost-complete-fundraiser-box">
+                  <div class="fundraiser-img" style="background: url('/assets/image/Home-Page/most-fundraisers/main-fundraiser-img.jpg');"></div>
+                  <div class="flex-content">
+                      <div class="account-and-save-btn">
+                          <div class="fundraiser-account">
+                              <img src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="">
+                              <h1 class="account-name">No Fundraisers</h1>
+                          </div>
+                          <a class="donate-later-btn btn-website">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-bookmark-plus" viewBox="0 0 16 16">
+                                  <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                                  <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4"/>
+                              </svg>
+                          </a>
+                      </div>
+                      <div class="title">
+                          <h1>No Almost Complete Fundraisers</h1>
+                      </div>
+                      <div class="location">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                              <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                          </svg>
+                          <span>Check back later</span>
+                      </div>
+                      <div class="flex-btns">
+                          <!-- Start Donation bar -->
+                          <div class="donation-bar">
+                              <div class="donation-scale">
+                                  <div class="donation-progress" style="width: 0%"></div>
+                              </div>
+                              <div class="donation-money-number">
+                                  <i class="fa fa-usd" aria-hidden="true"></i>
+                                  <div class="money" data-goal="0">0</div>
+                              </div>
+                          </div>
+                          <!-- End Donation bar -->
+                          <a class="donate-btn btn-website" href="/all-fundraisers" data-i18n="almostCompleteFundraisersDonateBtnTgt">Browse All</a>
+                      </div>
+                  </div>
+              </div>
+          <% } %>
+          <!-- End Almost Complete Fundraisers Section -->
+        </div>
+      </div>
+      <!-- End Almost Complete Fundraisers -->
+      <!-- Start Application Fundraisers -->
+      <div class="application-funraisers">
+        <h1 class="title" data-i18n="applicationFundraisersTitleTgt">Fundraisers In The Application</h1>
+        <div class="application-funraisers-boxes">
+          <!-- Start Application Fundraiser Box -->
+          <div class="application-funraiser-box">
+           <div class="account-and-urgent-state">
+              <div class="fundraiser-account">
+                <img src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="">
+                <h1 class="account-name">AbOoD1 aqqq</h1>
+              </div>
+              <div class="urgent-state">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                </svg>
+                <h1 data-i18n="applicationFundraisersUrgentTgt">Urgent</h1>
+              </div>
+            </div>
+            <div class="title">
+              <h1>Bloody war on the Gaza Strip</h1>
+            </div>
+            <div class="location-and-date">
+              <div class="location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                  <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                  <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+                <span>Palestine - GazaStrip</span>
+              </div>
+              <div class="date-and-time">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                  <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                </svg>
+                <h1>7-8-2025 22:00</h1>
+              </div>
+            </div>
+            <div class="category-and-details-btn">
+              <div class="category-box">
+                Food
+              </div>
+              <div class="details-btn-box">
+                <a class="details-btn btn-website" data-i18n="applicationFundraisersDetailsBtnTgt">More Details</a>
+              </div>
+            </div>
+          </div>
+          <!-- End Application Fundraiser Box -->
+          <!-- Start Application Fundraiser Box -->
+          <div class="application-funraiser-box">
+           <div class="account-and-urgent-state">
+              <div class="fundraiser-account">
+                <img src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="">
+                <h1 class="account-name">AbOoD1 aqqq</h1>
+              </div>
+
+            </div>
+            <div class="title">
+              <h1>Bloody war on the Gaza Strip</h1>
+            </div>
+            <div class="location-and-date">
+              <div class="location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                  <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                  <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+                <span>Palestine - GazaStrip</span>
+              </div>
+              <div class="date-and-time">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                  <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                </svg>
+                <h1>7-8-2025 22:00</h1>
+              </div>
+            </div>
+            <div class="category-and-details-btn">
+              <div class="category-box">
+                Food
+              </div>
+              <div class="details-btn-box">
+                <a class="details-btn btn-website" data-i18n="applicationFundraisersDetailsBtnTgt">More Details</a>
+              </div>
+            </div>
+          </div>
+          <!-- End Application Fundraiser Box -->
+          <!-- Start Application Fundraiser Box -->
+          <div class="application-funraiser-box">
+           <div class="account-and-urgent-state">
+              <div class="fundraiser-account">
+                <img src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="">
+                <h1 class="account-name">AbOoD1 aqqq</h1>
+              </div>
+              <div class="urgent-state">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                </svg>
+                <h1 data-i18n="applicationFundraisersUrgentTgt">Urgent</h1>
+              </div>
+            </div>
+            <div class="title">
+              <h1>Bloody war on the Gaza Strip</h1>
+            </div>
+            <div class="location-and-date">
+              <div class="location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                  <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                  <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+                <span>Palestine - GazaStrip</span>
+              </div>
+              <div class="date-and-time">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                  <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                </svg>
+                <h1>7-8-2025 22:00</h1>
+              </div>
+            </div>
+            <div class="category-and-details-btn">
+              <div class="category-box">
+                Food
+              </div>
+              <div class="details-btn-box">
+                <a class="details-btn btn-website" data-i18n="applicationFundraisersDetailsBtnTgt">More Details</a>
+              </div>
+            </div>
+          </div>
+          <!-- End Application Fundraiser Box -->
+        </div>
+      </div>
+      <!-- End Application Fundraisers -->
+    </div>
+  </section>
+  <!-- End Almost Complete Fundraisers And Application Fundraisers Section -->
+  <!-- Start Top Donor Section -->
+  <section class="top-donor-sec">
+    <div class="container">
+      <div class="flex-top-donor-content">
+        <!-- Start Top Donor List -->
+        <div class="top-donor-list">
+          <div class="title-content">
+            <h1 class="title" data-i18n="topDonorTitleTgt">Our Top</h1>
+            <h2 data-i18n="topDonorTitleSpanTgt">Donors</h2>
+          </div>
+          <!-- Start Top Donor List Boxes -->
+          <div class="top-donor-list-boxes">
+            <% if (typeof topDonors !== 'undefined' && topDonors && topDonors.length > 0) { %>
+              <% topDonors.forEach((donor, index) => { %>
+                <!-- Start Top Donor Box -->
+                <div class="top-donor-box <%= index >= 6 ? `top-donor-${['six', 'seven', 'eigth', 'nine', 'ten'][index - 6]}` : '' %>">
+                  <div class="rank-number">
+                    <% if (index < 3) { %>
+                      <img src="/assets/image/Home-Page/top-donor/<%= ['first-place.png', 'Second-place.png', 'third-place.png'][index] %>" alt="<%= donor.rank %> place">
+                    <% } else { %>
+                      <h1><%= donor.rank %></h1>
+                    <% } %>
+                  </div>
+                  <div class="account-image">
+                    <img src="<%= donor.userImage %>" alt="<%= donor.fullName %> profile" onerror="this.src='/assets/image/Fundraiser-Page/header-sec/man-profile.png'">
+                  </div>
+                  <div class="account-desc">
+                    <div class="name-and-points">
+                      <h1><%= donor.fullName %></h1>
+                      <div class="rank-point">
+                        <h1><%= donor.userPoints.toLocaleString() %></h1>
+                      </div>
+                    </div>
+                    <div class="rank-and-thanks-btn">
+                      <div class="donation-rank">
+                        <img src="<%= donor.rankImage %>" alt="<%= donor.rankName %>" onerror="this.src='/assets/image/Account-Page/rank.png'">
+                        <h1><%= donor.rankName %></h1>
+                      </div>
+                      <a href="/donor-account/<%= donor.userId %>" class="btn-website go-account-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-forward-fill" viewBox="0 0 16 16">
+                          <path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              <% }); %>
+            <% } else { %>
+              <!-- Fallback content when no donors are found -->
+              <% for (let i = 1; i <= 10; i++) { %>
+                <div class="top-donor-box <%= i >= 6 ? `top-donor-${['six', 'seven', 'eigth', 'nine', 'ten'][i - 6]}` : '' %>">
+                  <div class="rank-number">
+                    <% if (i <= 3) { %>
+                      <img src="/assets/image/Home-Page/top-donor/<%= ['first-place.png', 'Second-place.png', 'third-place.png'][i - 1] %>" alt="<%= i %> place">
+                    <% } else { %>
+                      <h1><%= i %></h1>
+                    <% } %>
+                  </div>
+                  <div class="account-image">
+                    <img src="/assets/image/Fundraiser-Page/header-sec/man-profile.png" alt="Default profile">
+                  </div>
+                  <div class="account-desc">
+                    <div class="name-and-points">
+                      <h1>No Data</h1>
+                      <div class="rank-point">
+                        <h1>0</h1>
+                      </div>
+                    </div>
+                    <div class="rank-and-thanks-btn">
+                      <div class="donation-rank">
+                        <img src="/assets/image/Account-Page/rank.png" alt="Default rank">
+                        <h1>No Rank</h1>
+                      </div>
+                      <a href="#" class="btn-website go-account-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-forward-fill" viewBox="0 0 16 16">
+                          <path d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              <% } %>
+            <% } %>
+          </div>
+          <!-- End Top Donor List Boxes -->
+        </div>
+        <!-- End Top Donor List -->
+        <!-- Start Top Donor Content -->
+        <div class="top-donor-content">
+          <div class="title-content">
+            <h1 class="title" data-i18n="topDonorContentTitleTgt">تبرع واحصل على </h1>
+            <h2 data-i18n="topDonorContenTitleSpanTgt">مكافئات قيّمة</h2>
+          </div>
+          <!-- Start Rewards -->
+          <div class="rewards">
+            <!-- Start Rewards Boxes -->
+            <div class="rewards-boxes">
+              <div class="reward-one reward-box">
+                <div class="reward-one-point reward-point">
+                  <h1>10000</h1>
+                </div>
+                <img src="/assets/image/User-Panel-Donor-Page/iphone.png" alt="">
+                <h3>IPhone 11 Pro</h3>
+              </div>
+              <div class="split-line"></div>
+              <div class="reward-two reward-box">
+                <div class="reward-two-point reward-point">
+                  <h1>2000</h1>
+                </div>
+                <img src="/assets/image/User-Panel-Donor-Page/airpods.png" alt="">
+                <h3>Airpod Pro 2</h3>
+              </div>
+              <div class="split-line"></div>
+              <div class="reward-three reward-box">
+                <div class="reward-three-point reward-point">
+                  <h1>120</h1>
+                </div>
+                <img src="/assets/image/User-Panel-Donor-Page/airpods.png" alt="">
+                <h3>Airpod Pro 2</h3>
+              </div>
+            </div>
+            <!-- End Rewards Boxes -->
+            <!-- Start Rewards Arrow -->
+            <div class="rewards-arrow"></div>
+            <!-- End Rewards Arrow -->
+          </div>
+          <!-- Start Rewards -->
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          <div class="donate-now-btn-box">
+            <a href="" class="btn-website" data-i18n="mostFundraisersDonateBtnTgt">Donate Now</a>
+          </div>
+        </div>
+        <!-- End Top Donor Content -->
+      </div>
+    </div>
+  </section>
+  <!-- End Top Donor Section -->
+  <!-- Start Categories Section -->
+  <section class="categories-sec">
+    <div class="container">
+      <div class="flex-top-categorie">
+        <!-- Start Top Categories Boxes -->
+        <div class="top-categories-boxes">
+          <!-- Start Categorie Content Box -->
+          <div class="categorie-content box-one">
+            <div class="categorie-icon">
+              <img src="/assets/image/Home-Page/categories/education.png" alt="">
+            </div>
+            <div class="categorie-name">
+              <h2 data-i18n="topCategoriesOneTgt">Education</h2>
+            </div>
+          </div>
+          <!-- End Categorie Content Box -->
+           <!-- Start Categorie Content Box -->
+          <div class="categorie-content box-two">
+            <div class="categorie-icon">
+              <img src="/assets/image/Home-Page/categories/disabled-person.png" alt="">
+            </div>
+            <div class="categorie-name">
+              <h2 data-i18n="topCategoriesTwoTgt">Disabilities</h2>
+            </div>
+          </div>
+          <!-- End Categorie Content Box -->
+           <!-- Start Categorie Content Box -->
+          <div class="categorie-content box-three">
+            <div class="categorie-icon">
+              <img src="/assets/image/Home-Page/categories/healthcare.png" alt="">
+            </div>
+            <div class="categorie-name">
+              <h2 data-i18n="topCategoriesThreeTgt">Health Care</h2>
+            </div>
+          </div>
+          <!-- End Categorie Content Box -->
+          <!-- Start Categorie Content Box -->
+          <div class="categorie-content box-four">
+            <div class="categorie-icon">
+              <img src="/assets/image/Home-Page/categories/poverty.png" alt="">
+            </div>
+            <div class="categorie-name">
+              <h2 data-i18n="topCategoriesFourTgt">Poverty</h2>
+            </div>
+          </div>
+          <!-- End Categorie Content Box -->
+          <!-- Start Categorie Content Box -->
+          <div class="categorie-content box-five">
+            <div class="categorie-icon">
+              <img src="/assets/image/Home-Page/categories/planet-earth.png" alt="">
+            </div>
+            <div class="categorie-name">
+              <h2 data-i18n="topCategoriesFiveTgt">Environment</h2>
+            </div>
+          </div>
+          <!-- End Categorie Content Box -->
+          <!-- Start Categorie Content Box -->
+          <div class="categorie-content box-six">
+            <div class="categorie-icon">
+              <img src="/assets/image/Home-Page/categories/orphan.png" alt="">
+            </div>
+            <div class="categorie-name">
+              <h2 data-i18n="topCategoriesSixTgt">Orphans</h2>
+            </div>
+          </div>
+          <!-- End Categorie Content Box -->
+        </div>
+        <!-- End Top Categories Boxes -->
+        <!-- Start Top Categories Content -->
+        <div class="top-categories-content">
+          <div class="title-content">
+            <h1 data-i18n="topCategoriesTitleTgt">Our Top</h1> 
+            <h2 data-i18n="topCategoriesTitleSpanTgt">Categories</h2>
+          </div>
+          <p data-i18n="topCategoriesDescriptionOneTgt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat dolores placeat laboriosam esse culpa. Minus, consequuntur nam! Blanditiis deserunt vel illo doloribus iure.</p>
+          <p class="p-span" data-i18n="topCategoriesDescriptionTwoTgt">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae maiores tempora magnam eveniet similique, rem ipsum delectus laboriosam ad quo esse soluta cum quidem iusto aspernatur, vero, iste odio alias!</p>
+          <div class="btn-top-categories">
+            <a href="/categories %>" class="btn-website" data-i18n="topCategoriesBtnTgt">See All Categories</a>
+          </div>
+        </div>
+        <!-- End Top Categories Content -->
+      </div>
+    </div>
+  </section>
+  <!-- End Categories Section -->
+  <!-- Start Mobile App Section-->
+  <section class="mobile-app-sec">
+    <div class="container">
+      <div class="main-content">
+        <div class="sub-content">
+          <div class="title">
+            <h1 data-i18n="mobileAppTitleTgt">Mobile App</h1>
+            <h2 data-i18n="mobileAppSubTitleTgt" class="sub-title">Find Your Favorites and Discover New Ones</h2>
+          </div>
+          <p class="mobile-dec" data-i18n="mobileAppDescriptionTgt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet eligendi doloribus optio reiciendis quaerat quidem deleniti aliquid voluptas assumenda incidunt Amet eligendi doloribus optio reiciendis quaerat quidem deleniti aliquid.</p>
+          <div class="flex-content">
+            <h3 class="bold" data-i18n="mobileAppDescriptionOneTgt">Download the App and get</h3>
+            <span data-i18n="mobileAppDescriptionTwoTgt">Special Discount</span>
+          </div>
+          <div class="download-btns">
+            <a class="google-play" style="background: url('/assets/image/Home-Page/mobile-app/google-play.png') no-repeat;"></a>
+            <a class="app-store" id="showAppWindowBtn" style="background: url('/assets/image/Home-Page/mobile-app/app-store.png') no-repeat;"></a>
+          </div>
+
+        </div>
+        <div class="mobile-img" style="background: url('/assets/image/Home-Page/mobile-app/mobile.gif') no-repeat;"></div>
+      </div>
+    </div>
+  </section>
+  <!-- End Mobile App Section -->
+  <!-- Start About And Faq Sec Section -->
+  <section class="about-and-faq-sec">
+    <div class="container">
+      <div class="title-content">
+        <div class="flex-title">
+        <h1 data-i18n="aboutAndFaqTitleOneTgt">An</h1>
+        <h2 data-i18n="aboutAndFaqTitleTwoTgt">Overview</h2>
+        <h1 data-i18n="aboutAndFaqTitleThreeTgt">Of Our Website And</h1> 
+        </div>
+        <div class="flex-title">
+          <h2 data-i18n="aboutAndFaqTitleFourTgt">FAQ</h2>
+          <h1 data-i18n="aboutAndFaqTitleFiveTgt">About It</h1>
+        </div>
+      </div>
+    </div>
+    <!-- Start About Us -->
+    <div class="about-us">
+      <div class="container">
+        <div class="main-content-about-us">
+          <div class="sub-content">
+            <h1 data-i18n="aboutTitleTgt">About Us</h1>
+            <p class="about-us-dec" data-i18n="aboutDescriptionTgt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat dolores placeat laboriosam esse culpa. Minus, consequuntur nam! Blanditiis deserunt vel illo doloribus iure consectetur adipisicing elit. Quaerat dolores placeat laboriosam esse culpa Minus.</p>
+            <a href="" class="start-now-btn btn-website" data-i18n="aboutBtnTgt">Start Now</a>
+          </div>
+          <div class="about-us-img" style="background: url('/assets/image/Home-Page/about-us/about-us-img.png');"></div>
+        </div>
+      </div>
+    </div>
+    <!-- End About Us -->
+    <!-- Start FAQ -->
+    <div class="faq">
+      <div class="container">
+        <div class="title">
+          <h1 data-i18n="faqTitleTgt">Most Frequently Asked Questions</h1>
+        </div>
+        <!-- Start FAQ Boxes -->
+        <div class="faq-boxes">
+          <% if (recentFAQs && recentFAQs.length > 0) { %>
+            <% recentFAQs.forEach((faq, index) => { %>
+              <!-- Start FAQ Box -->
+              <div class="faq-box">
+                <h1 class="bold" id="question-<%= index %>"><%= faq.faq_question %></h1>
+                <div class="split-line"></div>
+                <h3 id="answer-<%= index %>"><span>The Answer: </span><%= faq.faq_answer %></h3>
+              </div>
+              <!-- End FAQ Box -->
+            <% }) %>
+          <% } else { %>
+            <!-- Fallback content if no FAQs exist -->
+            <div class="faq-box">
+              <h1 class="bold" id="question">No FAQs available at the moment.</h1>
+              <div class="split-line"></div>
+              <h3 id="answer"><span>The Answer: </span>Please check back later for frequently asked questions.</h3>
+            </div>
+          <% } %>
+          <!-- Start more FAQ Button -->
+          <div class="more-btn-box">
+            <a href="/faq %>" class="more-faq-btn btn-website">
+              <span data-i18n="faqBtnTgt">More FAQ</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
+              </svg>
+            </a>
+          </div>
+          <!-- End more FAQ Button -->
+        </div>
+        <!-- End FAQ Boxes -->
+      </div>
+    </div>
+    <!-- End FAQ -->
+   </section>
+  <!-- End About And Faq Sec Section -->
+  <!-- Start Footer -->
+  <footer class="footer-sec">
+    <div class="container">
+      <div class="content">
+        <!-- Start Boxes -->
+        <div class="boxes">
+          <!-- Start box -->
+          <div class="box-one">
+            <a href="/" class="brand">
+              <img src="/assets/image/Home-Page/header/najdah.png" alt="">
+            </a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet eligendi doloribus optio reiciendis quaerat quidem deleniti aliquid voluptas.</p>
+            <section class="main-icon">
+              <ul>
+                <li class="face content-icon"><i class="fa fa-facebook"></i></li>
+                <li class="whats content-icon"><i class="fa fa-whatsapp"></i></li>
+                <li class="youtube content-icon"><a><i class="fa fa-youtube-play"></i></a></li>
+                <li class="twitter content-icon"><i class="fa fa-twitter"></i></li>
+              </ul>
+            </section>
+          </div>
+          <!-- End box -->
+          <!-- Start box -->
+          <div class="box-two">
+            <!-- <ul>
+              <li><h1>About</h1></li>
+              <li class="small-font"><h2>About Us</h2></li>
+              <li class="small-font"><h2>Feedus</h2></li>
+              <li class="small-font"><h2>News</h2></li>
+              <li class="small-font"><h2>Menu</h2></li>
+            </ul>
+            <ul>
+              <li><h1>Company</h1></li>
+              <li class="small-font"><h2>Why Solidarity?</h2></li>
+              <li class="small-font"><h2>PinPeu With Liu</h2></li>
+              <li class="small-font"><h2>FAQ</h2></li>
+              <li class="small-font"><h2>Bing</h2></li>
+            </ul> -->
+            <!-- <ul>
+              <li><h1>Support</h1></li>
+              <li class="small-font"><h2>Accout</h2></li>
+              <li class="small-font"><h2>Support Center</h2></li>
+              <li class="small-font"><h2>Feedback</h2></li>
+              <li class="small-font"><h2>Contact Us</h2></li>
+            </ul> -->
+            <ul>
+              <li><h1>Get In Touch</h1></li>
+              <li class="small-font flex-li">
+                <i class="fa fa-map-marker"></i>
+                <h2>2715 Aph San-Andrias</h2>
+              </li>
+              <li class="small-font flex-li"><i class="fa fa-phone"></i><h2>(MD)565-8327</h2></li>
+              <li class="small-font flex-li"><i class="fa fa-envelope-o"></i><h2>Solidarity@gmail.com</h2></li>
+            </ul>
+          </div>
+          <!-- End box -->
+        </div>
+        <!-- End Boxes -->
+      </div>
+    </div>
+    <!-- Start Copyright Section -->
+    <div class="copyright-box">
+      <ul class="copyright-box-list">
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li>&copy; 2025 Copyright Nowrap Inc.</li>
+      </ul>
+    </div>
+    <!-- End Copyright Section -->
+  </footer>
+  <!-- End Footer -->
+  
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <!-- jQuery من CDN -->
+  <script src="/assets/js/jquery.js"></script>
+  <!-- Owl Carousel js -->
+  <script src="/assets/js/owl.carousel.min.js"></script>
+  <!-- مكتبات i18next من CDN -->
+  <script src="/assets/libs/i18next.min.js"></script>
+  <script src="/assets/libs/i18nextHttpBackend.js"></script>
+  <script src="/assets/libs/i18nextBrowserLanguageDetector.js"></script>
+  <!-- الكود الخاص بك -->
+   <!-- Add data attributes to a hidden element or the script tag -->
+  <div id="auth-data" style="display: none;" 
+    data-is-authenticated="<%= typeof isAuthenticated !== 'undefined' ? isAuthenticated : 'false' %>"
+    data-user="<%= typeof user !== 'undefined' ? JSON.stringify(user) : 'null' %>"
+    data-is-logout-redirect="<%= typeof isLogoutRedirect !== 'undefined' ? isLogoutRedirect : 'false' %>"
+    data-is-logout-error="<%= typeof isLogoutError !== 'undefined' ? isLogoutError : 'false' %>">
+  </div>
+  <script src="/assets/js/index.js"></script>
+  <!-- FontAwesome Icon-->
+  <!-- <script src="https://kit.fontawesome.com/6fccdcc8fe.js" crossorigin="anonymous"></script> -->
+
+</body> 

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Najdah - Category</title>
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+  <!-- my fotawesome -->
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <!-- my style css -->
+  <link rel="stylesheet" href="/assets/css/style.scss">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/image/Home-Page/header/najdah-icon.png">
+  <!-- Compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+</head>
+<body>
+  <!-- Start Header -->
+  <header class="category-header-sec" id="header-sec">
+    <!-- Start Nav -->
+    <nav>
+      <!-- Start Nav Links -->
+      <a class="links-list btn-website" id="menuButton">
+        <img src="/assets/image/Home-Page/header/menus.png" alt="Menu">
+      </a>
+      <!-- Start Dropdown Access Menu -->
+      <div class="dropdown-content" id="dropdownMenu">
+        <a href="/ %>" data-i18n="dropdownHomeTgt">Home</a>
+        <a href="/userPanelIndigent %>" data-i18n="dropdownDashboardTgt" id="controlPanelBtn">Dashboard</a>
+        <a href="/all-fundraisers %>" data-i18n="dropdownFundraisersTgt">Fundraisers</a>
+        <a href="/categories %>" data-i18n="dropdownCategoriesTgt">Categories</a>
+        <a href="/faq %>" data-i18n="dropdownContactTgt">Contact Us</a>
+        <a class="language-menu" id="languageMenu" data-i18n="dropdownLanguageTgt">Language</a>
+        <div class="language-switcher" id="languageSwitcher">
+          <button class="lang-btn active" id="en-btn">English</button>
+          <button class="lang-btn" id="ar-btn">العربية</button>
+        </div>
+      </div>
+      <!-- End Dropdown Access Menu -->
+      <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+      </ul>
+      <!-- End Nav Links -->
+      <!-- Start Logo -->
+      <a href="/" class="brand">
+        <img src="/assets/image/Home-Page/header/najdah.png" alt="">
+      </a>
+      <!-- End Logo -->
+       <!-- Start Search And Contact -->
+      <div class="search-and-contact">
+        <!-- <div class="search-box">
+          <input type="text" placeholder="search...">
+          <div class="search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+          </div>
+        </div> -->
+        <a class="help-btn btn-website" id="helpBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-question-lg" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215 0 1.344-.665 2.288-1.79 2.973-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712 1.03-.632 1.397-1.135 1.397-2.028 0-.979-.758-1.698-1.926-1.698-1.009 0-1.71.529-1.938 1.402-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09 0-.618-.473-1.092-1.095-1.092-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14"/>
+          </svg>
+        </a>
+        <!-- Start Submit A Complaint Box(Form) -->
+        <div class="submit-complaint" id="submitComplaint">
+            <h1 data-i18n="complaintTitleTgt">Enter the problem you are facing</h1>
+            <form id="complaintForm" method="post">
+                <div class="title-filed input-box">
+                    <label class="label-desc" for="complaint_content" data-i18n="complaintLabelTgt">Enter A Problem</label>
+                    <textarea 
+                        id="complaint_content" 
+                        name="complaint_content" 
+                        required 
+                        maxlength="100"
+                    ></textarea>
+                    <div class="characters">
+                        <span class="signal_num">0</span>
+                        <span class="limit_num">/100</span>
+                    </div>
+                </div>
+                <button type="submit" class="complaint-submit-btn btn-website" data-i18n="complaintBtnTgt">
+                    Send
+                </button>
+            </form>
+            <div id="complaintMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;"></div>
+        </div>
+        <!-- End Submit A Complaint Box(Form) -->
+      </div>
+      <!-- End Search And Contact -->
+    </nav>
+    <!-- End Nav -->
+    <!-- Start Main Content -->
+    <div class="category-main-content">
+        <div class="container">
+                <% if (category) { %>
+                    <div class="flex-category-content">
+                        <div class="title">
+                            <h1 class="category-name"><%= category.category_name %></h1>
+                            <% if (category.category_description) { %>
+                                <p class="category-description"><%= category.category_description %></p>
+                            <% } else { %>
+                                <p class="category-description">No description available for this category.</p>
+                            <% } %>
+                        </div>
+                        <div class="category-img">
+                            <img src="<%= category.category_image || '/assets/image/categories-page/categories/default-category.png' %>" 
+                                alt="<%= category.category_name %>"
+                                onerror="this.src='/assets/image/categories-page/categories/default-category.png'">
+                        </div>
+                    </div>
+
+                <% } else { %>
+                    <div class="error-message">
+                        <h1>Category Not Found</h1>
+                        <p>The requested category could not be found.</p>
+                        <a href="/categories" class="btn">Back to Categories</a>
+                    </div>
+                <% } %>
+            <div class="split-line"></div>
+            <!-- Start Category Fundraisers Boxes -->
+            <div class="category-fundraisers-boxes">
+                <!-- Display error message if any -->
+                <% if (typeof error !== 'undefined' && error) { %>
+                    <div class="error-message" style="color: red; padding: 10px; background: #ffe6e6; border: 1px solid red; margin-bottom: 20px;">
+                        <%= error %>
+                    </div>
+                <% } %>
+
+                <!-- Start Fundraisers Boxes -->
+                <div class="fundraisers-boxes">
+                    <% if (fundraisers && fundraisers.length > 0) { %>
+                        <% fundraisers.forEach(fundraiser => { %>
+                            <% if (fundraiser.fundraiser_status === 'Waiting_requesters' && authUser && authUser.user_type === 'requester') { %>
+                            <!-- CHARITY FUNDRAISER CARD -->
+                            <div class="fundraiser-box <%= fundraiser.user_has_submitted ? 'campaign-submitted' : '' %> <%= (fundraiser.form_current >= fundraiser.form_target) ? 'campaign-full' : '' %>" 
+                                 data-fundraiser-id="<%= fundraiser.public_id %>">
+                                <div class="fundraiser-account" onclick="handleFundraiserAccountClick(event, '<%= fundraiser.user.id %>')" style="cursor: pointer;">
+                                    <% if (fundraiser.user && fundraiser.user.user_image) { %>
+                                        <img src="<%= fundraiser.user.user_image %>" alt="<%= fundraiser.user.full_name || 'User' %>" onerror="this.src='/images/default-profile.png'">
+                                    <% } else { %>
+                                        <img src="/images/default-profile.png" alt="Default Profile">
+                                    <% } %>
+                                    <h1 class="account-name"><%= fundraiser.user ? fundraiser.user.full_name : 'Unknown User' %></h1>
+                                    <div class="fundraiser-Icons">
+                                        <% if (fundraiser.fundraiser_status !== 'waiting_verification') { %>
+                                          <span class="icon-wrapper">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style="display: inline-block; vertical-align: middle;">
+                                              <defs>
+                                                <linearGradient id="verifiedGrad-cat-<%= fundraiser.public_id%>" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                  <stop offset="0%" style="stop-color:#ff9a17;stop-opacity:1" />
+                                                  <stop offset="100%" style="stop-color:#e67e00;stop-opacity:1" />
+                                                </linearGradient>
+                                                <filter id="glow-cat-<%= fundraiser.public_id %>" x="-50%" y="-50%" width="200%" height="200%">
+                                                  <feGaussianBlur stdDeviation="0.6" result="coloredBlur"/>
+                                                  <feMerge>
+                                                    <feMergeNode in="coloredBlur"/>
+                                                    <feMergeNode in="SourceGraphic"/>
+                                                  </feMerge>
+                                                </filter>
+                                              </defs>
+                                              <circle cx="12" cy="12" r="11" fill="url(#verifiedGrad-cat-<%= fundraiser.public_id %>)" stroke="#fff" stroke-width="0.8">
+                                                <animate attributeName="r" values="11;11.4;11" dur="2.5s" repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="1;0.92;1" dur="3s" repeatCount="indefinite" />
+                                              </circle>
+                                              <path d="M7 12l3 3 7-7" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="20" stroke-dashoffset="20" filter="url(#glow-cat-<%= fundraiser.public_id %>)">
+                                                <animate attributeName="stroke-dashoffset" values="20;0;0;20" dur="3s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1" />
+                                                <animate attributeName="stroke-width" values="2.5;3;2.5" dur="2s" repeatCount="indefinite" />
+                                              </path>
+                                              <circle cx="12" cy="12" r="11" fill="none" stroke="#ff9a17" stroke-width="0.5" opacity="0">
+                                                <animate attributeName="r" values="11;14;16" dur="2.5s" repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="0.5;0;0" dur="2.5s" repeatCount="indefinite" />
+                                              </circle>
+                                            </svg>
+                                            <span class="tooltip tooltip-verified">This campaign account is verified</span>
+                                          </span>
+                                        <% } %>
+                                        <% if (fundraiser.user && fundraiser.user.user_type === 'Charity') { %>
+                                          <span class="icon-wrapper">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style="display: inline-block; vertical-align: middle;">
+                                              <defs>
+                                                <linearGradient id="charityGrad-cat-<%= fundraiser.public_id %>" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                  <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+                                                  <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+                                                </linearGradient>
+                                                <filter id="glow2-cat-<%= fundraiser.public_id %>" x="-50%" y="-50%" width="200%" height="200%">
+                                                  <feGaussianBlur stdDeviation="0.6" result="coloredBlur"/>
+                                                  <feMerge>
+                                                    <feMergeNode in="coloredBlur"/>
+                                                    <feMergeNode in="SourceGraphic"/>
+                                                  </feMerge>
+                                                </filter>
+                                              </defs>
+                                              <circle cx="12" cy="12" r="11" fill="url(#charityGrad-cat-<%= fundraiser.public_id %>)" stroke="#fff" stroke-width="0.8">
+                                                <animate attributeName="r" values="11;11.4;11" dur="2.5s" repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="1;0.92;1" dur="3s" repeatCount="indefinite" />
+                                              </circle>
+                                              <path d="M12 15.5 C8 12, 6 9.5, 7 7 C8 5, 10 5, 12 7 C14 5, 16 5, 17 7 C18 9.5, 16 12, 12 15.5" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="28" stroke-dashoffset="28" filter="url(#glow2-cat-<%= fundraiser.public_id %>)">
+                                                <animate attributeName="stroke-dashoffset" values="28;0;0;28" dur="3s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1" />
+                                                <animate attributeName="stroke-width" values="2.2;2.7;2.2" dur="2s" repeatCount="indefinite" />
+                                              </path>
+                                              <circle cx="12" cy="12" r="11" fill="none" stroke="#2ecc71" stroke-width="0.5" opacity="0">
+                                                <animate attributeName="r" values="11;14;16" dur="2.5s" repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="0.5;0;0" dur="2.5s" repeatCount="indefinite" />
+                                              </circle>
+                                            </svg>
+                                            <span class="tooltip tooltip-charity">This campaign is for a charity</span>
+                                          </span>
+                                        <% } %>
+                                        <% if (fundraiser.is_urgent) { %>
+                                          <span class="icon-wrapper">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style="display: inline-block; vertical-align: middle;">
+                                              <defs>
+                                                <linearGradient id="urgentGrad-cat-<%= fundraiser.public_id %>" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                  <stop offset="0%" style="stop-color:#ff4757;stop-opacity:1" />
+                                                  <stop offset="100%" style="stop-color:#e84118;stop-opacity:1" />
+                                                </linearGradient>
+                                                <filter id="glow3-cat-<%= fundraiser.public_id %>" x="-50%" y="-50%" width="200%" height="200%">
+                                                  <feGaussianBlur stdDeviation="0.6" result="coloredBlur"/>
+                                                  <feMerge>
+                                                    <feMergeNode in="coloredBlur"/>
+                                                    <feMergeNode in="SourceGraphic"/>
+                                                  </feMerge>
+                                                </filter>
+                                              </defs>
+                                              <circle cx="12" cy="12" r="11" fill="url(#urgentGrad-cat-<%= fundraiser.public_id %>)" stroke="#fff" stroke-width="0.8">
+                                                <animate attributeName="r" values="11;11.4;11" dur="2.5s" repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="1;0.92;1" dur="3s" repeatCount="indefinite" />
+                                              </circle>
+                                              <path d="M12 17 L12 6 M7 11 L12 6 L17 11" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="26" stroke-dashoffset="26" filter="url(#glow3-cat-<%= fundraiser.public_id %>)">
+                                                <animate attributeName="stroke-dashoffset" values="26;0;0;26" dur="3s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1" />
+                                                <animate attributeName="stroke-width" values="2.5;3;2.5" dur="2s" repeatCount="indefinite" />
+                                              </path>
+                                              <path d="M12 17 L12 6 M7 11 L12 6 L17 11" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0" filter="url(#glow3-cat-<%= fundraiser.public_id %>)">
+                                                <animate attributeName="opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite" keyTimes="0;0.3;1" />
+                                                <animateTransform attributeName="transform" type="translate" values="0 2; 0 -3; 0 -4" dur="2s" repeatCount="indefinite" keyTimes="0;0.5;1" />
+                                              </path>
+                                              <path d="M12 17 L12 6 M7 11 L12 6 L17 11" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0" filter="url(#glow3-cat-<%= fundraiser.public_id %>)">
+                                                <animate attributeName="opacity" values="0;0.4;0" dur="2s" repeatCount="indefinite" keyTimes="0;0.3;1" begin="1s" />
+                                                <animateTransform attributeName="transform" type="translate" values="0 2; 0 -3; 0 -4" dur="2s" repeatCount="indefinite" keyTimes="0;0.5;1" begin="1s" />
+                                              </path>
+                                              <circle cx="12" cy="12" r="11" fill="none" stroke="#ff4757" stroke-width="0.5" opacity="0">
+                                                <animate attributeName="r" values="11;14;16" dur="2.5s" repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="0.5;0;0" dur="2.5s" repeatCount="indefinite" />
+                                              </circle>
+                                            </svg>
+                                            <span class="tooltip tooltip-urgent">This campaign urgently needs donations</span>
+                                          </span>
+                                        <% } %>
+                                    </div>
+                                </div>
+                                <div class="fundraiser-img" style="background: url('<%= fundraiser.fundraiser_main_image %>'); background-size: cover; background-position: center;"></div>
+                                <div class="fundraiser-title">
+                                    <h2 class="main-title"><%= fundraiser.fundraiser_title.length > 15 ? fundraiser.fundraiser_title.substring(0, 15) + '...' : fundraiser.fundraiser_title %></h2>
+                                    <span><%= fundraiser.user ? fundraiser.user.locationString : 'Location not specified' %></span>
+                                </div>
+                                
+                                <p class="fundraiser-des">
+                                    <%= fundraiser.fundraiser_description.length > 150 ? fundraiser.fundraiser_description.substring(0, 150) + '...' : fundraiser.fundraiser_description %>
+                                </p>
+                                <div class="fundraiser-btns">
+                                    <div class="flex-btns">
+                                        <div class="donation-bar" style="background: transparent;">
+                                            <div class="donation-charity-note">
+                                                <% if (fundraiser.user_has_submitted) { %>
+                                                    <div class="money" style="color: #28a745; font-weight: bold;">✓ Form Filled Out</div>
+                                                <% } else if (fundraiser.form_current >= fundraiser.form_target) { %>
+                                                    <div class="money" style="color: #dc3545; font-weight: bold;">✕ Target Reached</div>
+                                                <% } else { %>
+                                                    <div class="money" style="color: #6f42c1; font-weight: bold;">📝 Form Available (<%= fundraiser.form_current %>/<%= fundraiser.form_target %>)</div>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% if (!fundraiser.user_has_submitted && fundraiser.form_current < fundraiser.form_target) { %>
+                                        <a href="/fundraiser-requester-form/<%= fundraiser.public_id %>" class="btn-website fill-form" style="background: #6f42c1;">Fill Form</a>
+                                    <% } else if (fundraiser.user_has_submitted) { %>
+                                        <button class="btn-website fill-form" style="background: #6c757d; cursor: not-allowed; opacity: 0.7;" disabled>✓ Already Filled</button>
+                                    <% } else { %>
+                                        <button class="btn-website fill-form" style="background: #dc3545; cursor: not-allowed; opacity: 0.7;" disabled>✕ Target Reached</button>
+                                    <% } %>
+                                </div>
+                            </div>
+                            <% } else if (fundraiser.fundraiser_status === 'incompleted') { %>
+                            <!-- STANDARD FUNDRAISER CARD -->
+                            <div class="fundraiser-box" data-fundraiser-id="<%= fundraiser.public_id %>">
+                                <div class="fundraiser-account" onclick="handleFundraiserAccountClick(event, '<%= fundraiser.user.id %>')" style="cursor: pointer;">
+                                    <% if (fundraiser.user && fundraiser.user.user_image) { %>
+                                        <img src="<%= fundraiser.user.user_image %>" alt="<%= fundraiser.user.full_name || 'User' %>" onerror="this.src='/images/default-profile.png'">
+                                    <% } else { %>
+                                        <img src="/images/default-profile.png" alt="Default Profile">
+                                    <% } %>
+                                    <h1 class="account-name"><%= fundraiser.user ? fundraiser.user.full_name : 'Unknown User' %></h1>
+                                    <div class="fundraiser-Icons">
+                                        <% if (fundraiser.fundraiser_status !== 'waiting_verification') { %>
+                                          <span class="icon-wrapper">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style="display: inline-block; vertical-align: middle;">
+                                              <defs>
+                                                <linearGradient id="verifiedGrad-cat-<%= fundraiser.public_id %>" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                  <stop offset="0%" style="stop-color:#ff9a17;stop-opacity:1" />
+                                                  <stop offset="100%" style="stop-color:#e67e00;stop-opacity:1" />
+                                                </linearGradient>
+                                                <filter id="glow-cat-<%= fundraiser.public_id %>" x="-50%" y="-50%" width="200%" height="200%">
+                                                  <feGaussianBlur stdDeviation="0.6" result="coloredBlur"/>
+                                                  <feMerge>
+                                                    <feMergeNode in="coloredBlur"/>
+                                                    <feMergeNode in="SourceGraphic"/>
+                                                  </feMerge>
+                                                </filter>
+                                              </defs>
+                                              <circle cx="12" cy="12" r="11" fill="url(#verifiedGrad-cat-<%= fundraiser.public_id %>)" stroke="#fff" stroke-width="0.8">
+                                                <animate attributeName="r" values="11;11.4;11" dur="2.5s" repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="1;0.92;1" dur="3s" repeatCount="indefinite" />
+                                              </circle>
+                                              <path d="M7 12l3 3 7-7" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="20" stroke-dashoffset="20" filter="url(#glow-cat-<%= fundraiser.public_id %>)">
+                                                <animate attributeName="stroke-dashoffset" values="20;0;0;20" dur="3s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1" />
+                                                <animate attributeName="stroke-width" values="2.5;3;2.5" dur="2s" repeatCount="indefinite" />
+                                              </path>
+                                              <circle cx="12" cy="12" r="11" fill="none" stroke="#ff9a17" stroke-width="0.5" opacity="0">
+                                                <animate attributeName="r" values="11;14;16" dur="2.5s" repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="0.5;0;0" dur="2.5s" repeatCount="indefinite" />
+                                              </circle>
+                                            </svg>
+                                            <span class="tooltip tooltip-verified">This campaign account is verified</span>
+                                          </span>
+                                        <% } %>
+                                        <% if (fundraiser.user && fundraiser.user.user_type === 'Charity') { %>
+                                          <span class="icon-wrapper">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style="display: inline-block; vertical-align: middle;">
+                                              <defs>
+                                                <linearGradient id="charityGrad-cat-<%= fundraiser.public_id %>" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                  <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+                                                  <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+                                                </linearGradient>
+                                                <filter id="glow2-cat-<%= fundraiser.public_id %>" x="-50%" y="-50%" width="200%" height="200%">
+                                                  <feGaussianBlur stdDeviation="0.6" result="coloredBlur"/>
+                                                  <feMerge>
+                                                    <feMergeNode in="coloredBlur"/>
+                                                    <feMergeNode in="SourceGraphic"/>
+                                                  </feMerge>
+                                                </filter>
+                                              </defs>
+                                              <circle cx="12" cy="12" r="11" fill="url(#charityGrad-cat-<%= fundraiser.public_id %>)" stroke="#fff" stroke-width="0.8">
+                                                <animate attributeName="r" values="11;11.4;11" dur="2.5s" repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="1;0.92;1" dur="3s" repeatCount="indefinite" />
+                                              </circle>
+                                              <path d="M12 15.5 C8 12, 6 9.5, 7 7 C8 5, 10 5, 12 7 C14 5, 16 5, 17 7 C18 9.5, 16 12, 12 15.5" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="28" stroke-dashoffset="28" filter="url(#glow2-cat-<%= fundraiser.public_id %>)">
+                                                <animate attributeName="stroke-dashoffset" values="28;0;0;28" dur="3s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1" />
+                                                <animate attributeName="stroke-width" values="2.2;2.7;2.2" dur="2s" repeatCount="indefinite" />
+                                              </path>
+                                              <circle cx="12" cy="12" r="11" fill="none" stroke="#2ecc71" stroke-width="0.5" opacity="0">
+                                                <animate attributeName="r" values="11;14;16" dur="2.5s" repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="0.5;0;0" dur="2.5s" repeatCount="indefinite" />
+                                              </circle>
+                                            </svg>
+                                            <span class="tooltip tooltip-charity">This campaign is for a charity</span>
+                                          </span>
+                                        <% } %>
+                                        <% if (fundraiser.is_urgent) { %>
+                                          <span class="icon-wrapper">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style="display: inline-block; vertical-align: middle;">
+                                              <defs>
+                                                <linearGradient id="urgentGrad-cat-<%= fundraiser.public_id %>" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                  <stop offset="0%" style="stop-color:#ff4757;stop-opacity:1" />
+                                                  <stop offset="100%" style="stop-color:#e84118;stop-opacity:1" />
+                                                </linearGradient>
+                                                <filter id="glow3-cat-<%= fundraiser.public_id %>" x="-50%" y="-50%" width="200%" height="200%">
+                                                  <feGaussianBlur stdDeviation="0.6" result="coloredBlur"/>
+                                                  <feMerge>
+                                                    <feMergeNode in="coloredBlur"/>
+                                                    <feMergeNode in="SourceGraphic"/>
+                                                  </feMerge>
+                                                </filter>
+                                              </defs>
+                                              <circle cx="12" cy="12" r="11" fill="url(#urgentGrad-cat-<%= fundraiser.public_id %>)" stroke="#fff" stroke-width="0.8">
+                                                <animate attributeName="r" values="11;11.4;11" dur="2.5s" repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="1;0.92;1" dur="3s" repeatCount="indefinite" />
+                                              </circle>
+                                              <path d="M12 17 L12 6 M7 11 L12 6 L17 11" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="26" stroke-dashoffset="26" filter="url(#glow3-cat-<%= fundraiser.public_id %>)">
+                                                <animate attributeName="stroke-dashoffset" values="26;0;0;26" dur="3s" repeatCount="indefinite" keyTimes="0;0.3;0.8;1" />
+                                                <animate attributeName="stroke-width" values="2.5;3;2.5" dur="2s" repeatCount="indefinite" />
+                                              </path>
+                                              <path d="M12 17 L12 6 M7 11 L12 6 L17 11" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0" filter="url(#glow3-cat-<%= fundraiser.public_id %>)">
+                                                <animate attributeName="opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite" keyTimes="0;0.3;1" />
+                                                <animateTransform attributeName="transform" type="translate" values="0 2; 0 -3; 0 -4" dur="2s" repeatCount="indefinite" keyTimes="0;0.5;1" />
+                                              </path>
+                                              <path d="M12 17 L12 6 M7 11 L12 6 L17 11" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0" filter="url(#glow3-cat-<%= fundraiser.public_id %>)">
+                                                <animate attributeName="opacity" values="0;0.4;0" dur="2s" repeatCount="indefinite" keyTimes="0;0.3;1" begin="1s" />
+                                                <animateTransform attributeName="transform" type="translate" values="0 2; 0 -3; 0 -4" dur="2s" repeatCount="indefinite" keyTimes="0;0.5;1" begin="1s" />
+                                              </path>
+                                              <circle cx="12" cy="12" r="11" fill="none" stroke="#ff4757" stroke-width="0.5" opacity="0">
+                                                <animate attributeName="r" values="11;14;16" dur="2.5s" repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="0.5;0;0" dur="2.5s" repeatCount="indefinite" />
+                                              </circle>
+                                            </svg>
+                                            <span class="tooltip tooltip-urgent">This campaign urgently needs donations</span>
+                                          </span>
+                                        <% } %>
+                                    </div>
+                                </div>
+                                <div class="fundraiser-img" style="background: url('<%= fundraiser.fundraiser_main_image %>'); background-size: cover; background-position: center;"
+                                onclick="window.location.href='/fundraiser/<%= fundraiser.public_id %>'"></div>
+                                <div class="fundraiser-title">
+                                    <h2 class="main-title"><%= fundraiser.fundraiser_title.length > 15 ? fundraiser.fundraiser_title.substring(0, 15) + '...' : fundraiser.fundraiser_title %></h2>
+                                    <span><%= fundraiser.user ? fundraiser.user.locationString : 'Location not specified' %></span>
+                                </div>
+                                <p class="fundraiser-des">
+                                    <%= fundraiser.fundraiser_description.length > 150 ? fundraiser.fundraiser_description.substring(0, 150) + '...' : fundraiser.fundraiser_description %>
+                                </p>
+                                <div class="fundraiser-btns">
+                                    <div class="flex-btns">
+                                        <button class="save-fundraiser-btn donate-later-btn btn-website">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-bookmark-plus" viewBox="0 0 16 16">
+                                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                                                <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4"/>
+                                            </svg>
+                                        </button>
+                                        <div class="donation-bar">
+                                            <div class="donation-scale">
+                                                <div class="donation-progress" style="width: <%= fundraiser.progressWidth || (fundraiser.progress_percentage + '%') %>;"></div>
+                                            </div>
+                                            <div class="donation-money-number">
+                                                <div class="money" data-goal="<%= fundraiser.fundraiser_target_amount || fundraiser.target_amount %>">
+                                                $<%= (fundraiser.fundraiser_collected_amount || 0).toLocaleString() %> / $<%= (fundraiser.fundraiser_target_amount || fundraiser.target_amount || 0).toLocaleString() %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="donate-btn btn-website" href="/fundraiser/<%= fundraiser.public_id || fundraiser.id %>" data-i18n="categoryDonateBtnTgt">Donate</a>
+                                </div>
+                            </div>
+                            <% } %>
+                        <% }); %>
+                    <% } else { %>
+                        <div class="no-fundraisers">
+                            <p>No fundraisers found for this category.</p>
+                        </div>
+                    <% } %>
+                </div>
+                <!-- End My Fundraisers Boxes -->
+                
+                <!-- Start Show More Button -->
+                <% if (hasMore) { %>
+                    <div class="show-more-box">
+                        <!-- Start Pagination Controls -->
+                        <div class="pagination-controls category-pagination" data-section="category" data-category-id="<%= category.category_id %>">
+                            <button class="prev-page-btn btn-website" data-page="<%= currentPage - 1 %>" <%= currentPage <= 1 ? 'disabled' : '' %>>Previous</button>
+                            <span class="page-info">Page <%= currentPage %> of <%= totalPages %></span>
+                            <button class="next-page-btn btn-website" data-page="<%= currentPage + 1 %>" <%= currentPage >= totalPages ? 'disabled' : '' %>>Next</button>
+                        </div>
+                        <!-- End Pagination Controls -->
+                    </div>
+                <% } %>
+                <!-- End Show More Button -->
+            </div>
+            <!-- End Category Fundraisers Boxes -->
+        </div>
+    </div>
+    <!-- End Main Content -->
+  </header>
+  <!-- End Header -->
+  <!-- Start Footer Section -->
+  <footer class="faq-footer footer-sec">
+    <!-- Start Copyright Section -->
+    <div class="copyright-box">
+      <ul class="copyright-box-list">
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li>&copy; 2025 Copyright Nowrap Inc.</li>
+      </ul>
+    </div>
+    <!-- End Copyright Section -->
+  </footer>
+  <!-- End Footer Section -->
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <!-- Jquery -->
+  <script src="/assets/js/jquery.js"></script>
+  <!-- Owl Carousel js -->
+  <script src="/assets/js/owl.carousel.min.js"></script>
+  <!-- مكتبات i18next من CDN -->
+  <script src="/assets/libs/i18next.min.js"></script>
+  <script src="/assets/libs/i18nextHttpBackend.js"></script>
+  <script src="/assets/libs/i18nextBrowserLanguageDetector.js"></script>
+  <!-- Custom my js -->
+  <script src="/assets/js/category.js"></script>
+  <!-- NEW: custom Google Translate script -->
+  <script src="/assets/js/google-translate-custom.js"></script>
+  <!-- FontAwesome Icon-->
+  <!-- <script src="https://kit.fontawesome.com/6fccdcc8fe.js" crossorigin="anonymous"></script> -->
+</body> 

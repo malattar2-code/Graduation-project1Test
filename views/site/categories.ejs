@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Najdah - Categories</title>
+<!-- Owl Carousel -->
+  <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+  <!-- my fotawesome -->
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <!-- my style css -->
+  <link rel="stylesheet" href="/assets/css/style.scss">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/image/Home-Page/header/najdah-icon.png">
+  <!-- Compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+</head>
+<body>
+  <!-- Start Header -->
+  <header class="categories-header-sec" id="header-sec">
+    <!-- Start Nav -->
+    <nav>
+      <!-- Start Nav Links -->
+      <a class="links-list btn-website" id="menuButton">
+        <img src="/assets/image/Home-Page/header/menus.png" alt="Menu">
+      </a>
+      <!-- Start Dropdown Access Menu -->
+      <div class="dropdown-content" id="dropdownMenu">
+        <a href="/ %>" data-i18n="dropdownHomeTgt">Home</a>
+        <a href="/userPanelIndigent %>" data-i18n="dropdownDashboardTgt" id="controlPanelBtn">Dashboard</a>
+        <a href="/all-fundraisers %>" data-i18n="dropdownFundraisersTgt">Fundraisers</a>
+        <a href="/categories %>" data-i18n="dropdownCategoriesTgt">Categories</a>
+        <a href="/faq %>" data-i18n="dropdownContactTgt">Contact Us</a>
+        <a class="language-menu" id="languageMenu" data-i18n="dropdownLanguageTgt">Language</a>
+        <div class="language-switcher" id="languageSwitcher">
+          <button class="lang-btn active" id="en-btn">English</button>
+          <button class="lang-btn" id="ar-btn">العربية</button>
+        </div>
+      </div>
+      <!-- End Dropdown Access Menu -->
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <!-- End Nav Links -->
+      <!-- Start Logo -->
+      <a href="/" class="brand">
+        <img src="/assets/image/Home-Page/header/najdah.png" alt="">
+      </a>
+      <!-- End Logo -->
+       <!-- Start Search And Contact -->
+      <div class="search-and-contact">
+        <!-- <div class="search-box">
+          <input type="text" placeholder="search...">
+          <div class="search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+          </div>
+        </div> -->
+        <a class="help-btn btn-website" id="helpBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-question-lg" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215 0 1.344-.665 2.288-1.79 2.973-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712 1.03-.632 1.397-1.135 1.397-2.028 0-.979-.758-1.698-1.926-1.698-1.009 0-1.71.529-1.938 1.402-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09 0-.618-.473-1.092-1.095-1.092-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14"/>
+          </svg>
+        </a>
+        <!-- Start Submit A Complaint Box(Form) -->
+        <div class="submit-complaint" id="submitComplaint">
+            <h1 data-i18n="complaintTitleTgt">Enter the problem you are facing</h1>
+            <form id="complaintForm" method="post">
+                <div class="title-filed input-box">
+                    <label class="label-desc" for="complaint_content" data-i18n="complaintLabelTgt">Enter A Problem</label>
+                    <textarea 
+                        id="complaint_content" 
+                        name="complaint_content" 
+                        required 
+                        maxlength="100"
+                    ></textarea>
+                    <div class="characters">
+                        <span class="signal_num">0</span>
+                        <span class="limit_num">/100</span>
+                    </div>
+                </div>
+                <button type="submit" class="complaint-submit-btn btn-website" data-i18n="complaintBtnTgt">
+                    Send
+                </button>
+            </form>
+            <div id="complaintMessage" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;"></div>
+        </div>
+        <!-- End Submit A Complaint Box(Form) -->
+      </div>
+      <!-- End Search And Contact -->
+    </nav>
+    <!-- End Nav -->
+    <!-- Start Main Content -->
+    <div class="categories-main-content">
+      <div class="container">
+        <div class="title">
+          <h1 data-i18n="categorieTitleTgt">Categories</h1>
+          <p data-i18n="categorieDescriptionTgt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa quas accusamus placeat at voluptatem id assumenda numquam cupiditate ab, molestiae quae tempore consectetur reiciendis voluptatum repellat corporis nesciunt soluta perferendis!</p>
+        </div>
+        <div class="split-line"></div>
+        <!-- Start Categories Boxes -->
+        <!-- Display Categories Only - No Form -->
+        <div class="categories-section">
+            <div class="categories-boxes" id="categoriesContainer">
+                <% if (categories && categories.length > 0) { %>
+                    <% categories.forEach(function(category) { %>
+                        <div class="categorie-box" data-category-id="<%= category.category_id %>">
+                            <div class="categorie-icon">
+                                <img src="<%= category.category_image || '/assets/image/categories-page/categories/default-category.png' %>" 
+                                     alt="<%= category.category_name %>"
+                                     onerror="this.src='/assets/image/categories-page/categories/default-category.png'">
+                            </div>
+                            <div class="categorie-name">
+                                <h2><%= category.category_name %></h2>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No categories available yet.</p>
+                <% } %>
+            </div>
+        </div>
+        <!-- End Categories Boxes -->
+      </div>
+    </div>
+    <!-- End Main Content -->
+  </header>
+  <!-- End Header -->
+  <!-- Start Most Viewed Categories -->
+  <!-- End Most Viewed Categories -->
+  <!-- Start Footer Section -->
+  <footer class="footer-sec">
+    <!-- Start Copyright Section -->
+    <div class="copyright-box">
+      <ul class="copyright-box-list">
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li>&copy; 2025 Copyright Nowrap Inc.</li>
+      </ul>
+    </div>
+    <!-- End Copyright Section -->
+  </footer>
+  <!-- End Footer Section -->
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+  <!-- Jquery -->
+  <script src="/assets/js/jquery.js"></script>
+  <!-- Owl Carousel js -->
+  <script src="/assets/js/owl.carousel.min.js"></script>
+  <!-- مكتبات i18next من CDN -->
+  <script src="/assets/libs/i18next.min.js"></script>
+  <script src="/assets/libs/i18nextHttpBackend.js"></script>
+  <script src="/assets/libs/i18nextBrowserLanguageDetector.js"></script>
+
+  <!-- الكود الخاص بك -->
+  <script src="/assets/js/categories.js"></script>
+  <!-- NEW: custom Google Translate script -->
+  <script src="/assets/js/google-translate-custom.js"></script>
+  <!-- FontAwesome Icon-->
+  <!-- <script src="https://kit.fontawesome.com/6fccdcc8fe.js" crossorigin="anonymous"></script> -->
+  <!-- 1. حاوية أداة الترجمة (مخفية لأننا سنحفزها عبر أزرارك الخاصة) -->
+  <!-- NEW: custom Google Translate script -->
+  <script src="/assets/js/google-translate-custom.js"></script>
+</body> 

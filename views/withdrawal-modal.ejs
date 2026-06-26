@@ -1,0 +1,731 @@
+
+<!-- Withdrawal Modal Overlay -->
+<div id="withdrawalModal" class="withdrawal-modal-overlay" style="display: none;">
+  <div class="withdrawal-modal">
+    <!-- Close Button -->
+    <button class="withdrawal-modal__close" id="withdrawalModalClose" aria-label="Close withdrawal modal">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- Modal Header -->
+    <div class="withdrawal-modal__header">
+      <div class="withdrawal-modal__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff9a17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+          <line x1="1" y1="10" x2="23" y2="10"></line>
+        </svg>
+      </div>
+      <h2 class="withdrawal-modal__title">Request Withdrawal</h2>
+      <p class="withdrawal-modal__subtitle" id="withdrawalSubtitle">Withdraw your campaign funds</p>
+    </div>
+
+    <!-- Loading State -->
+    <div class="withdrawal-modal__step" id="withdrawalLoading" style="display: none;">
+      <div class="withdrawal-modal__loading">
+        <div class="withdrawal-modal__spinner"></div>
+        <p>Checking withdrawal eligibility...</p>
+      </div>
+    </div>
+
+    <!-- Step 1: Not Eligible -->
+    <div class="withdrawal-modal__step" id="withdrawalNotEligible" style="display: none;">
+      <div class="withdrawal-modal__result withdrawal-modal__result--info">
+        <div class="withdrawal-modal__result-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff9a17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+        </div>
+        <h3 class="withdrawal-modal__result-title">Withdrawal Not Available</h3>
+        <p class="withdrawal-modal__result-message" id="notEligibleMessage">
+          This campaign is not yet eligible for withdrawal.
+        </p>
+        <div class="withdrawal-modal__result-actions">
+          <button class="withdrawal-modal__btn withdrawal-modal__btn--primary" id="notEligibleClose">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: Eligibility Info & Amount Input -->
+    <div class="withdrawal-modal__step" id="withdrawalStep1" style="display: none;">
+      <!-- Balance Summary -->
+      <div class="withdrawal-modal__balance-card">
+        <h4 class="withdrawal-modal__balance-title">Campaign Balance</h4>
+        <div class="withdrawal-modal__balance-grid">
+          <div class="withdrawal-modal__balance-item">
+            <span class="withdrawal-modal__balance-label">Total Raised</span>
+            <span class="withdrawal-modal__balance-value" id="withdrawTotalBalance">$0.00</span>
+          </div>
+          <div class="withdrawal-modal__balance-item">
+            <span class="withdrawal-modal__balance-label">Available</span>
+            <span class="withdrawal-modal__balance-value withdrawal-modal__balance-value--green" id="withdrawAvailableBalance">$0.00</span>
+          </div>
+          <div class="withdrawal-modal__balance-item">
+            <span class="withdrawal-modal__balance-label">Pending</span>
+            <span class="withdrawal-modal__balance-value withdrawal-modal__balance-value--orange" id="withdrawPendingBalance">$0.00</span>
+          </div>
+          <div class="withdrawal-modal__balance-item">
+            <span class="withdrawal-modal__balance-label">Withdrawn</span>
+            <span class="withdrawal-modal__balance-value" id="withdrawTotalWithdrawn">$0.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Withdrawal Type Info -->
+      <div class="withdrawal-modal__type-info" id="withdrawalTypeInfo">
+        <div class="withdrawal-modal__type-badge" id="withdrawalTypeBadge">Early Withdrawal</div>
+        <p class="withdrawal-modal__type-desc" id="withdrawalTypeDesc">
+          You can withdraw up to 40% of your campaign target since you've reached the threshold.
+        </p>
+      </div>
+
+      <!-- Amount Input -->
+      <div class="withdrawal-modal__amount-section">
+        <label class="withdrawal-modal__label" for="withdrawalAmount">Withdrawal Amount</label>
+        <div class="withdrawal-modal__input-wrapper">
+          <span class="withdrawal-modal__currency">$</span>
+          <input 
+            type="number" 
+            id="withdrawalAmount" 
+            class="withdrawal-modal__input" 
+            placeholder="0.00" 
+            min="1" 
+            step="0.01"
+          >
+        </div>
+        <p class="withdrawal-modal__hint">
+          Maximum: <strong id="withdrawMaxAmount">$0.00</strong> 
+          <span id="withdrawMinHint">| Minimum: $1.00</span>
+        </p>
+      </div>
+
+      <!-- Fee Preview -->
+      <div class="withdrawal-modal__fee-preview" id="withdrawalFeePreview" style="display: none;">
+        <div class="withdrawal-modal__fee-row">
+          <span>Withdrawal amount</span>
+          <span id="withdrawFeeGross">$0.00</span>
+        </div>
+        <div class="withdrawal-modal__fee-row">
+          <span>Platform fee <small>(3%)</small></span>
+          <span id="withdrawFeeAmount">$0.00</span>
+        </div>
+        <div class="withdrawal-modal__fee-row withdrawal-modal__fee-row--total">
+          <span>You receive</span>
+          <span id="withdrawFeeNet">$0.00</span>
+        </div>
+      </div>
+
+      <div class="withdrawal-modal__error" id="withdrawalStep1Error" style="display: none;"></div>
+
+      <button class="withdrawal-modal__btn withdrawal-modal__btn--primary" id="withdrawalContinueBtn" disabled>
+        Continue
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Step 3: Withdrawal Method Selection -->
+    <div class="withdrawal-modal__step" id="withdrawalStep2" style="display: none;">
+      <div class="withdrawal-modal__summary">
+        <span>Withdrawing</span>
+        <strong id="withdrawalSummaryAmount">$0.00</strong>
+        <span id="withdrawalSummaryNetWrap">(you receive <strong id="withdrawalSummaryNet">$0.00</strong>)</span>
+      </div>
+
+      <!-- Method Selection Tabs -->
+      <div class="withdrawal-modal__method-tabs">
+        <button class="withdrawal-modal__method-tab" data-method="bank_transfer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="1" y1="12" x2="23" y2="12"></line>
+            <polyline points="23 12 17 6 7 6 1 12"></polyline>
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+          </svg>
+          Bank Transfer
+        </button>
+        <button class="withdrawal-modal__method-tab" data-method="paypal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7.5 18h-3a1.5 1.5 0 0 1-1.5-1.5V3a1.5 1.5 0 0 1 1.5-1.5h11.5a4 4 0 0 1 4 4c0 2.2-1.8 4-4 4H15a1.5 1.5 0 0 0-1.5 1.5v.5"></path>
+          </svg>
+          PayPal
+        </button>
+        <button class="withdrawal-modal__method-tab" data-method="palpay">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          </svg>
+          PalPay
+        </button>
+        <button class="withdrawal-modal__method-tab" data-method="stripe">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+            <line x1="1" y1="10" x2="23" y2="10"></line>
+          </svg>
+          Stripe
+        </button>
+      </div>
+
+      <!-- Bank Transfer Form -->
+      <div class="withdrawal-modal__method-form" id="form_bank_transfer" style="display: none;">
+        <div class="withdrawal-modal__form-group">
+          <label class="withdrawal-modal__label" for="bankAccountHolder">Account Holder Name</label>
+          <input type="text" id="bankAccountHolder" class="withdrawal-modal__input withdrawal-modal__input--full" placeholder="Full name on account">
+        </div>
+        <div class="withdrawal-modal__form-group">
+          <label class="withdrawal-modal__label" for="bankAccountNumber">Account Number</label>
+          <input type="text" id="bankAccountNumber" class="withdrawal-modal__input withdrawal-modal__input--full" placeholder="Bank account number">
+        </div>
+        <div class="withdrawal-modal__form-group">
+          <label class="withdrawal-modal__label" for="bankIban">IBAN</label>
+          <input type="text" id="bankIban" class="withdrawal-modal__input withdrawal-modal__input--full" placeholder="IBAN (e.g., PS...)">
+        </div>
+      </div>
+
+      <!-- PayPal Form -->
+      <div class="withdrawal-modal__method-form" id="form_paypal" style="display: none;">
+        <div class="withdrawal-modal__form-group">
+          <label class="withdrawal-modal__label" for="paypalEmail">PayPal Email</label>
+          <input type="email" id="paypalEmail" class="withdrawal-modal__input withdrawal-modal__input--full" placeholder="your@email.com">
+        </div>
+      </div>
+
+      <!-- PalPay Form -->
+      <div class="withdrawal-modal__method-form" id="form_palpay" style="display: none;">
+        <div class="withdrawal-modal__form-group">
+          <label class="withdrawal-modal__label" for="palpayMobile">Mobile Number</label>
+          <input type="tel" id="palpayMobile" class="withdrawal-modal__input withdrawal-modal__input--full" placeholder="05XXXXXXXX">
+        </div>
+      </div>
+
+      <!-- Stripe Form -->
+      <div class="withdrawal-modal__method-form" id="form_stripe" style="display: none;">
+        <div class="withdrawal-modal__form-group">
+          <label class="withdrawal-modal__label" for="stripeAccountId">Stripe Account ID</label>
+          <input type="text" id="stripeAccountId" class="withdrawal-modal__input withdrawal-modal__input--full" placeholder="acct_xxxxxxxxxxxx">
+          <p class="withdrawal-modal__hint">Your Stripe connected account ID starting with "acct_"</p>
+        </div>
+      </div>
+
+      <!-- Notes -->
+      <div class="withdrawal-modal__form-group">
+        <label class="withdrawal-modal__label" for="withdrawalNotes">Notes (optional)</label>
+        <textarea id="withdrawalNotes" class="withdrawal-modal__textarea" placeholder="Any additional information..." maxlength="500"></textarea>
+      </div>
+
+      <div class="withdrawal-modal__error" id="withdrawalStep2Error" style="display: none;"></div>
+
+      <div class="withdrawal-modal__btn-group">
+        <button class="withdrawal-modal__btn withdrawal-modal__btn--secondary" id="withdrawalBackBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back
+        </button>
+        <button class="withdrawal-modal__btn withdrawal-modal__btn--primary" id="withdrawalSubmitBtn">
+          <span class="withdrawal-modal__btn-text">Submit Request</span>
+          <span class="withdrawal-modal__btn-loading" style="display: none;">
+            <span class="withdrawal-modal__spinner"></span>
+            Submitting...
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 4: Success -->
+    <div class="withdrawal-modal__step" id="withdrawalStep3" style="display: none;">
+      <div class="withdrawal-modal__result withdrawal-modal__result--success">
+        <div class="withdrawal-modal__result-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3 class="withdrawal-modal__result-title">Request Submitted!</h3>
+        <p class="withdrawal-modal__result-message">
+          Your withdrawal request of <strong id="withdrawSuccessAmount">$0.00</strong> has been submitted for review.
+        </p>
+        <p class="withdrawal-modal__result-detail">
+          An admin will review your request within 1-3 business days. You'll be notified once it's approved and processed.
+        </p>
+        <div class="withdrawal-modal__result-actions">
+          <button class="withdrawal-modal__btn withdrawal-modal__btn--primary" id="withdrawalSuccessClose">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5: Error -->
+    <div class="withdrawal-modal__step" id="withdrawalStep4" style="display: none;">
+      <div class="withdrawal-modal__result withdrawal-modal__result--error">
+        <div class="withdrawal-modal__result-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="15" y1="9" x2="9" y2="15"></line>
+            <line x1="9" y1="9" x2="15" y2="15"></line>
+          </svg>
+        </div>
+        <h3 class="withdrawal-modal__result-title">Request Failed</h3>
+        <p class="withdrawal-modal__result-message" id="withdrawalErrorMessage">
+          Something went wrong while submitting your request. Please try again.
+        </p>
+        <div class="withdrawal-modal__result-actions">
+          <button class="withdrawal-modal__btn withdrawal-modal__btn--secondary" id="withdrawalErrorRetry">Try Again</button>
+          <button class="withdrawal-modal__btn withdrawal-modal__btn--outline" id="withdrawalErrorClose">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Withdrawal Modal Styles -->
+<style>
+/* ── Modal Overlay ────────────────────────────────────────────────────────── */
+.withdrawal-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: withdrawalFadeIn 0.25s ease-out;
+}
+@keyframes withdrawalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Modal Container ──────────────────────────────────────────────────────── */
+.withdrawal-modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: withdrawalSlideUp 0.3s ease-out;
+}
+@keyframes withdrawalSlideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ── Close Button ─────────────────────────────────────────────────────────── */
+.withdrawal-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #f5f5f5;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 10;
+}
+.withdrawal-modal__close:hover {
+  background: #e0e0e0;
+  transform: rotate(90deg);
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+.withdrawal-modal__header {
+  padding: 32px 32px 20px;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+.withdrawal-modal__icon {
+  margin-bottom: 12px;
+}
+.withdrawal-modal__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #14213d;
+  margin: 0 0 6px;
+}
+.withdrawal-modal__subtitle {
+  font-size: 14px;
+  color: #767676;
+  margin: 0;
+}
+
+/* ── Steps ────────────────────────────────────────────────────────────────── */
+.withdrawal-modal__step {
+  padding: 24px 32px 32px;
+}
+
+/* ── Loading State ────────────────────────────────────────────────────────── */
+.withdrawal-modal__loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+
+/* ── Balance Card ─────────────────────────────────────────────────────────── */
+.withdrawal-modal__balance-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.withdrawal-modal__balance-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 12px;
+}
+.withdrawal-modal__balance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.withdrawal-modal__balance-item {
+  display: flex;
+  flex-direction: column;
+}
+.withdrawal-modal__balance-label {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 4px;
+}
+.withdrawal-modal__balance-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #14213d;
+}
+.withdrawal-modal__balance-value--green {
+  color: #27ae60;
+}
+.withdrawal-modal__balance-value--orange {
+  color: #ff9a17;
+}
+
+/* ── Type Info ────────────────────────────────────────────────────────────── */
+.withdrawal-modal__type-info {
+  background: #fff8f0;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+  border-left: 4px solid #ff9a17;
+}
+.withdrawal-modal__type-badge {
+  display: inline-block;
+  background: #ff9a17;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+.withdrawal-modal__type-desc {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Amount Section ───────────────────────────────────────────────────────── */
+.withdrawal-modal__amount-section {
+  margin-bottom: 16px;
+}
+.withdrawal-modal__label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.withdrawal-modal__input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.withdrawal-modal__currency {
+  position: absolute;
+  left: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #999;
+  pointer-events: none;
+}
+.withdrawal-modal__input {
+  width: 100%;
+  padding: 12px 14px 12px 32px;
+  border: 2px solid #e8e8e8;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #14213d;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.withdrawal-modal__input:focus {
+  border-color: #ff9a17;
+}
+.withdrawal-modal__input--full {
+  padding-left: 14px;
+}
+.withdrawal-modal__hint {
+  font-size: 12px;
+  color: #999;
+  margin: 6px 0 0;
+}
+
+/* ── Fee Preview ──────────────────────────────────────────────────────────── */
+.withdrawal-modal__fee-preview {
+  background: #f0fff4;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.withdrawal-modal__fee-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.withdrawal-modal__fee-row--total {
+  border-top: 1px solid #c8e6c9;
+  padding-top: 8px;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #14213d;
+}
+.withdrawal-modal__fee-row--total span:last-child {
+  color: #27ae60;
+}
+
+/* ── Summary ──────────────────────────────────────────────────────────────── */
+.withdrawal-modal__summary {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+.withdrawal-modal__summary strong {
+  color: #ff9a17;
+  font-weight: 700;
+}
+
+/* ── Method Tabs ──────────────────────────────────────────────────────────── */
+.withdrawal-modal__method-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.withdrawal-modal__method-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 4px;
+  border: 2px solid #e8e8e8;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.withdrawal-modal__method-tab:hover {
+  border-color: #ff9a17;
+  color: #ff9a17;
+}
+.withdrawal-modal__method-tab--active {
+  border-color: #ff9a17;
+  background: #fff8f0;
+  color: #ff9a17;
+}
+
+/* ── Method Forms ─────────────────────────────────────────────────────────── */
+.withdrawal-modal__method-form {
+  margin-bottom: 16px;
+}
+.withdrawal-modal__form-group {
+  margin-bottom: 14px;
+}
+
+/* ── Textarea ─────────────────────────────────────────────────────────────── */
+.withdrawal-modal__textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #e8e8e8;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #14213d;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.2s;
+  outline: none;
+  font-family: inherit;
+}
+.withdrawal-modal__textarea:focus {
+  border-color: #ff9a17;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+.withdrawal-modal__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  width: 100%;
+}
+.withdrawal-modal__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.withdrawal-modal__btn--primary {
+  background: #ff9a17;
+  color: #fff;
+}
+.withdrawal-modal__btn--primary:hover:not(:disabled) {
+  background: #e88b14;
+  transform: translateY(-1px);
+}
+.withdrawal-modal__btn--secondary {
+  background: #f0f0f0;
+  color: #555;
+}
+.withdrawal-modal__btn--secondary:hover {
+  background: #e0e0e0;
+}
+.withdrawal-modal__btn--outline {
+  background: transparent;
+  color: #999;
+  border: 1px solid #e0e0e0;
+}
+.withdrawal-modal__btn--outline:hover {
+  border-color: #999;
+  color: #666;
+}
+.withdrawal-modal__btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.withdrawal-modal__btn-group .withdrawal-modal__btn {
+  flex: 1;
+}
+
+/* ── Loading Spinner ──────────────────────────────────────────────────────── */
+.withdrawal-modal__spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: withdrawalSpin 0.8s linear infinite;
+}
+@keyframes withdrawalSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Error Messages ───────────────────────────────────────────────────────── */
+.withdrawal-modal__error {
+  background: #ffebee;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #c62828;
+}
+
+/* ── Result Steps ─────────────────────────────────────────────────────────── */
+.withdrawal-modal__result {
+  text-align: center;
+  padding: 20px 0;
+}
+.withdrawal-modal__result-icon {
+  margin-bottom: 16px;
+}
+.withdrawal-modal__result-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+.withdrawal-modal__result--success .withdrawal-modal__result-title {
+  color: #27ae60;
+}
+.withdrawal-modal__result--error .withdrawal-modal__result-title {
+  color: #e74c3c;
+}
+.withdrawal-modal__result--info .withdrawal-modal__result-title {
+  color: #ff9a17;
+}
+.withdrawal-modal__result-message {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+.withdrawal-modal__result-detail {
+  font-size: 13px;
+  color: #999;
+  margin: 0 0 24px;
+}
+.withdrawal-modal__result-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.withdrawal-modal__result-actions .withdrawal-modal__btn {
+  width: auto;
+  min-width: 120px;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .withdrawal-modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .withdrawal-modal {
+    max-height: 95vh;
+    border-radius: 16px 16px 0 0;
+  }
+  .withdrawal-modal__step {
+    padding: 20px 20px 24px;
+  }
+  .withdrawal-modal__header {
+    padding: 24px 20px 16px;
+  }
+  .withdrawal-modal__method-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>

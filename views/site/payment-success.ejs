@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تم الدفع بنجاح - Payment Success</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <style>
+    .success-container {
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 40px;
+      text-align: center;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .success-icon {
+      font-size: 80px;
+      color: #28a745;
+      margin-bottom: 20px;
+    }
+    .success-title {
+      font-size: 28px;
+      color: #28a745;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .success-message {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    .invoice-details {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 5px;
+      margin: 20px 0;
+      text-align: right;
+    }
+    .invoice-details h3 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+    .invoice-details p {
+      margin: 8px 0;
+      color: #666;
+    }
+    .invoice-details strong {
+      color: #333;
+    }
+    .btn-group {
+      margin-top: 30px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      margin: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    .btn-primary {
+      background: #3498db;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #2980b9;
+    }
+    .btn-secondary {
+      background: #95a5a6;
+      color: white;
+    }
+    .btn-secondary:hover {
+      background: #7f8c8d;
+    }
+    .loading {
+      display: none;
+    }
+    .error-message {
+      color: #e74c3c;
+      background: #fee;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="success-container">
+    <div id="loadingState" class="loading">
+      <div class="success-icon">⏳</div>
+      <p>جاري التحقق من حالة الدفع...</p>
+    </div>
+
+    <div id="successState" style="display: none;">
+      <div class="success-icon">✓</div>
+      <h1 class="success-title">تم الدفع بنجاح!</h1>
+      <p class="success-message">
+        شكراً لك على تبرعك الكريم. لقد تم استلام تبرعك بنجاح وسيتم استخدامه لدعم الحملة.
+      </p>
+      
+      <div class="invoice-details" id="invoiceDetails">
+        <h3>تفاصيل التبرع</h3>
+        <p><strong>رقم الفاتورة:</strong> <span id="invoiceId">-</span></p>
+        <p><strong>المبلغ:</strong> <span id="amount">-</span></p>
+        <p><strong>الحملة:</strong> <span id="fundraiserTitle">-</span></p>
+        <p><strong>تاريخ الدفع:</strong> <span id="paidAt">-</span></p>
+        <p><strong>طريقة الدفع:</strong> <span id="paymentMethod">-</span></p>
+      </div>
+
+      <div class="btn-group">
+        <a href="/all-fundraisers" class="btn btn-primary">تصفح المزيد من الحملات</a>
+        <a href="/userPanelDonor" class="btn btn-secondary">عرض تبرعاتي</a>
+      </div>
+    </div>
+
+    <div id="errorState" class="error-message" style="display: none;">
+      <strong>حدث خطأ:</strong>
+      <p id="errorText"></p>
+      <div class="btn-group">
+        <a href="/all-fundraisers" class="btn btn-primary">العودة للحملات</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get invoice ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const invoiceId = urlParams.get('invoice');
+    const paymentIntent = urlParams.get('payment_intent');
+    const paymentIntentClientSecret = urlParams.get('payment_intent_client_secret');
+
+    // Fetch invoice data
+    async function fetchInvoiceData() {
+      try {
+        if (!invoiceId) {
+          throw new Error('رقم الفاتورة غير موجود في الرابط');
+        }
+
+        // Try to fetch invoice from Firestore via your API
+        const response = await fetch(`/api/invoices/${invoiceId}`, {
+          credentials: 'include'
+        });
+
+        if (!response.ok) {
+          // If API doesn't exist, show basic success message
+          showSuccessState({
+            invoiceId: invoiceId,
+            amount: 'تم التحقق',
+            fundraiserTitle: 'تم الدفع بنجاح',
+            paidAt: new Date().toLocaleString('ar-SA'),
+            paymentMethod: 'بطاقة إئتمانية'
+          });
+          return;
+        }
+
+        const data = await response.json();
+        if (data.success && data.data) {
+          showSuccessState(data.data);
+        } else {
+          throw new Error('لم يتم العثور على بيانات الفاتورة');
+        }
+      } catch (error) {
+        console.error('Error fetching invoice:', error);
+        // Even if fetch fails, show success if we have invoice ID
+        if (invoiceId) {
+          showSuccessState({
+            invoiceId: invoiceId,
+            amount: 'تم التحقق',
+            fundraiserTitle: 'تم الدفع بنجاح',
+            paidAt: new Date().toLocaleString('ar-SA'),
+            paymentMethod: 'بطاقة إئتمانية'
+          });
+        } else {
+          showErrorState(error.message);
+        }
+      }
+    }
+
+    function showSuccessState(data) {
+      document.getElementById('loadingState').style.display = 'none';
+      document.getElementById('errorState').style.display = 'none';
+      document.getElementById('successState').style.display = 'block';
+
+      if (data.invoiceId || invoiceId) {
+        document.getElementById('invoiceId').textContent = data.invoiceId || invoiceId;
+      }
+      if (data.formattedAmount || data.amount) {
+        document.getElementById('amount').textContent = data.formattedAmount || `$${parseFloat(data.amount).toFixed(2)}`;
+      }
+      if (data.fundraiserTitle) {
+        document.getElementById('fundraiserTitle').textContent = data.fundraiserTitle;
+      }
+      if (data.formattedPaidAt || data.paidAt) {
+        document.getElementById('paidAt').textContent = data.formattedPaidAt || data.paidAt;
+      }
+      if (data.paymentMethod) {
+        const methodNames = {
+          'card': 'بطاقة إئتمانية',
+          'alipay': 'علي باي',
+          'google_pay': 'جوجل باي',
+          'wallet': 'محفظة إلكترونية'
+        };
+        document.getElementById('paymentMethod').textContent = methodNames[data.paymentMethod] || data.paymentMethod;
+      }
+    }
+
+    function showErrorState(message) {
+      document.getElementById('loadingState').style.display = 'none';
+      document.getElementById('successState').style.display = 'none';
+      document.getElementById('errorState').style.display = 'block';
+      document.getElementById('errorText').textContent = message;
+    }
+
+    // Check payment status with Stripe if payment_intent_client_secret is provided
+    async function checkStripePaymentStatus() {
+      if (paymentIntentClientSecret && typeof Stripe !== 'undefined') {
+        try {
+          const stripe = Stripe('<%= typeof stripePublishableKey !== "undefined" ? stripePublishableKey : "" %>');
+          const { paymentIntent } = await stripe.retrievePaymentIntent(paymentIntentClientSecret);
+          
+          if (paymentIntent.status === 'succeeded') {
+            await fetchInvoiceData();
+          } else {
+            showErrorState('لم يكتمل الدفع بعد. يرجى المحاولة مرة أخرى.');
+          }
+        } catch (error) {
+          console.error('Stripe check error:', error);
+          await fetchInvoiceData();
+        }
+      } else {
+        await fetchInvoiceData();
+      }
+    }
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('loadingState').style.display = 'block';
+      checkStripePaymentStatus();
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

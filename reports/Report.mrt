@@ -1,0 +1,1764 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <CalculationMode>Interpretation</CalculationMode>
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <firebase_structure Ref="2" type="Stimulsoft.Report.Dictionary.StiJsonDatabase" isKey="true">
+        <Alias>firebase-structure</Alias>
+        <HeadersString />
+        <Key />
+        <Name>firebase-structure</Name>
+        <PathData>D:\courses\nodjscourses\final\مجلد جديد\Graduation project1\services\firebase-structure.json</PathData>
+      </firebase_structure>
+    </Databases>
+    <DataSources isList="true" count="4">
+      <stats Ref="3" type="DataTableSource" isKey="true">
+        <Alias>stats</Alias>
+        <Columns isList="true" count="8">
+          <value>totalUsers,System.Decimal</value>
+          <value>totalDonors,System.Decimal</value>
+          <value>totalHelpSeekers,System.Decimal</value>
+          <value>totalNonFinancialRequests,System.Decimal</value>
+          <value>totalFinancialRequests,System.Decimal</value>
+          <value>totalDonations,System.Decimal</value>
+          <value>totalDonationsValue,System.Decimal</value>
+          <value>categoriesCount,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>450a91604ee24320959afeadf873a9d0</Key>
+        <Name>stats</Name>
+        <NameInSource>firebase-structure.stats</NameInSource>
+      </stats>
+      <stats_donorsList Ref="4" type="DataTableSource" isKey="true">
+        <Alias>stats_donorsList</Alias>
+        <Columns isList="true" count="0" />
+        <Dictionary isRef="1" />
+        <Key>90b135518cf742ea9a34996ebba37115</Key>
+        <Name>stats_donorsList</Name>
+        <NameInSource>firebase-structure.stats_donorsList</NameInSource>
+      </stats_donorsList>
+      <stats_financialRequests Ref="5" type="DataTableSource" isKey="true">
+        <Alias>stats_financialRequests</Alias>
+        <Columns isList="true" count="2">
+          <value>completed,System.Decimal</value>
+          <value>incomplete,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>805df5dfb49d4be084a2de2acfff24de</Key>
+        <Name>stats_financialRequests</Name>
+        <NameInSource>firebase-structure.stats_financialRequests</NameInSource>
+      </stats_financialRequests>
+      <stats_nonFinancialRequests Ref="6" type="DataTableSource" isKey="true">
+        <Alias>stats_nonFinancialRequests</Alias>
+        <Columns isList="true" count="2">
+          <value>completed,System.Decimal</value>
+          <value>incomplete,System.Decimal</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>dc98694015ec40098fd769492a1e31dc</Key>
+        <Name>stats_nonFinancialRequests</Name>
+        <NameInSource>firebase-structure.stats_nonFinancialRequests</NameInSource>
+      </stats_nonFinancialRequests>
+    </DataSources>
+    <Relations isList="true" count="3">
+      <stats Ref="7" type="DataRelation" isKey="true">
+        <Alias>stats</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>relationId</value>
+        </ChildColumns>
+        <ChildSource isRef="4" />
+        <Dictionary isRef="1" />
+        <Name>stats</Name>
+        <NameInSource>stats_donorsList</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>donorsList</value>
+        </ParentColumns>
+        <ParentSource isRef="3" />
+      </stats>
+      <stats Ref="8" type="DataRelation" isKey="true">
+        <Alias>stats</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>relationId</value>
+        </ChildColumns>
+        <ChildSource isRef="5" />
+        <Dictionary isRef="1" />
+        <Name>stats</Name>
+        <NameInSource>stats_financialRequests</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>financialRequests</value>
+        </ParentColumns>
+        <ParentSource isRef="3" />
+      </stats>
+      <stats Ref="9" type="DataRelation" isKey="true">
+        <Alias>stats</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>relationId</value>
+        </ChildColumns>
+        <ChildSource isRef="6" />
+        <Dictionary isRef="1" />
+        <Name>stats</Name>
+        <NameInSource>stats_nonFinancialRequests</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>nonFinancialRequests</value>
+        </ParentColumns>
+        <ParentSource isRef="3" />
+      </stats>
+    </Relations>
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <UserFunctions isList="true" count="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>cc22c580a0fe44e695dadde29230f115</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="10" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="39">
+        <ReportTitle Ref="11" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,7.72,0.5</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text_9 Ref="12" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.5,0.1,6.3,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,18</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Name>Text_9</Name>
+              <Page isRef="10" />
+              <Parent isRef="11" />
+              <Text>njdah reporte</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text_9>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>ReportTitle</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </ReportTitle>
+        <Headerstats Ref="13" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,1.1,7.72,0.2</ClientRectangle>
+          <Components isList="true" count="5">
+            <HeaderTextstats1 Ref="14" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black;True</Border>
+              <Brush>[3:81:103]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1.3,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>HeaderTextstats1</Name>
+              <Page isRef="10" />
+              <Parent isRef="13" />
+              <Text>total users</Text>
+              <TextBrush>White</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTextstats1>
+            <HeaderTextstats2 Ref="15" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black;True</Border>
+              <Brush>[3:81:103]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.3,0,1.5,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>HeaderTextstats2</Name>
+              <Page isRef="10" />
+              <Parent isRef="13" />
+              <Text>totalDonors</Text>
+              <TextBrush>White</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTextstats2>
+            <HeaderTextstats3 Ref="16" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black;True</Border>
+              <Brush>[3:81:103]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.8,0,1.4,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>HeaderTextstats3</Name>
+              <Page isRef="10" />
+              <Parent isRef="13" />
+              <Text>totalHelpSeekers</Text>
+              <TextBrush>White</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTextstats3>
+            <HeaderTextstats4 Ref="17" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black;True</Border>
+              <Brush>[3:81:103]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4.2,0,2.1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>HeaderTextstats4</Name>
+              <Page isRef="10" />
+              <Parent isRef="13" />
+              <Text>totalNonFinancialRequests</Text>
+              <TextBrush>White</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTextstats4>
+            <HeaderTextstats5 Ref="18" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black;True</Border>
+              <Brush>[3:81:103]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.3,0,1.4,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>HeaderTextstats5</Name>
+              <Page isRef="10" />
+              <Parent isRef="13" />
+              <Text>totalFinancialRequests</Text>
+              <TextBrush>White</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTextstats5>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>Headerstats</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </Headerstats>
+        <GroupHeaderBand1 Ref="19" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,1.7,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="6">
+            <Text_1 Ref="20" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,7.72,0.3</ClientRectangle>
+              <ComponentStyle>Moray_Group_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>Text_1</Name>
+              <Page isRef="10" />
+              <Parent isRef="19" />
+              <TextBrush>[3:81:103]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text_1>
+            <Text_2 Ref="21" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.1,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,18</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Name>Text_2</Name>
+              <Page isRef="10" />
+              <Parent isRef="19" />
+              <Text>{stats.totalUsers}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text_2>
+            <Text_3 Ref="22" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.3,0.1,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,18</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Name>Text_3</Name>
+              <Page isRef="10" />
+              <Parent isRef="19" />
+              <Text>{stats.totalDonors}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text_3>
+            <Text_4 Ref="23" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,0.1,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,18</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Name>Text_4</Name>
+              <Page isRef="10" />
+              <Parent isRef="19" />
+              <Text>{stats.totalHelpSeekers}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text_4>
+            <Text_5 Ref="24" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.2,0.1,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,18</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Name>Text_5</Name>
+              <Page isRef="10" />
+              <Parent isRef="19" />
+              <Text>{stats.totalNonFinancialRequests}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text_5>
+            <Text_6 Ref="25" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.3,0.1,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,18</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Name>Text_6</Name>
+              <Page isRef="10" />
+              <Parent isRef="19" />
+              <Text>{stats.totalFinancialRequests}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text_6>
+          </Components>
+          <Condition>{stats.totalUsers}</Condition>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupHeaderBand1</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupHeaderBand1>
+        <GroupHeaderstats0 Ref="26" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2.4,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <GroupHeaderTextstats0 Ref="27" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,7.72,0.3</ClientRectangle>
+              <ComponentStyle>Moray_Group_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>GroupHeaderTextstats0</Name>
+              <Page isRef="10" />
+              <Parent isRef="26" />
+              <Text>{stats.totalUsers}</Text>
+              <TextBrush>[3:81:103]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </GroupHeaderTextstats0>
+          </Components>
+          <Condition>{stats.totalUsers}</Condition>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupHeaderstats0</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupHeaderstats0>
+        <GroupHeaderstats1 Ref="28" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.1,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <GroupHeaderTextstats1 Ref="29" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,7.72,0.3</ClientRectangle>
+              <ComponentStyle>Moray_Group_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>GroupHeaderTextstats1</Name>
+              <Page isRef="10" />
+              <Parent isRef="28" />
+              <Text>{stats.totalDonors}</Text>
+              <TextBrush>[3:81:103]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </GroupHeaderTextstats1>
+          </Components>
+          <Condition>{stats.totalDonors}</Condition>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupHeaderstats1</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupHeaderstats1>
+        <GroupHeaderstats2 Ref="30" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.8,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <GroupHeaderTextstats2 Ref="31" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,7.72,0.3</ClientRectangle>
+              <ComponentStyle>Moray_Group_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>GroupHeaderTextstats2</Name>
+              <Page isRef="10" />
+              <Parent isRef="30" />
+              <Text>{stats.totalHelpSeekers}</Text>
+              <TextBrush>[3:81:103]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </GroupHeaderTextstats2>
+          </Components>
+          <Condition>{stats.totalHelpSeekers}</Condition>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupHeaderstats2</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupHeaderstats2>
+        <GroupHeaderstats3 Ref="32" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,4.5,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <GroupHeaderTextstats3 Ref="33" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,7.72,0.3</ClientRectangle>
+              <ComponentStyle>Moray_Group_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>GroupHeaderTextstats3</Name>
+              <Page isRef="10" />
+              <Parent isRef="32" />
+              <Text>{stats.totalNonFinancialRequests}</Text>
+              <TextBrush>[3:81:103]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </GroupHeaderTextstats3>
+          </Components>
+          <Condition>{stats.totalNonFinancialRequests}</Condition>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupHeaderstats3</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupHeaderstats3>
+        <GroupHeaderstats4 Ref="34" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,5.2,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <GroupHeaderTextstats4 Ref="35" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,7.72,0.3</ClientRectangle>
+              <ComponentStyle>Moray_Group_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>GroupHeaderTextstats4</Name>
+              <Page isRef="10" />
+              <Parent isRef="34" />
+              <Text>{stats.totalFinancialRequests}</Text>
+              <TextBrush>[3:81:103]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </GroupHeaderTextstats4>
+          </Components>
+          <Condition>{stats.totalFinancialRequests}</Condition>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupHeaderstats4</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupHeaderstats4>
+        <GroupHeaderstats5 Ref="36" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,5.9,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <GroupHeaderTextstats5 Ref="37" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,7.72,0.3</ClientRectangle>
+              <ComponentStyle>Moray_Group_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>GroupHeaderTextstats5</Name>
+              <Page isRef="10" />
+              <Parent isRef="36" />
+              <Text>{stats.totalDonations}</Text>
+              <TextBrush>[3:81:103]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </GroupHeaderTextstats5>
+          </Components>
+          <Condition>{stats.totalDonations}</Condition>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupHeaderstats5</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupHeaderstats5>
+        <GroupHeaderstats6 Ref="38" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,6.6,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <GroupHeaderTextstats6 Ref="39" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,7.72,0.3</ClientRectangle>
+              <ComponentStyle>Moray_Group_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>GroupHeaderTextstats6</Name>
+              <Page isRef="10" />
+              <Parent isRef="38" />
+              <Text>{stats.totalDonationsValue}</Text>
+              <TextBrush>[3:81:103]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </GroupHeaderTextstats6>
+          </Components>
+          <Condition>{stats.totalDonationsValue}</Condition>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupHeaderstats6</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupHeaderstats6>
+        <GroupHeaderstats7 Ref="40" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,7.3,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <GroupHeaderTextstats7 Ref="41" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,7.72,0.3</ClientRectangle>
+              <ComponentStyle>Moray_Group_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>GroupHeaderTextstats7</Name>
+              <Page isRef="10" />
+              <Parent isRef="40" />
+              <Text>{stats.categoriesCount}</Text>
+              <TextBrush>[3:81:103]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </GroupHeaderTextstats7>
+          </Components>
+          <Condition>{stats.categoriesCount}</Condition>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupHeaderstats7</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupHeaderstats7>
+        <GroupHeaderstats8 Ref="42" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,8,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <GroupHeaderTextstats8 Ref="43" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,7.72,0.3</ClientRectangle>
+              <ComponentStyle>Moray_Group_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>GroupHeaderTextstats8</Name>
+              <Page isRef="10" />
+              <Parent isRef="42" />
+              <Text>{stats_financialRequests.completed}</Text>
+              <TextBrush>[3:81:103]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </GroupHeaderTextstats8>
+          </Components>
+          <Condition>{stats_financialRequests.completed}</Condition>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupHeaderstats8</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupHeaderstats8>
+        <GroupHeaderstats9 Ref="44" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,8.7,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <GroupHeaderTextstats9 Ref="45" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,7.72,0.3</ClientRectangle>
+              <ComponentStyle>Moray_Group_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>GroupHeaderTextstats9</Name>
+              <Page isRef="10" />
+              <Parent isRef="44" />
+              <Text>{stats_financialRequests.incomplete}</Text>
+              <TextBrush>[3:81:103]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </GroupHeaderTextstats9>
+          </Components>
+          <Condition>{stats_financialRequests.incomplete}</Condition>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupHeaderstats9</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupHeaderstats9>
+        <GroupHeaderstats10 Ref="46" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,9.4,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <GroupHeaderTextstats10 Ref="47" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,7.72,0.3</ClientRectangle>
+              <ComponentStyle>Moray_Group_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>GroupHeaderTextstats10</Name>
+              <Page isRef="10" />
+              <Parent isRef="46" />
+              <Text>{stats_nonFinancialRequests.completed}</Text>
+              <TextBrush>[3:81:103]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </GroupHeaderTextstats10>
+          </Components>
+          <Condition>{stats_nonFinancialRequests.completed}</Condition>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupHeaderstats10</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupHeaderstats10>
+        <GroupHeaderstats11 Ref="48" type="GroupHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,10.1,7.72,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <GroupHeaderTextstats11 Ref="49" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,7.72,0.3</ClientRectangle>
+              <ComponentStyle>Moray_Group_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,13,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>GroupHeaderTextstats11</Name>
+              <Page isRef="10" />
+              <Parent isRef="48" />
+              <Text>{stats_nonFinancialRequests.incomplete}</Text>
+              <TextBrush>[3:81:103]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </GroupHeaderTextstats11>
+          </Components>
+          <Condition>{stats_nonFinancialRequests.incomplete}</Condition>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupHeaderstats11</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupHeaderstats11>
+        <Datastats Ref="50" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,10.8,7.72,0.2</ClientRectangle>
+          <Components isList="true" count="8">
+            <DataTextstats1 Ref="51" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Data1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>DataTextstats1</Name>
+              <Page isRef="10" />
+              <Parent isRef="50" />
+              <Text>{stats.totalUsers}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataTextstats1>
+            <DataTextstats2 Ref="52" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Data1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>DataTextstats2</Name>
+              <Page isRef="10" />
+              <Parent isRef="50" />
+              <Text>{stats.totalDonors}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataTextstats2>
+            <DataTextstats3 Ref="53" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Data1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>DataTextstats3</Name>
+              <Page isRef="10" />
+              <Parent isRef="50" />
+              <Text>{stats.totalHelpSeekers}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataTextstats3>
+            <DataTextstats4 Ref="54" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Data1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>DataTextstats4</Name>
+              <Page isRef="10" />
+              <Parent isRef="50" />
+              <Text>{stats.totalNonFinancialRequests}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataTextstats4>
+            <DataTextstats5 Ref="55" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Data1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>DataTextstats5</Name>
+              <Page isRef="10" />
+              <Parent isRef="50" />
+              <Text>{stats.totalFinancialRequests}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataTextstats5>
+            <DataTextstats6 Ref="56" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Data1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>DataTextstats6</Name>
+              <Page isRef="10" />
+              <Parent isRef="50" />
+              <Text>{stats.totalDonations}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataTextstats6>
+            <DataTextstats7 Ref="57" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Data1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>DataTextstats7</Name>
+              <Page isRef="10" />
+              <Parent isRef="50" />
+              <Text>{stats.totalDonationsValue}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataTextstats7>
+            <DataTextstats8 Ref="58" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>7,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Data1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>DataTextstats8</Name>
+              <Page isRef="10" />
+              <Parent isRef="50" />
+              <Text>{stats.categoriesCount}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataTextstats8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>stats</DataSourceName>
+          <EvenStyle>Moray_Data1_Even Style</EvenStyle>
+          <Expressions isList="true" count="0" />
+          <FilterMode>Or</FilterMode>
+          <Filters isList="true" count="0" />
+          <Name>Datastats</Name>
+          <OddStyle>Moray_Data1_Odd Style</OddStyle>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Sort isList="true" count="0" />
+        </Datastats>
+        <GroupFooterstats0 Ref="59" type="GroupFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,11.4,7.72,0.1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupFooterstats0</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupFooterstats0>
+        <GroupFooterstats1 Ref="60" type="GroupFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,11.9,7.72,0.1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupFooterstats1</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupFooterstats1>
+        <GroupFooterstats2 Ref="61" type="GroupFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,12.4,7.72,0.1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupFooterstats2</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupFooterstats2>
+        <GroupFooterstats3 Ref="62" type="GroupFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,12.9,7.72,0.1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupFooterstats3</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupFooterstats3>
+        <GroupFooterstats4 Ref="63" type="GroupFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,13.4,7.72,0.1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupFooterstats4</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupFooterstats4>
+        <GroupFooterstats5 Ref="64" type="GroupFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,13.9,7.72,0.1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupFooterstats5</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupFooterstats5>
+        <GroupFooterstats6 Ref="65" type="GroupFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,14.4,7.72,0.1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupFooterstats6</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupFooterstats6>
+        <GroupFooterstats7 Ref="66" type="GroupFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,14.9,7.72,0.1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupFooterstats7</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupFooterstats7>
+        <GroupFooterstats8 Ref="67" type="GroupFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,15.4,7.72,0.1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupFooterstats8</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupFooterstats8>
+        <GroupFooterstats9 Ref="68" type="GroupFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,15.9,7.72,0.1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupFooterstats9</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupFooterstats9>
+        <GroupFooterstats10 Ref="69" type="GroupFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,16.4,7.72,0.1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupFooterstats10</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupFooterstats10>
+        <GroupFooterstats11 Ref="70" type="GroupFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,16.9,7.72,0.1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>GroupFooterstats11</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </GroupFooterstats11>
+        <Footerstats Ref="71" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,17.4,7.72,0.2</ClientRectangle>
+          <Components isList="true" count="8">
+            <FooterTextstats1 Ref="72" type="Text" isKey="true">
+              <Border>Top;[0:31:53];3;Solid;False;4;Black</Border>
+              <Brush>[219:245:249]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Footer1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Name>FooterTextstats1</Name>
+              <Page isRef="10" />
+              <Parent isRef="71" />
+              <Text>{Count()}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </FooterTextstats1>
+            <FooterTextstats2 Ref="73" type="Text" isKey="true">
+              <Border>Top;[0:31:53];3;Solid;False;4;Black</Border>
+              <Brush>[219:245:249]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Footer1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Name>FooterTextstats2</Name>
+              <Page isRef="10" />
+              <Parent isRef="71" />
+              <Text>{Count()}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </FooterTextstats2>
+            <FooterTextstats3 Ref="74" type="Text" isKey="true">
+              <Border>Top;[0:31:53];3;Solid;False;4;Black</Border>
+              <Brush>[219:245:249]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Footer1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Name>FooterTextstats3</Name>
+              <Page isRef="10" />
+              <Parent isRef="71" />
+              <Text>{Count()}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </FooterTextstats3>
+            <FooterTextstats4 Ref="75" type="Text" isKey="true">
+              <Border>Top;[0:31:53];3;Solid;False;4;Black</Border>
+              <Brush>[219:245:249]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Footer1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Name>FooterTextstats4</Name>
+              <Page isRef="10" />
+              <Parent isRef="71" />
+              <Text>{Count()}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </FooterTextstats4>
+            <FooterTextstats5 Ref="76" type="Text" isKey="true">
+              <Border>Top;[0:31:53];3;Solid;False;4;Black</Border>
+              <Brush>[219:245:249]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Footer1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Name>FooterTextstats5</Name>
+              <Page isRef="10" />
+              <Parent isRef="71" />
+              <Text>{Count()}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </FooterTextstats5>
+            <FooterTextstats6 Ref="77" type="Text" isKey="true">
+              <Border>Top;[0:31:53];3;Solid;False;4;Black</Border>
+              <Brush>[219:245:249]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Footer1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Name>FooterTextstats6</Name>
+              <Page isRef="10" />
+              <Parent isRef="71" />
+              <Text>{Count()}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </FooterTextstats6>
+            <FooterTextstats7 Ref="78" type="Text" isKey="true">
+              <Border>Top;[0:31:53];3;Solid;False;4;Black</Border>
+              <Brush>[219:245:249]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6,0,1,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Footer1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Name>FooterTextstats7</Name>
+              <Page isRef="10" />
+              <Parent isRef="71" />
+              <Text>{Count()}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </FooterTextstats7>
+            <FooterTextstats8 Ref="79" type="Text" isKey="true">
+              <Border>Top;[0:31:53];3;Solid;False;4;Black</Border>
+              <Brush>[219:245:249]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>7,0,0.7,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Footer1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Name>FooterTextstats8</Name>
+              <Page isRef="10" />
+              <Parent isRef="71" />
+              <Text>{Count()}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </FooterTextstats8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>Footerstats</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </Footerstats>
+        <Headerstats_donorsList Ref="80" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,18,7.72,0.2</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>Headerstats_donorsList</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </Headerstats_donorsList>
+        <Datastats_donorsList Ref="81" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,18.6,7.72,0.2</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <DataSourceName>stats_donorsList</DataSourceName>
+          <EvenStyle>Moray_Data1_Even Style</EvenStyle>
+          <Expressions isList="true" count="0" />
+          <FilterMode>Or</FilterMode>
+          <Filters isList="true" count="0" />
+          <MasterComponent isRef="50" />
+          <Name>Datastats_donorsList</Name>
+          <OddStyle>Moray_Data1_Odd Style</OddStyle>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Sort isList="true" count="0" />
+        </Datastats_donorsList>
+        <Footerstats_donorsList Ref="82" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,19.2,7.72,0.2</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>Footerstats_donorsList</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </Footerstats_donorsList>
+        <Headerstats_financialRequests Ref="83" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,19.8,7.72,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <HeaderTextstats_financialRequests1 Ref="84" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black;True</Border>
+              <Brush>[3:81:103]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,3.9,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>HeaderTextstats_financialRequests1</Name>
+              <Page isRef="10" />
+              <Parent isRef="83" />
+              <Text>completed</Text>
+              <TextBrush>White</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTextstats_financialRequests1>
+            <HeaderTextstats_financialRequests2 Ref="85" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black;True</Border>
+              <Brush>[3:81:103]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.9,0,3.8,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>HeaderTextstats_financialRequests2</Name>
+              <Page isRef="10" />
+              <Parent isRef="83" />
+              <Text>incomplete</Text>
+              <TextBrush>White</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTextstats_financialRequests2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>Headerstats_financialRequests</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </Headerstats_financialRequests>
+        <Datastats_financialRequests Ref="86" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,20.4,7.72,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <DataTextstats_financialRequests1 Ref="87" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,3.9,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Data1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>DataTextstats_financialRequests1</Name>
+              <Page isRef="10" />
+              <Parent isRef="86" />
+              <Text>{stats_financialRequests.completed}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataTextstats_financialRequests1>
+            <DataTextstats_financialRequests2 Ref="88" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.9,0,3.9,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Data1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>DataTextstats_financialRequests2</Name>
+              <Page isRef="10" />
+              <Parent isRef="86" />
+              <Text>{stats_financialRequests.incomplete}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataTextstats_financialRequests2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>stats_financialRequests</DataSourceName>
+          <EvenStyle>Moray_Data1_Even Style</EvenStyle>
+          <Expressions isList="true" count="0" />
+          <FilterMode>Or</FilterMode>
+          <Filters isList="true" count="0" />
+          <MasterComponent isRef="50" />
+          <Name>Datastats_financialRequests</Name>
+          <OddStyle>Moray_Data1_Odd Style</OddStyle>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Sort isList="true" count="0" />
+        </Datastats_financialRequests>
+        <Footerstats_financialRequests Ref="89" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,21,7.72,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <FooterTextstats_financialRequests1 Ref="90" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,3.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Name>FooterTextstats_financialRequests1</Name>
+              <Page isRef="10" />
+              <Parent isRef="89" />
+              <Text>{Count()}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </FooterTextstats_financialRequests1>
+            <FooterTextstats_financialRequests2 Ref="91" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.9,0,3.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Name>FooterTextstats_financialRequests2</Name>
+              <Page isRef="10" />
+              <Parent isRef="89" />
+              <Text>{Count()}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </FooterTextstats_financialRequests2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>Footerstats_financialRequests</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </Footerstats_financialRequests>
+        <Headerstats_nonFinancialRequests Ref="92" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,21.6,7.72,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <HeaderTextstats_nonFinancialRequests1 Ref="93" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black;True</Border>
+              <Brush>[3:81:103]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,3.9,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>HeaderTextstats_nonFinancialRequests1</Name>
+              <Page isRef="10" />
+              <Parent isRef="92" />
+              <Text>completed</Text>
+              <TextBrush>White</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTextstats_nonFinancialRequests1>
+            <HeaderTextstats_nonFinancialRequests2 Ref="94" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black;True</Border>
+              <Brush>[3:81:103]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.9,0,3.8,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Header1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>HeaderTextstats_nonFinancialRequests2</Name>
+              <Page isRef="10" />
+              <Parent isRef="92" />
+              <Text>incomplete</Text>
+              <TextBrush>White</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTextstats_nonFinancialRequests2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>Headerstats_nonFinancialRequests</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </Headerstats_nonFinancialRequests>
+        <Datastats_nonFinancialRequests Ref="95" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,22.2,7.72,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <DataTextstats_nonFinancialRequests1 Ref="96" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,3.9,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Data1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>DataTextstats_nonFinancialRequests1</Name>
+              <Page isRef="10" />
+              <Parent isRef="95" />
+              <Text>{stats_nonFinancialRequests.completed}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataTextstats_nonFinancialRequests1>
+            <DataTextstats_nonFinancialRequests2 Ref="97" type="Text" isKey="true">
+              <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.9,0,3.9,0.2</ClientRectangle>
+              <ComponentStyle>Moray_Data1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Name>DataTextstats_nonFinancialRequests2</Name>
+              <Page isRef="10" />
+              <Parent isRef="95" />
+              <Text>{stats_nonFinancialRequests.incomplete}</Text>
+              <TextBrush>[0:0:0]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataTextstats_nonFinancialRequests2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>stats_nonFinancialRequests</DataSourceName>
+          <EvenStyle>Moray_Data1_Even Style</EvenStyle>
+          <Expressions isList="true" count="0" />
+          <FilterMode>Or</FilterMode>
+          <Filters isList="true" count="0" />
+          <MasterComponent isRef="50" />
+          <Name>Datastats_nonFinancialRequests</Name>
+          <OddStyle>Moray_Data1_Odd Style</OddStyle>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+          <Sort isList="true" count="0" />
+        </Datastats_nonFinancialRequests>
+        <Footerstats_nonFinancialRequests Ref="98" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,22.8,7.72,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <FooterTextstats_nonFinancialRequests1 Ref="99" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,3.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Name>FooterTextstats_nonFinancialRequests1</Name>
+              <Page isRef="10" />
+              <Parent isRef="98" />
+              <Text>{Count()}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </FooterTextstats_nonFinancialRequests1>
+            <FooterTextstats_nonFinancialRequests2 Ref="100" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.9,0,3.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Name>FooterTextstats_nonFinancialRequests2</Name>
+              <Page isRef="10" />
+              <Parent isRef="98" />
+              <Text>{Count()}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </FooterTextstats_nonFinancialRequests2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>Footerstats_nonFinancialRequests</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </Footerstats_nonFinancialRequests>
+        <CrossHeaderBand1 Ref="101" type="Stimulsoft.Report.Components.StiCrossHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,23.2,7.7,3.37</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>CrossHeaderBand1</Name>
+          <Page isRef="10" />
+          <Parent isRef="10" />
+        </CrossHeaderBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Expressions isList="true" count="0" />
+      <Guid>23f8d3ecbdaa45f58219c8aedd6643cf</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <PageHeight>11</PageHeight>
+      <PageWidth>8.5</PageWidth>
+      <PaperSize>Letter</PaperSize>
+      <Report isRef="0" />
+    </Page1>
+  </Pages>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportAuthor>محمد عبد الجواد العطار</ReportAuthor>
+  <ReportChanged>10/6/2025 12:51:40 AM</ReportChanged>
+  <ReportCreated>10/6/2025 12:24:19 AM</ReportCreated>
+  <ReportFile>D:\courses\nodjscourses\final\مجلد جديد\Graduation project1\reports\Report.mrt</ReportFile>
+  <ReportGuid>ff72c976dd074b598034d945e6402769</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2025.3.5.0</ReportVersion>
+  <Script>Imports System
+Imports System.Drawing
+Imports System.Windows.Forms
+Imports System.Data
+Imports Stimulsoft.Controls
+Imports Stimulsoft.Base.Drawing
+Imports Stimulsoft.Report
+Imports Stimulsoft.Report.Dialogs
+Imports Stimulsoft.Report.Components
+
+Namespace Reports
+    Public Class Report
+        Inherits Stimulsoft.Report.StiReport
+
+        Public Sub New()
+            MyBase.New
+            Me.InitializeComponent
+        End Sub
+
+        #Region "StiReport Designer generated code - do not modify"
+		#End Region 'StiReport Designer generated code - do not modify
+    End Class
+End Namespace
+</Script>
+  <ScriptLanguage>VB</ScriptLanguage>
+  <Styles isList="true" count="12">
+    <Moray_Report_Title1 Ref="102" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Moray</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item102 Ref="103" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>ReportTitle</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item102>
+      </Conditions>
+      <Font>Arial,14,Bold</Font>
+      <Name>Moray_Report_Title1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[3:81:103]</TextBrush>
+    </Moray_Report_Title1>
+    <Moray_Report_Title2 Ref="104" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Moray</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item104 Ref="105" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>ReportTitle</Placement>
+          <PlacementNestedLevel>2</PlacementNestedLevel>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item104>
+      </Conditions>
+      <Font>Arial,10,Bold</Font>
+      <Name>Moray_Report_Title2</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[3:81:103]</TextBrush>
+    </Moray_Report_Title2>
+    <Moray_Report_Summary Ref="106" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Moray</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item106 Ref="107" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>ReportSummary</Placement>
+          <Type>ComponentType, Placement</Type>
+        </Item106>
+      </Conditions>
+      <Font>Arial,10,Bold</Font>
+      <Name>Moray_Report_Summary</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[3:81:103]</TextBrush>
+    </Moray_Report_Summary>
+    <Moray_Page_Header Ref="108" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Moray</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item108 Ref="109" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>PageHeader</Placement>
+          <Type>ComponentType, Placement</Type>
+        </Item108>
+      </Conditions>
+      <Font>Arial,10</Font>
+      <Name>Moray_Page_Header</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[3:81:103]</TextBrush>
+    </Moray_Page_Header>
+    <Moray_Page_Footer Ref="110" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Moray</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item110 Ref="111" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>PageFooter</Placement>
+          <Type>ComponentType, Placement</Type>
+        </Item110>
+      </Conditions>
+      <Font>Arial,10</Font>
+      <Name>Moray_Page_Footer</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[3:81:103]</TextBrush>
+    </Moray_Page_Footer>
+    <Moray_Group_Header1 Ref="112" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Moray</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item112 Ref="113" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>GroupHeader</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item112>
+      </Conditions>
+      <Font>Arial,13,Bold</Font>
+      <Name>Moray_Group_Header1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[3:81:103]</TextBrush>
+    </Moray_Group_Header1>
+    <Moray_Group_Footer1 Ref="114" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Moray</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item114 Ref="115" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>GroupFooter</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item114>
+      </Conditions>
+      <Font>Arial,13,Bold</Font>
+      <Name>Moray_Group_Footer1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[3:81:103]</TextBrush>
+    </Moray_Group_Footer1>
+    <Moray_Header1 Ref="116" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[0:31:53];1;Solid;False;4;Black;True</Border>
+      <Brush>[3:81:103]</Brush>
+      <CollectionName>Moray</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item116 Ref="117" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>Header</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item116>
+      </Conditions>
+      <Font>Arial,8,Bold</Font>
+      <Name>Moray_Header1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>White</TextBrush>
+    </Moray_Header1>
+    <Moray_Data1 Ref="118" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Moray</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item118 Ref="119" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image, CheckBox</ComponentType>
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>Data</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item118>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Moray_Data1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:0:0]</TextBrush>
+    </Moray_Data1>
+    <Moray_Data1_Odd_x0020_Style Ref="120" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+      <Brush>[219:245:249]</Brush>
+      <CollectionName>Moray</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item120 Ref="121" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>DataOddStyle</Placement>
+          <Type>Placement, PlacementNestedLevel</Type>
+        </Item120>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Moray_Data1_Odd Style</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:0:0]</TextBrush>
+    </Moray_Data1_Odd_x0020_Style>
+    <Moray_Data1_Even_x0020_Style Ref="122" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[0:31:53];1;Solid;False;4;Black</Border>
+      <Brush>[120:219:230]</Brush>
+      <CollectionName>Moray</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item122 Ref="123" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <OperationPlacementNestedLevel>GreaterThanOrEqualTo</OperationPlacementNestedLevel>
+          <Placement>DataEvenStyle</Placement>
+          <Type>Placement, PlacementNestedLevel</Type>
+        </Item122>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Moray_Data1_Even Style</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:0:0]</TextBrush>
+    </Moray_Data1_Even_x0020_Style>
+    <Moray_Footer1 Ref="124" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>Top;[0:31:53];3;Solid;False;4;Black</Border>
+      <Brush>[219:245:249]</Brush>
+      <CollectionName>Moray</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item124 Ref="125" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentType>Text, Primitive, Image</ComponentType>
+          <Placement>Footer</Placement>
+          <Type>ComponentType, Placement, PlacementNestedLevel</Type>
+        </Item124>
+      </Conditions>
+      <Font>Arial,8</Font>
+      <Name>Moray_Footer1</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[0:0:0]</TextBrush>
+    </Moray_Footer1>
+  </Styles>
+</StiSerializer>
