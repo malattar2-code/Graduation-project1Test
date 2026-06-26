@@ -2,54 +2,41 @@
 const express = require('express');
 const router = express.Router();
 const statisticsController = require('../../controller/dashbored/statisticsController');
-const { requireAuth } = require("../../middelware/requireAuth");
+const { requireAuth, requireAdmin } = require("../../middelware/requireAuth");
+
+// حماية جميع routes الإحصائيات — admin فقط
+router.use(requireAuth, requireAdmin);
 
 // User statistics routes with debug middleware
 router.get('/api/statistics/users/monthly', 
-    requireAuth, 
     statisticsController.debugRoute.bind(statisticsController),
     statisticsController.getMonthlyUserStatistics
 );
 
 router.get('/api/statistics/users/overview', 
-    requireAuth, 
     statisticsController.getUserStatistics
 );
 
-// Add a test route to verify the route is working
-router.get('/api/statistics/test', (req, res) => {
-    console.log('✅ Statistics test route hit successfully');
-    res.json({
-        success: true,
-        message: 'Statistics API is working!',
-        timestamp: new Date().toISOString(),
-        route: req.originalUrl
-    });
-});
-// Add these routes to your statisticsRoutes.js
+// Fundraiser statistics
 router.get('/api/statistics/fundraisers/monthly', 
-    requireAuth, 
     statisticsController.getMonthlyFundraiserStatistics
 );
 
 router.get('/api/statistics/fundraisers/overview', 
-    requireAuth, 
     statisticsController.getFundraiserStatistics
 );
 
-// Add these routes to your statisticsRoutes.js
+// Rank statistics
 router.get('/api/statistics/ranks/overview', 
-    requireAuth, 
     statisticsController.getRankStatistics
 );
 
+// Forms & Requests statistics
 router.get('/api/statistics/forms-requests/monthly', 
-    requireAuth, 
     statisticsController.getMonthlyFormsRequestsStatistics
 );
 
 router.get('/api/statistics/forms-requests/overview', 
-    requireAuth, 
     statisticsController.getFormsRequestsStatistics
 );
 module.exports = router;

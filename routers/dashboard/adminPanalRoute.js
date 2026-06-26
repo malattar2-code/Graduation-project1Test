@@ -8,6 +8,9 @@ const imageUploadController = require("../../controller/site/imageUploadControll
 
 const { requireAuth, requireAdmin } = require("../../middelware/requireAuth");
 
+// حماية جميع routes في هذا الملف — admin فقط
+// requireAuth يتحقق من تسجيل الدخول، requireAdmin يتحقق من صلاحية الأدمن
+
 /* ─── Admin Panel ─── */
 router.get('/admin', requireAuth, adminPanelController.getAdminPanel);
 router.post('/admin/refresh-rank-counts', requireAuth, adminPanelController.refreshRankCounts);
@@ -53,11 +56,11 @@ router.post('/api/fundraisers/:id/unurgent', requireAuth, adminPanelController.u
 /* ─── Users ─── */
 router.get("/me", requireAuth, adminPanelController.getMe);
 router.get("/admin/me", requireAuth, adminPanelController.getAdminMe);
-router.post('/users/:id/ban', adminPanelController.banUser);
-router.post('/users/:id/unban', adminPanelController.unbanUser);
+router.post('/users/:id/ban', requireAuth, requireAdmin, adminPanelController.banUser);
+router.post('/users/:id/unban', requireAuth, requireAdmin, adminPanelController.unbanUser);
 
 /* ─── Statistics ─── */
-router.get('/api/fundraiser-stats', adminPanelController.getFundraiserStats);
+router.get('/api/fundraiser-stats', requireAuth, requireAdmin, adminPanelController.getFundraiserStats);
 router.get("/admin/counts", requireAuth, adminPanelController.getAdminCounts);
 
 /* ─── Categories ─── */

@@ -29,12 +29,12 @@ router.post(
   bodyParser.raw({ type: 'application/json' }),
   paymentController.handleWebhook
 );
-router.get("/check/:fundraiserId", paymentController.checkAccount);
+router.get("/check/:fundraiserId", requireAuth, paymentController.checkAccount);
 
 // ✅ إنشاء حساب Stripe جديد
-router.post("/create/:fundraiserId", paymentController.createAccount);
+router.post("/create/:fundraiserId", requireAuth, paymentController.createAccount);
 
 // ✅ تحويل الأموال عند اكتمال الحملة
-router.post("/transfer/:fundraiserId", paymentController.transferFunds);
-router.get('/login/:fundraiserId', paymentController.getLoginLink);
+router.post("/transfer/:fundraiserId", requireAuth, paymentController.transferFunds);
+router.get('/login/:fundraiserId', requireAuth, paymentController.getLoginLink);
 module.exports = router;

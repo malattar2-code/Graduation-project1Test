@@ -2,20 +2,22 @@ const express = require("express");
 const router = express.Router();
 const bannerController = require("../../controller/dashbored/BannerAdminController");
 const upload = require("../../middelware/uploade-emergency_relief_banner"); // لو عندك رفع صور
+const { requireAuth, requireAdmin } = require("../../middelware/requireAuth");
 
-// 🔹 جلب جميع البنرات
+// 🔹 جلب جميع البنرات (مفتوح — يُستخدم في الصفحة الرئيسية)
 router.get("/", bannerController.getAll);
 
-// 🔹 إنشاء Banner جديد
-router.post("/create", upload.single("image"), bannerController.create);
-
-// 🔹 تعديل Banner
-router.put("/update/:id", upload.single("image"), bannerController.update);
-
-// 🔹 حذف Banner
-router.delete("/delete/:id", bannerController.delete);
-
-// 🔹 API إضافي
+// 🔹 API إضافي (مفتوح — يُستخدم في الصفحة الرئيسية)
 router.get("/api/all", bannerController.getAllApi);
 
+// 🔹 إنشاء Banner جديد (admin فقط)
+router.post("/create", requireAuth, requireAdmin, upload.single("image"), bannerController.create);
+
+// 🔹 تعديل Banner (admin فقط)
+router.put("/update/:id", requireAuth, requireAdmin, upload.single("image"), bannerController.update);
+
+// 🔹 حذف Banner (admin فقط)
+router.delete("/delete/:id", requireAuth, requireAdmin, bannerController.delete);
+
 module.exports = router;
+

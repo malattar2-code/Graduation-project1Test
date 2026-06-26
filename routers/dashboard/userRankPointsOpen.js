@@ -2,8 +2,10 @@
 const express = require('express');
 const router = express.Router();
 const userRankPointsController = require('../../controller/dashbored/userRankPointsController');
+const { requireAuth, requireAdmin } = require("../../middelware/requireAuth");
 
-// NO AUTHENTICATION REQUIRED - FOR TESTING
+// حماية جميع routes — admin فقط (كانت مفتوحة للتجريب سابقاً)
+router.use(requireAuth, requireAdmin);
 
 // Initialize all donors
 router.post('/user-rank-points-open/initialize-donors', userRankPointsController.initializeAllDonors);

@@ -5,6 +5,8 @@ const donationStatsController = require('../../controller/site/donationStatsCont
 const invoiceStatisticsController = require('../../controller/site/invoiceStatisticsController');
 
 // Session-based authentication middleware
+const { requireAuth, requireAdmin } = require("../../middelware/requireAuth");
+
 const authenticateUser = (req, res, next) => {
   console.log('🔐 Checking session authentication...');
   
@@ -25,12 +27,12 @@ router.get('/donation-stats', donationStatsController.getUserDonationStats);
 router.delete('/:invoiceId', invoicesController.deleteInvoice);
 router.get('/fundraiser-stats', donationStatsController.getUserFundraiserStats);
 
-// Debug routes
-router.post('/debug-add-points', invoicesController.debugAddPoints);
-router.get('/debug-user-points/:id', invoicesController.debugUserPoints);
+// Debug routes (admin فقط)
+router.post('/debug-add-points', requireAdmin, invoicesController.debugAddPoints);
+router.get('/debug-user-points/:id', requireAdmin, invoicesController.debugUserPoints);
 
-// Admin routes
-router.get('/admin/all-invoices', invoicesController.getAllInvoices);
-router.get('/admin/statistics', invoiceStatisticsController.getInvoiceStatistics);
+// Admin routes (admin فقط)
+router.get('/admin/all-invoices', requireAdmin, invoicesController.getAllInvoices);
+router.get('/admin/statistics', requireAdmin, invoiceStatisticsController.getInvoiceStatistics);
 
 module.exports = router;

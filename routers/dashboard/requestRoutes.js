@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const requestController = require("../../controller/dashbored/RequestController");
+const { requireAuth, requireAdmin } = require("../../middelware/requireAuth");
+
+// حماية جميع routes الطلبات — admin فقط
+router.use(requireAuth, requireAdmin);
 
 // 🔹 جميع الطلبات مع النسبة المئوية
 router.get("/", requestController.findAllRequest);

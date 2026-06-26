@@ -2,9 +2,11 @@
 const express = require('express');
 const router = express.Router();
 const { buildFirebaseStats } = require('../../controller/dashbored/repController');
+const { requireAuth, requireAdmin } = require("../../middelware/requireAuth");
 
 // GET /api/report/data  -> يعيد firebase-structure.json (ويحدّثه من Firebase)
-router.get('/report/data', async (req, res) => {
+// admin فقط
+router.get('/report/data', requireAuth, requireAdmin, async (req, res) => {
     try {
         // عند الطلب سيُعاد بناء الإحصائيات من Firestore
         const result = await buildFirebaseStats({ writeToFile: true }); // يكتب أيضاً على report/firebase-structure.json
